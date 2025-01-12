@@ -1,0 +1,526 @@
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* 01 - FONTS */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+.about-item-img img {
+    max-width: 100%; /* Ajusta el tamaño según tus necesidades */
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .about-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los elementos */
+  }
+  
+  h3.text-center {
+    margin-bottom: 10px; /* Espacio entre h3 y el párrafo */
+    color: #0F6466;
+  }
+  
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  /* 02 - TYPOGRAPHY */
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  
+  .h1,.h2,.h3,.h4,.h5,.h6, .h1-2{font-family: 'Montserrat', sans-serif; color: #0F6466; font-weight: 400; margin: 0;}
+  .h1{font-size: 60px; line-height: 60px; padding-bottom: 17px; position: relative;}
+  .h1:before{content: ""; position: absolute; width: 100%; height: 1px; bottom: 0; left: 0; background-color: #D8B08C;}
+  .h1-2{font-size: 60px; line-height: 60px; padding-bottom: 17px; position: relative;}
+  .h1-2:before{content: ""; position: absolute; width: 50px; height: 1px; bottom: 0; left: 50%; margin-left: -25px; background-color: #D8B08C;}
+  .h2{font-size: 40px; line-height: 40px; padding-bottom: 22px; position: relative;}
+  .h2:before{content: ""; position: absolute; width: 50px; height: 1px; bottom: 0; left: 50%; margin-left: -25px; background-color: #D8B08C;}
+  .h2.text-left:before {left: 0px; margin-left: 0px;}
+  .h2.white:before{background-color: #fff;}
+  .h3{font-size: 32px; line-height: 28px; text-transform: uppercase; color: #0F6466;}
+  .h4{font-size: 24px; line-height: 24px; text-transform: uppercase;}
+  .h5{font-size: 16px; line-height: 40px; text-transform: uppercase;}
+  .h6{font-size: 16px; line-height: 24px;}
+  .h6.sm {font-size: 14px; line-height: 22px;}
+  .h7{font-size: 13px; line-height: 24px; color: #fff; font-family: 'Montserrat', sans-serif;}
+  
+  .large{font-size: 26px; line-height: 26px;}
+  .big{font-size: 15px; line-height: 26px;}
+  .normal{font-size: 15px; line-height: 24px;}
+  .small{font-size: 13px; line-height: 32px;}
+  .small-sm{font-size: 13px; line-height: 24px;}
+  .small-xs{font-size: 12px; line-height: 28px;}
+  
+  /*hover*/
+  
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  /* 02 - EMPTY SPACE */
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  
+  /*padding class*/
+  .empty-space{position: relative; display: block;}
+  
+  .h0-xs{height: 0px;}
+  .h5-xs{height: 5px;}
+  .h10-xs{height: 10px;}
+  .h15-xs{height: 15px;}
+  .h20-xs{height: 20px;}
+  .h25-xs{height: 25px;}
+  .h30-xs{height: 30px;}
+  .h35-xs{height: 35px;}
+  .h40-xs{height: 40px;}
+  .h45-xs{height: 45px;}
+  .h50-xs{height: 50px;}
+  .h55-xs{height: 55px;}
+  .h60-xs{height: 60px;}
+  .h65-xs{height: 65px;}
+  .h70-xs{height: 70px;}
+  .h75-xs{height: 75px;}
+  .h80-xs{height: 80px;}
+  .h85-xs{height: 85px;}
+  .h90-xs{height: 90px;}
+  .h95-xs{height: 95px;}
+  .h100-xs{height: 100px;}
+  
+  @media (min-width: 768px) {
+    .h0-sm{height: 0px;}
+    .h5-sm{height: 5px;}
+    .h10-sm{height: 10px;}
+    .h15-sm{height: 15px;}
+    .h20-sm{height: 20px;}
+    .h25-sm{height: 25px;}
+    .h30-sm{height: 30px;}
+    .h35-sm{height: 35px;}
+    .h40-sm{height: 40px;}
+    .h45-sm{height: 45px;}
+    .h50-sm{height: 50px;}
+    .h55-sm{height: 55px;}
+    .h60-sm{height: 60px;}
+    .h65-sm{height: 65px;}
+    .h70-sm{height: 70px;}
+    .h75-sm{height: 75px;}
+    .h80-sm{height: 80px;}
+    .h85-sm{height: 85px;}
+    .h90-sm{height: 90px;}
+    .h95-sm{height: 95px;}
+    .h100-sm{height: 100px;}
+  }
+  
+  @media (min-width: 992px) {
+    .h0-md{height: 0px;}
+    .h5-md{height: 5px;}
+    .h10-md{height: 10px;}
+    .h15-md{height: 15px;}
+    .h20-md{height: 20px;}
+    .h25-md{height: 25px;}
+    .h30-md{height: 30px;}
+    .h35-md{height: 35px;}
+    .h40-md{height: 40px;}
+    .h45-md{height: 45px;}
+    .h50-md{height: 50px;}
+    .h55-md{height: 55px;}
+    .h60-md{height: 60px;}
+    .h65-md{height: 65px;}
+    .h70-md{height: 70px;}
+    .h75-md{height: 75px;}
+    .h80-md{height: 80px;}
+    .h85-md{height: 85px;}
+    .h90-md{height: 90px;}
+    .h95-md{height: 95px;}
+    .h100-md{height: 100px;}
+  }
+  
+  @media (min-width: 1200px) {
+    .h0-lg{height: 0px;}
+    .h5-lg{height: 5px;}
+    .h10-lg{height: 10px;}
+    .h15-lg{height: 15px;}
+    .h20-lg{height: 20px;}
+    .h25-lg{height: 25px;}
+    .h30-lg{height: 30px;}
+    .h35-lg{height: 35px;}
+    .h40-lg{height: 40px;}
+    .h45-lg{height: 45px;}
+    .h50-lg{height: 50px;}
+    .h55-lg{height: 55px;}
+    .h60-lg{height: 60px;}
+    .h65-lg{height: 65px;}
+    .h70-lg{height: 70px;}
+    .h75-lg{height: 75px;}
+    .h80-lg{height: 80px;}
+    .h85-lg{height: 85px;}
+    .h90-lg{height: 90px;}
+    .h95-lg{height: 95px;}
+    .h100-lg{height: 100px;}
+  }
+  
+  .fl{float: left; width:100%;}
+  
+  
+  /*nopadding class*/
+  .nopadding {padding-left: 0; padding-right: 0; margin-left: 0; margin-right: 0;}
+  @media (min-width: 992px) {
+    .nopadding-md{padding-left: 0; padding-right: 0; margin-left: 0; margin-right: 0;}
+  }
+  
+  /*background*/
+  .bg{position:absolute; left:0px; top:0px; width:100%; height:100%; overflow:hidden; background-position: 50% 50%; background-repeat: no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-attachment:scroll;}
+  .bg.fix{background-attachment: fixed;}
+  .bg-layer-5{position:absolute; left:0px; top:0px; width:100%; height:100%; background:rgba(0,0,0,0.5);}
+  .bg-layer-6{position:absolute; left:0px; top:0px; width:100%; height:100%; background:rgba(0,0,0,0.6);}
+  .clip{clip: rect(auto, auto, auto, auto); height: 100%; position: absolute; width: 100%; left: 0px; top: 0px;}
+  .img{width: 100%; height: auto; display: block;}
+  
+  /*table*/
+  .table-view{height: 100%; width: 100%; display: table;}
+  .row-view{display: table-row;}
+  .cell-view{display: table-cell; vertical-align: middle; height: inherit;}
+  
+  /*block*/
+  .block{position: relative; float: left; width: 100%;}
+  .wide-container-fluid{position: relative; padding: 0 50px;}
+  .container-fluid-05{position: relative; padding: 0 5px;}
+  .container-fluid-10{position: relative; padding: 0 10px;}
+  @media (max-width: 767px) {
+    .wide-container-fluid{padding: 0 15px;}
+  }
+  
+  .grid-5-col{position: relative; width: 20%; float: left; min-height: 1px; padding-left: 15px; padding-right: 15px;}
+  
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  /* 03 - HEADER */
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo del header */
+  header {
+    background-color: #d2e8e3;
+    padding: 10px 0;
+    color: #0f6466;
+  }
+  
+  /* Contenedor del logo y la barra de navegación */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Estilo del logo */
+  .logo img {
+    width: 120px; /* Ajusta el tamaño del logo según sea necesario */
+  }
+  
+  /* Estilo de la barra de navegación */
+  .navbar ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar li {
+    margin-left: 30px;
+  }
+  
+  .navbar a {
+    color: #0f6466;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Efecto al pasar el ratón */
+  .navbar a:hover {
+    background-color: #b3cfc9;
+  }
+  
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  /* 04 - FOOTER */
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye las secciones de forma equitativa */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Acomoda las secciones en varias filas si es necesario */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  
+  .custom-footer {
+    background-color: #D2E8E3;
+    color: #0F6466;
+    padding: 20px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+  }
+  
+  .footer-logo {
+    max-width: 50px;
+    margin-bottom: 15px;
+  }
+  
+  .footer-title {
+    color: #0F6466;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .footer-list {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+  }
+  
+  .footer-link {
+    color: #0F6466;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-socials {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .footer-social-icon {
+    color: #0F6466;
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-social-icon:hover {
+    color: #FFCB9A;
+  }
+  
+  .footer-heart {
+    color: #D8B08C;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Las secciones se apilan verticalmente */
+        align-items: center;
+    }
+  
+    .footer-section {
+        text-align: center;
+        margin: 10px 0;
+    }
+  }
+  
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  /* 05 - ABOUT PAGE  */
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  
+  /* Centrar las imágenes en sus columnas */
+  .d-flex {
+    display: flex;
+  }
+  .justify-content-center {
+    justify-content: center;
+  }
+  .align-items-center {
+    align-items: center;
+  }
+  
+  /* Centrar las imágenes dentro de la columna */
+  .about-item-img {
+    text-align: center; /* Garantiza que el contenido se centre horizontalmente */
+  }
+  
+  /* Espaciado entre secciones */
+  .spacer {
+    height: 50px; /* Ajusta según sea necesario */
+  }
+  
+  /* Imágenes responsivas */
+  .resp-img {
+    max-width: 80%; /* Ajusta el ancho máximo de las imágenes dentro de su contenedor */
+    height: auto; /* Mantén la proporción de la imagen */
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+  }
+  
+  
+  .about-item-img img {
+    max-width: 80%; /* Ajusta el tamaño según tus necesidades */
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .about-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los elementos */
+  }
+  
+  h3.text-center {
+    margin-bottom: 2px; /* Espacio entre h3 y el párrafo */
+  }
+  
+  .simple-text p {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 16px; 
+    margin: 10px;  
+    line-height: 1.5; 
+    color: #2C3532
+
+  }
+  
+  .text-center {
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+    font-size: 16px; /* Tamaño de letra */
+    line-height: 1.5; /* Altura de línea */
+    margin: 10px; /* Márgenes exteriores */
+    padding: 5px; /* Espaciado interno */
+    color: #2C3532
+  }
+  
+  
+  .h20-xs {
+    height: 20px; /* Altura específica para el espacio */
+  }
+  
+  /*El Equipo - Natalia*/ 
+  
+  /* Centrar el título y la descripción */
+  
+  #about-us h2 {
+    margin-bottom: 20px; /* Espacio entre el título y la descripción */
+  }
+  
+  .team-img {
+    width: 200px; /* Ancho fijo */
+    height: 400px; /* Altura fija */
+    object-fit: cover; /* Mantiene el contenido ajustado sin deformarlo */
+    border: 2px solid #d8b08c;
+    margin: 8px; /* Separación entre las imágenes */
+    padding: 4px; /* Separación entre la imagen y el borde */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .team-img:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+  }
+  
+  .card {
+    transition: transform 0.3s ease-in-out !important;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos de la tarjeta estén alineados verticalmente */
+    align-items: center; /* Centra los contenidos de la tarjeta */
+    margin-bottom: 30px; /* Espacio entre las tarjetas */
+  }
+  
+  /* Estilo de los botones */
+  .card-body .btn {
+    margin: 5px; /* Espacio entre los botones */
+    font-size: 14px;
+    text-align: center;
+    width: 60%; 
+    max-width: 200px; /* Máximo tamaño de los botones */
+    padding: 8px; /* Añadir padding para mayor área clicable */
+  }
+  
+  /* Colores personalizados */
+  .btn-custom-primary {
+    background-color: #0F6466 !important; /* Color inicial */
+    border-color: #0F6466 !important;
+    color: #fff !important; /* Texto blanco */
+  }
+  
+  .btn-custom-primary:hover {
+    background-color: #2b7779 !important; /* Color al pasar el mouse */
+    border-color: #2C3532 !important;
+  }
+  
+  .btn-custom-primary:active {
+    background-color: #D2E8E3 !important; /* Color cuando el botón está siendo presionado */
+    border-color: #D2E8E3 !important;
+  }
+  
+  .btn-custom-primary:focus {
+    background-color: #D2E8E3 !important; /* Color cuando el botón tiene foco */
+    border-color: #D2E8E3 !important;
+    color: #2C3532 !important; /* Color de texto cuando está enfocado */
+  }
+  
+  .btn-custom-secondary {
+    background-color: #FFCB9A !important; /* Segundo color inicial */
+    border-color: #FFCB9A !important;
+    color: #2C3532 !important;
+  }
+  
+  .btn-custom-secondary:hover {
+    background-color: #f3cba5 !important;
+    border-color: #2C3532 !important;
+  }
+  
+  .btn-custom-secondary:active {
+    background-color: #D2E8E3 !important;
+    border-color: #D2E8E3 !important;
+  }
+  
+  .btn-custom-secondary:focus{
+    background-color: #D2E8E3 !important; 
+    border-color: #D2E8E3 !important;
+    color: #2C3532 !important; 
+  }
+  
+  /* Estilos para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .team-img {
+      width: 100%; /* Hacer la imagen más pequeña y flexible */
+      height: auto;
+    }
+  
+    .card-body {
+      padding: 10px; /* Más espacio en el interior de las tarjetas */
+    }
+  
+    .card {
+      width: 100%; /* Las tarjetas ocupan el 100% del ancho disponible */
+      margin-bottom: 20px; /* Espacio entre las tarjetas */
+    }
+  
+    .card-body .btn {
+      width: 100%; /* Los botones ocuparán todo el ancho de la tarjeta */
+      margin-bottom: 10px; /* Espacio entre botones */
+    }
+  
+    #about-us h2 {
+      font-size: 1.5rem; /* Título más pequeño en pantallas pequeñas */
+    }
+  
+    .carousel-inner .carousel-item {
+      padding: 0;
+    }
+  }
+  
+  /* Estilos para pantallas muy pequeñas (por ejemplo, móviles en modo retrato) */
+  @media (max-width: 480px) {
+    .card-body .btn {
+      font-size: 12px; /* Reducir el tamaño de la fuente en botones pequeños */
+    }
+  }
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  /* About-final
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
