@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link href="Css/Styles_Contcts.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="/Img/Favicon_ManosLocales.png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/Img/Logo Manos Locales transparente.png" alt="Logo">
+        </div>
+        
+        <!-- Icono hamburguesa -->
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <img class="img_Nav" src="/Img/hamburger-icon.png" alt="Menu" />
+        </div>
+
+        <!-- Navegación -->
+        <nav id="navbar" class="navbar">
+            <a href="#">Inicio</a>
+            <a href="#">Acerca de nosotros</a>
+            <a href="#">Blog</a>
+            <a href="#" class="contact-btn">Contáctanos</a>
+            <a href="#"><img src="/api/placeholder/24/24" alt="Cart"></a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Contact us</h1>
+        <p></p>
+    </section>
+
+    <section class="form-section">
+        <h2>¡Habla con nosotros!</h2>
+        <p>¿Te gustaría ser parte de este increíble eCommerce y vender tus productos con nosotros? Llena el siguiente formulario y nos pondremos en contacto contigo lo antes posible. Recuerda, poner la descripción de tu negocio. <strong>¡Estamos emocionados de trabajar juntos! </strong></p>
+        
+        <form id="contact-form" action="https://formspree.io/f/mvggyynn" method="POST">
+            <div class="form-grid">
+                <input type="text" id="name" name="name" placeholder="Nombre" required>
+                <input type="tel" id="phone" name="phone" placeholder="Teléfono" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <img src="/Img/Logo Manos Locales transparente.png" alt="Logo">
+                </div>
+                <p>Lorem ipsum dolor sit amet elit.<br>Vestibulum mattis nulla<br>Etiam a maximus leo</p>
+            </div>
+            <div class="footer-info">
+                <h3>Dirección</h3>
+                <p>Bogotá, Colombia<br>33602</p>
+            </div>
+            <div class="footer-info">
+                <h3>Contáctanos</h3>
+                <p>teléfono: +57 322 395 7904<br>manoslocalesecommerce@gmail.com</p>
+            </div>
+            <div class="footer-info">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <img src="/Img/Facebook.png" alt="Facebook">
+                    <img src="/Img/instagram.png" alt="Instagram">
+                    <img src="/Img/linkedin.png" alt="LinkedIn">
+                </div>
+                <p>© 2025 Marca/Compañía. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script>
+        // JavaScript para el menú hamburguesa
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
+    </script> -->
+
+    <script src="js/contact.js"></script>
+</body>
+</html>
