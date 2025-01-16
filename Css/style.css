@@ -1,0 +1,832 @@
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* 01 - FONTS */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+.about-item-img img {
+    max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
+    height: auto;
+    object-fit: cover; /* Mantiene las proporciones de la imagen */
+}
+
+.about-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los elementos */
+    padding: 20px; /* Espacio interno para evitar bordes pegados */
+    text-align: center; /* Centra el texto en dispositivos más pequeños */
+}
+
+h3.text-center {
+    margin-bottom: 10px; /* Espacio entre h3 y el párrafo */
+    color: #0F6466;
+}
+
+/* Media queries para responsividad */
+@media (min-width: 768px) {
+    .about-text-container {
+        flex-direction: row; /* Cambia a disposición en fila en pantallas más grandes */
+        text-align: left; /* Texto alineado a la izquierda */
+    }
+    .about-item-img {
+        flex: 1; /* La imagen ocupa espacio proporcional */
+    }
+    .about-text-container h3 {
+        font-size: 1.5rem; /* Ajusta el tamaño del texto */
+    }
+}
+
+@media (max-width: 480px) {
+    h3.text-center {
+        font-size: 1.2rem; /* Texto más pequeño en pantallas pequeñas */
+    }
+    .about-text-container {
+        gap: 5px; /* Reduce el espacio entre elementos */
+        padding: 10px; /* Reduce el espacio interno */
+    }
+}
+
+  
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  /* 02 - TYPOGRAPHY */
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  .h1, .h2, .h3, .h4, .h5, .h6, .h1-2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #0F6466;
+    font-weight: 400;
+    margin: 0;
+}
+
+.h1 {
+    font-size: 60px;
+    line-height: 60px;
+    padding-bottom: 17px;
+    position: relative;
+}
+
+.h1:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #D8B08C;
+}
+
+.h1-2 {
+    font-size: 60px;
+    line-height: 60px;
+    padding-bottom: 17px;
+    position: relative;
+}
+
+.h1-2:before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -25px;
+    background-color: #D8B08C;
+}
+
+.h2 {
+    font-size: 40px;
+    line-height: 40px;
+    padding-bottom: 22px;
+    position: relative;
+}
+
+.h2:before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -25px;
+    background-color: #D8B08C;
+}
+
+.h2.text-left:before {
+    left: 0px;
+    margin-left: 0px;
+}
+
+.h2.white:before {
+    background-color: #fff;
+}
+
+.h3 {
+    font-size: 32px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #0F6466;
+}
+
+.h4 {
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+.h5 {
+    font-size: 16px;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+
+.h6 {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.h6.sm {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.h7 {
+    font-size: 13px;
+    line-height: 24px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.large {
+    font-size: 26px;
+    line-height: 26px;
+}
+
+.big {
+    font-size: 15px;
+    line-height: 26px;
+}
+
+.normal {
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.small {
+    font-size: 13px;
+    line-height: 32px;
+}
+
+.small-sm {
+    font-size: 13px;
+    line-height: 24px;
+}
+
+.small-xs {
+    font-size: 12px;
+    line-height: 28px;
+}
+
+/* Media queries para dispositivos más pequeños */
+@media (max-width: 768px) {
+    .h1, .h1-2 {
+        font-size: 40px;
+        line-height: 45px;
+    }
+
+    .h2 {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .h3 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .h4 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .h5, .h6 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .large {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .big, .normal, .small, .small-sm {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .small-xs {
+        font-size: 10px;
+        line-height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .h1, .h1-2 {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .h2 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .h3 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .h4 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .h5, .h6 {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .large {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .big, .normal, .small, .small-sm {
+        font-size: 10px;
+        line-height: 16px;
+    }
+
+    .small-xs {
+        font-size: 8px;
+        line-height: 14px;
+    }
+}
+
+
+  
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  /* 02 - EMPTY SPACE */
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+  }
+  
+  /* Empty Space (Spacers) */
+  .empty-space {
+    display: block;
+    width: 100%;
+  }
+  
+  .spacer {
+    height: var(--spacer-height, 1rem);
+  }
+  
+  /* Height Utilities */
+  :root {
+    --spacer-xs: 0.5rem;
+    --spacer-sm: 1rem;
+    --spacer-md: 2rem;
+    --spacer-lg: 3rem;
+    --spacer-xl: 4rem;
+  }
+  
+  .h-xs { height: var(--spacer-xs); }
+  .h-sm { height: var(--spacer-sm); }
+  .h-md { height: var(--spacer-md); }
+  .h-lg { height: var(--spacer-lg); }
+  .h-xl { height: var(--spacer-xl); }
+  
+  /* Responsive Typography */
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+  }
+  
+  p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+  }
+  
+  /* Flexible Grids */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  /* Flex Utilities */
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .flex-center {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Backgrounds */
+  .bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+  }
+  
+  /* Padding and Margin */
+  .nopadding {
+    padding: 0 !important;
+  }
+  
+  .nomargin {
+    margin: 0 !important;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 0.5rem;
+    }
+  }
+  
+  /* Buttons */
+  .button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 1200px) {
+    .h-lg { height: var(--spacer-md); }
+    .h-xl { height: var(--spacer-lg); }
+  }
+  
+  @media (max-width: 992px) {
+    .h-md { height: var(--spacer-sm); }
+    .h-lg { height: var(--spacer-md); }
+  }
+  
+  @media (max-width: 768px) {
+    .h-sm { height: var(--spacer-xs); }
+    .h-md { height: var(--spacer-sm); }
+  }
+  
+  @media (max-width: 576px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  /* 03 - HEADER */
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  /* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo del header */
+  header {
+    background-color: #d2e8e3;
+    padding: 10px 0;
+    color: #0f6466;
+  }
+  
+  /* Contenedor del logo y la barra de navegación */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Estilo del logo */
+  .logo img {
+    width: 120px; /* Ajusta el tamaño del logo según sea necesario */
+  }
+  
+  /* Estilo de la barra de navegación */
+  .navbar ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  /* Ajuste para navegacion responsiva */
+  .navbar li {
+    margin-left: 30px;
+  }
+  
+  .navbar a {
+    color: #0f6466;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Efecto al pasar el ratón */
+  .navbar a:hover {
+    background-color: #b3cfc9;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .navbar ul {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .navbar li {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+    
+    .container {
+      flex-direction: column;
+    }
+    
+    .logo img {
+      width: 100px;
+    }
+    
+    .navbar a {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .logo img {
+      width: 80px;
+    }
+  }
+  
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  /* 04 - FOOTER */
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  /* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye las secciones de forma equitativa */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Acomoda las secciones en varias filas si es necesario */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Estilo del footer */
+  .custom-footer {
+    background-color: #D2E8E3;
+    color: #0F6466;
+    padding: 20px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+  }
+  
+  /* Estilo del logo en el footer */
+  .footer-logo {
+    max-width: 50px;
+    margin-bottom: 15px;
+  }
+  
+  /* Estilo del título en el footer */
+  .footer-title {
+    color: #0F6466;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo de las listas en el footer */
+  .footer-list {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+  }
+  
+  /* Estilo de los enlaces en el footer */
+  .footer-link {
+    color: #0F6466;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilo de los íconos sociales */
+  .footer-socials {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Estilo de los íconos sociales */
+  .footer-social-icon {
+    color: #0F6466;
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-social-icon:hover {
+    color: #FFCB9A;
+  }
+  
+  /* Estilo del corazón en el footer */
+  .footer-heart {
+    color: #D8B08C;
+    font-size: 16px;
+  }
+  
+  /* Media Query para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column; /* Las secciones se apilan verticalmente */
+      align-items: center;
+    }
+  
+    .footer-section {
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+  
+  
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  /* 05 - ABOUT PAGE  */
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  
+  /* Centrar las imágenes en sus columnas */
+  .d-flex {
+    display: flex;
+  }
+  
+  .justify-content-center {
+    justify-content: center;
+  }
+  
+  .align-items-center {
+    align-items: center;
+  }
+  
+  /* Centrar las imágenes dentro de la columna */
+  .about-item-img {
+    text-align: center; /* Garantiza que el contenido se centre horizontalmente */
+  }
+  
+  /* Espaciado entre secciones */
+  .spacer {
+    height: 50px; /* Ajusta según sea necesario */
+  }
+  
+  /* Imágenes responsivas */
+  .resp-img {
+    max-width: 100%; /* Se ajusta al 100% del ancho del contenedor */
+    height: auto; /* Mantén la proporción de la imagen */
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+  }
+  
+  .about-item-img img {
+    max-width: 100%; /* Asegura que las imágenes se adapten al ancho */
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .about-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los elementos */
+  }
+  
+  h3.text-center {
+    margin-bottom: 2px; /* Espacio entre h3 y el párrafo */
+  }
+  
+  .simple-text p {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin: 10px;
+    line-height: 1.5;
+    color: #2C3532;
+  }
+  
+  .text-center {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px;
+    padding: 5px;
+    color: #2C3532;
+  }
+  
+  /* Altura específica para los dispositivos más pequeños */
+  .h20-xs {
+    height: 20px; /* Altura específica para el espacio */
+  }
+  
+  /* Medidas responsivas para mejorar aún más la experiencia */
+  @media (max-width: 768px) {
+    .resp-img {
+      max-width: 100%;
+    }
+  
+    .about-text-container {
+      gap: 8px; /* Ajustar el espacio según el contenido en pantallas más pequeñas */
+    }
+  
+    .text-center {
+      font-size: 14px; /* Reducir el tamaño de texto en dispositivos más pequeños */
+    }
+  }
+  
+  
+  /*El Equipo*/ 
+  
+  /* Centrar el título y la descripción */
+  
+  #about-us h2 {
+    margin-bottom: 20px; /* Espacio entre el título y la descripción */
+  }
+  
+  .team-img {
+    width: 200px; /* Ancho fijo */
+    height: 400px; /* Altura fija */
+    object-fit: cover; /* Mantiene el contenido ajustado sin deformarlo */
+    border: 2px solid #d8b08c;
+    margin: 8px; /* Separación entre las imágenes */
+    padding: 4px; /* Separación entre la imagen y el borde */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .team-img:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+  }
+  
+  .card {
+    transition: transform 0.3s ease-in-out !important;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos de la tarjeta estén alineados verticalmente */
+    align-items: center; /* Centra los contenidos de la tarjeta */
+    margin-bottom: 30px; /* Espacio entre las tarjetas */
+  }
+  
+  /* Estilo de los botones */
+  .card-body .btn {
+    margin: 5px; /* Espacio entre los botones */
+    font-size: 14px;
+    text-align: center;
+    width: 60%; 
+    max-width: 200px; /* Máximo tamaño de los botones */
+    padding: 8px; /* Añadir padding para mayor área clicable */
+  }
+  
+  /* Colores personalizados */
+  .btn-custom-primary {
+    background-color: #0F6466 !important; /* Color inicial */
+    border-color: #0F6466 !important;
+    color: #fff !important; /* Texto blanco */
+  }
+  
+  .btn-custom-primary:hover {
+    background-color: #2b7779 !important; /* Color al pasar el mouse */
+    border-color: #2C3532 !important;
+  }
+  
+  .btn-custom-primary:active {
+    background-color: #D2E8E3 !important; /* Color cuando el botón está siendo presionado */
+    border-color: #D2E8E3 !important;
+  }
+  
+  .btn-custom-primary:focus {
+    background-color: #D2E8E3 !important; /* Color cuando el botón tiene foco */
+    border-color: #D2E8E3 !important;
+    color: #2C3532 !important; /* Color de texto cuando está enfocado */
+  }
+  
+  .btn-custom-secondary {
+    background-color: #FFCB9A !important; /* Segundo color inicial */
+    border-color: #FFCB9A !important;
+    color: #2C3532 !important;
+  }
+  
+  .btn-custom-secondary:hover {
+    background-color: #f3cba5 !important;
+    border-color: #2C3532 !important;
+  }
+  
+  .btn-custom-secondary:active {
+    background-color: #D2E8E3 !important;
+    border-color: #D2E8E3 !important;
+  }
+  
+  .btn-custom-secondary:focus{
+    background-color: #D2E8E3 !important; 
+    border-color: #D2E8E3 !important;
+    color: #2C3532 !important; 
+  }
+  
+  /* Estilos para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .team-img {
+      width: 100%; /* Hacer la imagen más pequeña y flexible */
+      height: auto;
+    }
+  
+    .card-body {
+      padding: 10px; /* Más espacio en el interior de las tarjetas */
+    }
+  
+    .card {
+      width: 100%; /* Las tarjetas ocupan el 100% del ancho disponible */
+      margin-bottom: 20px; /* Espacio entre las tarjetas */
+    }
+  
+    .card-body .btn {
+      width: 100%; /* Los botones ocuparán todo el ancho de la tarjeta */
+      margin-bottom: 10px; /* Espacio entre botones */
+    }
+  
+    #about-us h2 {
+      font-size: 1.5rem; /* Título más pequeño en pantallas pequeñas */
+    }
+  
+    .carousel-inner .carousel-item {
+      padding: 0;
+    }
+  }
+  
+  /* Estilos para pantallas muy pequeñas (por ejemplo, móviles en modo retrato) */
+  @media (max-width: 480px) {
+    .card-body .btn {
+      font-size: 12px; /* Reducir el tamaño de la fuente en botones pequeños */
+    }
+  }
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
+  /* About-final
+  /*-------------------------------------------------------------------------------------------------------------------------------*/
