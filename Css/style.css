@@ -440,35 +440,79 @@ h3.text-center {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Montserrat", serif;
   }
   
   /* Estilo del header */
-  header {
-    background-color: #d2e8e3;
-    padding: 10px 0;
-    color: #0f6466;
-  }
-  
-  /* Contenedor del logo y la barra de navegación */
-  .container {
+  #contenedor_cabecera{
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/*^ Estilo del logo */
+.contenedor_logo{
+    display: flex;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* Estilo del logo */
-  .logo img {
-    width: 120px; /* Ajusta el tamaño del logo según sea necesario */
-  }
-  
-  /* Estilo de la barra de navegación */
-  .navbar ul {
-    list-style: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.logo_header{
+    width: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.logo_header:hover{
+    filter: drop-shadow(0px 0px 10px rgb(109, 198, 200));
+}
+
+/*^ Estilo del menú */
+.contenedor_nav{
     display: flex;
-  }
+    align-items: center;
+}
+
+.contenedor_menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+    transform: 0.2s;
+}
+
+.menu_navegacion{
+    list-style: none;
+}
+
+.menu_navegacion a{
+    text-decoration: none;
+    color: black;
+}
+
+.menu_navegacion:hover{
+    color: rgb(232, 157, 116);
+    transform: scale(1.1);
+}
+
+.menu_navegacion a:hover{
+    color: rgb(232, 157, 116);
+}
+
+/*^ Estilo del carro de compras */
+.contenedor_carritoCompras{
+    display: flex;
+    align-items: center;
+}
+
+.logo_carro_compras{
+    width: 50px;
+    cursor: pointer;
+}
   
   /* Ajuste para navegacion responsiva */
   .navbar li {
