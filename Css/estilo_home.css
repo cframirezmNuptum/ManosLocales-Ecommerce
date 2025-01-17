@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+SA:wght@100..400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", serif;
+}
+
+#contenedor_cabecera{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/*^LOGO*/
+.contenedor_logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.logo_header{
+    width: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.logo_header:hover{
+    filter: drop-shadow(0px 0px 10px rgb(109, 198, 200));
+}
+
+/*^MENÚ*/
+.contenedor_nav{
+    display: flex;
+    align-items: center;
+}
+
+.contenedor_menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+    transform: 0.2s;
+}
+
+.menu_navegacion{
+    list-style: none;
+}
+
+.menu_navegacion a{
+    text-decoration: none;
+    color: black;
+}
+
+.menu_navegacion:hover{
+    color: rgb(232, 157, 116);
+    transform: scale(1.1);
+}
+
+.menu_navegacion a:hover{
+    color: rgb(232, 157, 116);
+}
+
+/*^CARRITO COMPRAS*/
+.contenedor_carritoCompras{
+    display: flex;
+    align-items: center;
+}
+
+.logo_carro_compras{
+    width: 50px;
+    cursor: pointer;
+}
+
+/*^BANNER*/
+#contenedor_banner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.texto_banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    gap: 30px;
+    width: 300px;
+    margin-top: 70px;
+}
+
+.titulo_banner{
+    width: 280px;
+}
+
+.parrafo_banner{
+    width: 280px;
+    margin-top: 10px;
+}
+
+.img_banner_uno{
+    background-image: url(../Img/lauraoh.png);
+    background-attachment: fixed;
+    background-size: auto;
+    background-repeat: none;
+    height: 510px;
+    width: 120px;
+}
+
+.img_banner_dos{
+    background-image: url(../Img/vacilao.png);
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: none;
+    height: 510px;
+    width: 120px;
+}
+
+.img_banner_tres{
+    background-image: url(../Img/lauraoh_2.png);
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: none;
+    height: 510px;
+    width: 120px;
+}
+
+/*^SECCION QUIENES SOMOS*/
+.contenedor_seccion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+    gap: 40px;
+}
+
+.texto_seccion{
+    width: 680px;
+    margin-top: 20px;
+}

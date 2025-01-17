@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+SA:wght@100..400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", serif;
+}
+
+/* Header Styles */
+#contenedor_cabecera{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/*^ Estilo del logo */
+.contenedor_logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.logo_header{
+    width: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.logo_header:hover{
+    filter: drop-shadow(0px 0px 10px rgb(109, 198, 200));
+}
+
+/*^ Estilo del menú */
+.contenedor_nav{
+    display: flex;
+    align-items: center;
+}
+
+.contenedor_menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+    transform: 0.2s;
+}
+
+.menu_navegacion{
+    list-style: none;
+}
+
+.menu_navegacion a{
+    text-decoration: none;
+    color: black;
+}
+
+.menu_navegacion:hover{
+    color: rgb(232, 157, 116);
+    transform: scale(1.1);
+}
+
+.menu_navegacion a:hover{
+    color: rgb(232, 157, 116);
+}
+
+/*^ Estilo del carro de compras */
+.contenedor_carritoCompras{
+    display: flex;
+    align-items: center;
+}
+
+.logo_carro_compras{
+    width: 50px;
+    cursor: pointer;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+.img_Nav {
+    height: 45px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url(../Img/prendas_banner.jpeg);
+    background-size: cover;
+    background-repeat: none;
+    background-attachment: fixed;
+    height: 300px;
+    background-color: #f5f5f5;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Form Section */
+.form-section {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-section p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+textarea {
+    grid-column: span 3;
+    height: 150px;
+    resize: vertical;
+}
+
+button {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 40px;
+    background-color: #d4b69b;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: #006863;
+    color: white;
+    padding: 50px 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-info p {
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center; /* Align social icons centered */
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Hamburger Menu (Visible on small screens) */
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        color: #333;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    textarea {
+        grid-column: span 1;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    header {
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Animated Hamburger Icon */
+.hamburger.active div:nth-child(1) {
+    transform: rotate(45deg);
+    transform-origin: 1px;
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg);
+    transform-origin: 1px;
+}
