@@ -103,12 +103,13 @@
 .parrafo_banner{
     width: 280px;
     margin-top: 10px;
+    text-align: left;
 }
 
 .img_banner_uno{
     background-image: url(../Img/lauraoh.png);
     background-attachment: fixed;
-    background-size: auto;
+    background-size: contain;
     background-repeat: none;
     height: 510px;
     width: 120px;
@@ -119,29 +120,170 @@
     background-attachment: fixed;
     background-size: contain;
     background-repeat: none;
+    background-position: center top;
     height: 510px;
     width: 120px;
 }
 
 .img_banner_tres{
-    background-image: url(../Img/lauraoh_2.png);
+    background-image: url(../Img/Antonella_dos.jpeg);
     background-attachment: fixed;
     background-size: contain;
     background-repeat: none;
+    background-position: -10px;
     height: 510px;
     width: 120px;
 }
 
 /*^SECCION QUIENES SOMOS*/
-.contenedor_seccion{
+#contenedor_seccion{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
     margin-top: 70px;
     gap: 40px;
 }
 
 .texto_seccion{
     width: 680px;
-    margin-top: 20px;
+}
+
+/*^CARACTERISTICAS*/
+#contenedor_caracteristica{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.caracteristicas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    gap: 20px;
+    width: 300px;
+}
+
+.img_caracteristicas{
+    width: 300px;
+}
+
+.parrafo_caracteristica{
+    text-align: justify;
+}
+
+/*^ ESTADISTICAS*/
+#contenedor_estadistica{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.contenedor_grafica{
+    width: 380px;
+    background-color: rgb(128, 128, 128, 0.8);
+}
+
+/*^FOOTER*/
+#contenedor_footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 40px;
+    background-image: linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
+}
+
+.footer_descripcion{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.texto_footer{
+    text-align: left;
+    width: 230px;
+}
+
+.footer_direccion{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.enlace_direccion_footer{
+    color: black;
+    width: 180px;
+}
+
+.enlace_direccion_footer:hover{
+    color:  rgb(109, 198, 200);
+    transform: scale(1.1);
+}
+
+.footer_logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo_footer{
+    width: 100px;
+    padding: 10px;
+}
+
+.logo_footer:hover{
+    filter: drop-shadow(0px 0px 10px rgb(109, 198, 200));
+    transform: scale(1.1);
+}
+
+.footer_contactanos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lista_contacto_footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.enlace_contactanos{
+    color: black;
+    margin-left: 5px;
+}
+
+.enlace_contactanos:hover{
+    color:  rgb(109, 198, 200);
+    transform: scale(1.1);
+}
+
+.footer_redes{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lista_redes_footer{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    transition: 0.2s;
+}
+
+.logos_redes_footer img:hover{
+    transform: scale(1.1) translate(-5px, -10px) rotate(30deg);
 }
