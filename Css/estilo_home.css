@@ -171,6 +171,8 @@
 
 .img_caracteristicas{
     width: 300px;
+    height: 300px;
+    object-fit: cover;
 }
 
 .parrafo_caracteristica{
