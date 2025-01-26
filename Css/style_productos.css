@@ -576,3 +576,13 @@ body {
       margin: 10px 0;
     }
   }
+
+/* Asegurarse de que el contador esté oculto inicialmente */
+#cart-count {
+    display: none;
+}
+
+/* Mostrar el contador al pasar el mouse por encima del carrito */
+.contenedor_carritoCompras:hover #cart-count {
+    display: block;
+}

@@ -1,6 +1,9 @@
 document.querySelectorAll('.btnVer').forEach(button => {
     button.addEventListener('click', () => {
-        window.location.href = 'item.html';
+        // Aquí debemos redirigir a un producto específico, no solo a 'item.html' por eso lo cambié.
+        // Cada producto tiene un atributo 'data-id' para identificarlo de forma única.
+        const productId = button.closest('.productoCompleto').dataset.id;
+        window.location.href = `item.html?id=${productId}`; // Redirige a item.html con un parámetro de ID
     });
 });
 
@@ -62,27 +65,67 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Funcionalidad para el botón de añadir al carrito
-    const añadirCarro = document.querySelector('.añadirCarro');
+    const añadirCarro = document.querySelector('.btnAnadir');
     
     if (añadirCarro) {
-        añadirCarro.addEventListener('click', function() {
+        añadirCarro.addEventListener('click', function () {
             // Recopilar datos del producto
-            const colorElegido = document.querySelector('.colorIndividual.selected');
-            const tallaElegida = document.querySelector('.selectorTalla').value;
-            const cantidad = document.getElementById('cantidad').value;
-
-            // Validar selecciones
-            if (!colorElegido) {
-                alert('Por favor seleccione un color');
-                return;
+            const productId = document.querySelector('.productoCompleto').dataset.id;
+            const cantidad = parseInt(document.getElementById('cantidad').value);
+    
+            // Validar cantidad
+        if (isNaN(cantidad) || cantidad < 1) {
+            alert('Por favor seleccione una cantidad válida');
+            return;
+        }
+    
+            // Crear objeto del producto
+            const producto = {
+                id: productId, // Usar el ID del producto
+                nombre: document.getElementById('nombreProducto').textContent, 
+                cantidad: cantidad,
+                precio: parseFloat(document.getElementById('precioProductos').textContent.replace('$', '').replace('.', '')),
+            };
+    
+            // Leer carrito actual desde localStorage
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    
+            // Verificar si el producto ya existe en el carrito
+            const indiceExistente = carrito.findIndex(
+                item => item.id === producto.id
+            );
+    
+            if (indiceExistente > -1) {
+                // Si ya existe, actualizar la cantidad
+                carrito[indiceExistente].cantidad += cantidad;
+            } else {
+                // Si no existe, añadirlo
+                carrito.push(producto);
             }
-            if (!tallaElegida) {
-                alert('Por favor seleccione una talla/tipo');
-                return;
-            }
-
-            // Aquí va lo que se necesita para añadir al carrito
+    
+            // Guardar carrito actualizado en localStorage
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+    
+            // Confirmar al usuario
             alert('Producto añadido al carrito');
+            window.location.href = 'cart.html';
         });
     }
+
+    // Función para actualizar el contador de productos en el carrito
+    function actualizarContadorCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const contador = carrito.reduce((acc, item) => acc + item.cantidad, 0); // Sumar las cantidades de todos los productos
+    const cartCount = document.getElementById('cart-count');
+    
+    if (contador > 0) {
+        cartCount.textContent = `${contador} productos añadidos`; // Actualizar texto
+        cartCount.style.display = 'block'; // Asegurarse de que el contador sea visible
+    } else {
+        cartCount.style.display = 'none'; // Ocultar el contador si no hay productos
+    }
+}
+
+// Llamar a la función cada vez que se carga la página para actualizar el contador
+document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
 });

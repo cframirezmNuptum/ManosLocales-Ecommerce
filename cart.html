@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!--FontAwesome-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="./Img/Favicon_ManosLocales.png">
+    <link rel="stylesheet" href="Css/cart.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <!--HEADER-->
+    <header id="contenedor_cabecera">
+        <div class="contenedor_logo">
+            <a href="./index.html"><img class="logo_header" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
+        </div>
+
+        <!--NAVBAR-->
+        <nav class="contenedor_nav">
+            <ul class="contenedor_menu">
+                <li class="menu_navegacion"><a href="./index.html">Inicio</a></li>
+                <li class="menu_navegacion"><a href="./about.html">Acerca de Nosotros</a></li>
+                <li class="menu_navegacion"><a href="./Productos.html">Productos</a></li>
+                <li class="menu_navegacion"><a href="./Contact us.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+        <div class="contenedor_carritoCompras">
+            <a href="./cart.html">
+                <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
+                <span id="cart-count">0</span> productos añadidos
+            </a>
+        </div>
+    </header>
+    <!--FIN HEADER-->
+
+    <main>
+        <!--SHOPPING CART CONTENT -->
+        <section id="carrito">
+            <h1>Carrito de Compras</h1>
+            <table id="tablaCarrito">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Talla</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="productosCarrito">
+                    <!-- Aquí se renderizan los productos -->
+                </tbody>
+            </table>
+            <div id="totalCarrito">
+                <p>Total: $<span id="totalPrecio">0.00</span></p>
+                <p>Envío: <span id="shipping">Gratis</span></p>
+                <button id="vaciarCarrito">Vaciar Carrito</button>
+                
+                <button id="btnCheckout">Continuar Compra</button>
+            </div>
+        </section>
+    </main>
+
+    <!--FOOTER-->
+    <footer id="contenedor_footer">
+        <div class="footer_descripcion">
+            <h3 class="titulos_footer">Manos Locales:</h3>
+            <p class="texto_footer">Conectamos talento y creatividad para lograr grandes proyectos.</p>
+            <p class="texto_footer">Únete a nuestra comunidad.</p>
+        </div>
+
+        <div class="footer_direccion">
+            <h3 class="titulos_footer">Dirección:</h3>
+            <a class="enlace_direccion_footer" href="https://www.google.com/maps/@4.5505119,-73.4058557,8.5z?hl=es&entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Cra. 6 #15-88, Santa Fé, Bogotá, Cundinamarca</a>
+        </div>
+
+        <div class="footer_logo">
+            <a href="./index.html"><img class="logo_footer" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
+        </div>
+
+        <div class="footer_contactanos">
+            <h3 class="titulos_footer">Contáctanos</h3>
+            <ul class="lista_contacto_footer">
+                <li>
+                    <p class="subtitulos_footer">Teléfono: <a class="enlace_contactanos" href="https://web.whatsapp.com/" target="_blank">+57 320567890</a></p>
+                </li>
+                <li>
+                    <p class="subtitulos_footer">Email: <a class="enlace_contactanos" href="https://web.whatsapp.com/" target="_blank">info@manoslocales.com</a></p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer_redes">
+            <h3 class="titulos_footer">Síguenos</h3>
+            <ul class="lista_redes_footer">
+                <li class="logos_redes_footer">
+                    <a href="https://www.instagram.com/" target="_blank" class="footer-social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                
+                <li class="logos_redes_footer">
+                    <a href="https://www.facebook.com/" target="_blank" class="footer-social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+
+                <li class="logos_redes_footer">
+                    <a href="https://www.linkedin.com/" target="_blank" class="footer-social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li> 
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/cart.js" defer></script>
+</body>
+</html>
