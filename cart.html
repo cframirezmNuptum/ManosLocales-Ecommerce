@@ -18,12 +18,12 @@
 </head>
 <body>
     <!--HEADER-->
+    <!--^ Cabecera y Banner del home -->
     <header id="contenedor_cabecera">
         <div class="contenedor_logo">
             <a href="./index.html"><img class="logo_header" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
         </div>
 
-        <!--NAVBAR-->
         <nav class="contenedor_nav">
             <ul class="contenedor_menu">
                 <li class="menu_navegacion"><a href="./index.html">Inicio</a></li>
@@ -33,10 +33,22 @@
             </ul>
         </nav>
         <div class="contenedor_carritoCompras">
-            <a href="./cart.html">
                 <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
-                <span id="cart-count">0</span> productos añadidos
-            </a>
+                <span class="indicador_compra"></span>
+        </div>
+        <!--& COMPRAS EN EL CARRITO-->
+        <div id="carrito-flotante" class="carrito oculto">
+            <div class="carrito-header">
+                <h2>Mis Productos</h2>
+                <button id="cerrar-carrito" class="cerrar">✖</button>
+            </div>
+            <div class="carrito-contenido">
+                <span class="producto_agregado"></span>
+                <p>No hay productos en el carrito.</p>
+            </div>
+            <div class="carrito-footer">
+                <a href="./cart.html"><button class="ver-carrito">Ver carrito completo</button></a>
+            </div>
         </div>
     </header>
     <!--FIN HEADER-->
@@ -266,5 +278,6 @@
     </footer>
 
     <script src="js/cart.js" defer></script>
+    <script src="./js/carrito_lateral.js"></script>
 </body>
 </html>

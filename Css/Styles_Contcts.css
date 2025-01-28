@@ -1,20 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+SA:wght@100..400&display=swap');
 
-* {
+*{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: "Montserrat", serif;
 }
 
-/* Header Styles */
+body{
+    padding-top: 140px;
+}
+
 #contenedor_cabecera{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(255, 255, 255, 0.7);
 }
 
-/*^ Estilo del logo */
+/*^LOGO*/
 .contenedor_logo{
     display: flex;
     align-items: center;
@@ -33,7 +41,7 @@
     filter: drop-shadow(0px 0px 10px rgb(109, 198, 200));
 }
 
-/*^ Estilo del menú */
+/*^MENÚ*/
 .contenedor_nav{
     display: flex;
     align-items: center;
@@ -67,15 +75,91 @@
     color: rgb(232, 157, 116);
 }
 
-/*^ Estilo del carro de compras */
+/*^CARRITO COMPRAS*/
 .contenedor_carritoCompras{
     display: flex;
+    flex-direction: row;
     align-items: center;
 }
 
 .logo_carro_compras{
     width: 50px;
     cursor: pointer;
+}
+
+.indicador_compra{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    top: -20px;
+    background-color: rgb(109, 198, 200);
+    cursor: pointer;
+}
+
+/** DATOS CARRITO FLOTANTE*/
+#carrito-flotante {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgb(109, 198, 200); 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Animación ocultar a la derecha*/
+}
+
+#carrito-flotante.mostrar {
+    transform: translateX(0);
+}
+
+.carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #555;
+    background-color: rgb(12, 131, 133);
+}
+
+.carrito-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.cerrar {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Contenido del carrito */
+.carrito-contenido {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Agrega un scroll si hay demasiados productos */
+}
+
+.carrito-footer {
+    padding: 20px;
+    border-top: 1px solid #555;
+}
+.ver-carrito {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
 /* Hamburger Menu */
@@ -171,90 +255,101 @@ button {
     cursor: pointer;
 }
 
-/* Footer */
-footer {
-    background-color: #006863;
-    color: white;
-    padding: 50px 20px;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-.footer-logo img {
-    height: 40px;
-    margin-bottom: 20px;
-}
-
-.footer-info p {
-    font-size: 0.9em;
-    line-height: 1.6;
-}
-
-.social-icons {
+/*^FOOTER*/
+#contenedor_footer{
     display: flex;
-    gap: 15px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    justify-content: center; /* Align social icons centered */
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 40px;
+    background-color: rgb(109, 198, 200);
 }
 
-.social-icons img {
-    width: 24px;
-    height: 24px;
+.footer_descripcion{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    /* Hamburger Menu (Visible on small screens) */
-    .hamburger {
-        display: flex;
-    }
+.texto_footer{
+    text-align: left;
+    width: 230px;
+}
 
-    nav {
-        display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background-color: #fff;
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-        text-align: center;
-    }
+.footer_direccion{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.2s;
+}
 
-    nav.active {
-        display: flex;
-    }
+.enlace_direccion_footer{
+    color: black;
+    width: 180px;
+    text-decoration: none;
+}
 
-    nav a {
-        color: #333;
-    }
+.enlace_direccion_footer:hover{
+    color: rgb(59, 101, 102);
+    text-decoration: underline;
+}
 
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
+.footer_logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    textarea {
-        grid-column: span 1;
-    }
+.logo_footer{
+    width: 100px;
+    padding: 10px;
+}
 
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+.logo_footer:hover{
+    filter: drop-shadow(0px 0px 10px rgb(41, 66, 67));
+    transform: scale(1.1);
+}
 
-    header {
-        padding: 20px;
-        flex-direction: column;
-        gap: 20px;
-    }
+.footer_contactanos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lista_contacto_footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.enlace_contactanos{
+    color: black;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.enlace_contactanos:hover{
+    color:  rgb(59, 101, 102);
+    transform: scale(1.2);
+    text-decoration: underline;
+}
+
+.footer_redes{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lista_redes_footer{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    transition: 0.2s;
+}
+
+.logos_redes_footer img:hover{
+    transform: scale(1.1) translate(-5px, -10px) rotate(30deg);
 }
 
 /* Animated Hamburger Icon */

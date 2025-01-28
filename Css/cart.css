@@ -1,3 +1,160 @@
+body{
+    padding-top: 90px;
+}
+
+#contenedor_cabecera{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(255, 255, 255, 0.7);
+}
+
+/*^LOGO*/
+.contenedor_logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.logo_header{
+    width: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.logo_header:hover{
+    filter: drop-shadow(0px 0px 10px rgb(109, 198, 200));
+}
+
+/*^MENÚ*/
+.contenedor_nav{
+    display: flex;
+    align-items: center;
+}
+
+.contenedor_menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+    transform: 0.2s;
+}
+
+.menu_navegacion{
+    list-style: none;
+}
+
+.menu_navegacion a{
+    text-decoration: none;
+    color: black;
+}
+
+.menu_navegacion:hover{
+    color: rgb(232, 157, 116);
+    transform: scale(1.1);
+}
+
+.menu_navegacion a:hover{
+    color: rgb(232, 157, 116);
+}
+
+/*^CARRITO COMPRAS*/
+.contenedor_carritoCompras{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo_carro_compras{
+    width: 50px;
+    cursor: pointer;
+}
+
+.indicador_compra{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    top: -20px;
+    background-color: rgb(109, 198, 200);
+    cursor: pointer;
+}
+
+/** DATOS CARRITO FLOTANTE*/
+#carrito-flotante {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgb(109, 198, 200); 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Animación ocultar a la derecha*/
+}
+
+#carrito-flotante.mostrar {
+    transform: translateX(0);
+}
+
+.carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #555;
+    background-color: rgb(12, 131, 133);
+}
+
+.carrito-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.cerrar {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Contenido del carrito */
+.carrito-contenido {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Agrega un scroll si hay demasiados productos */
+}
+
+.carrito-footer {
+    padding: 20px;
+    border-top: 1px solid #555;
+}
+.ver-carrito {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+}
+/* FIN ESTILO HEADER*/
+
 .cart-page {
     position: relative;
     margin-top: 30px;
