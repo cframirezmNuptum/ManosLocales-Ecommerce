@@ -11,23 +11,37 @@
 <body>
 
 <!--^ Cabecera y Banner del home -->
-    <header id="contenedor_cabecera">
-        <div class="contenedor_logo">
-            <a href="./index.html"><img class="logo_header" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
-        </div>
+<header id="contenedor_cabecera">
+    <div class="contenedor_logo">
+        <a href="./index.html"><img class="logo_header" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
+    </div>
 
-        <nav class="contenedor_nav">
-            <ul class="contenedor_menu">
-                <li class="menu_navegacion"><a href="./index.html">Inicio</a></li>
-                <li class="menu_navegacion"><a href="./about.html">Acerca de Nosotros</a></li>
-                <li class="menu_navegacion"><a href="./Productos.html">Productos</a></li>
-                <li class="menu_navegacion"><a href="./Contact us.html">Contáctanos</a></li>
-            </ul>
-        </nav>
-        <div class="contenedor_carritoCompras">
-            <img class="logo_carro_compras" src="./imagenes/carrito-de-compras.gif" alt="Carrito de compras">
+    <nav class="contenedor_nav">
+        <ul class="contenedor_menu">
+            <li class="menu_navegacion"><a href="./index.html">Inicio</a></li>
+            <li class="menu_navegacion"><a href="./about.html">Acerca de Nosotros</a></li>
+            <li class="menu_navegacion"><a href="./Productos.html">Productos</a></li>
+            <li class="menu_navegacion"><a href="./Contact us.html">Contáctanos</a></li>
+        </ul>
+    </nav>
+    <div class="contenedor_carritoCompras">
+            <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
+            <span class="indicador_compra"></span>
+    </div>
+    <!--& COMPRAS EN EL CARRITO-->
+    <div id="carrito-flotante" class="carrito oculto">
+        <div class="carrito-header">
+            <h2>Mis Productos</h2>
+            <button id="cerrar-carrito" class="cerrar">✖</button>
         </div>
-    </header>
+        <div class="carrito-contenido">
+            <span class="producto_agregado"></span>
+        </div>
+        <div class="carrito-footer">
+            <a href="./cart.html"><button class="ver-carrito">Ver carrito completo</button></a>
+        </div>
+    </div>
+</header>
 
     <header id="contenedor_banner">
         <div class="texto_banner">
