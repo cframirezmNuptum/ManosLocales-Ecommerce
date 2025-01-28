@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+SA:wght@100..400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", serif;
+}
+
+body{
+    padding-top: 90px;
+}
+
+#contenedor_cabecera{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(255, 255, 255, 0.7);
+}
+
+/*^LOGO*/
+.contenedor_logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.logo_header{
+    width: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.logo_header:hover{
+    filter: drop-shadow(0px 0px 10px rgb(109, 198, 200));
+}
+
+/*^MENÚ*/
+.contenedor_nav{
+    display: flex;
+    align-items: center;
+}
+
+.contenedor_menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+    transform: 0.2s;
+}
+
+.menu_navegacion{
+    list-style: none;
+}
+
+.menu_navegacion a{
+    text-decoration: none;
+    color: black;
+}
+
+.menu_navegacion:hover{
+    color: rgb(232, 157, 116);
+    transform: scale(1.1);
+}
+
+.menu_navegacion a:hover{
+    color: rgb(232, 157, 116);
+}
+
+/*^CARRITO COMPRAS*/
+.contenedor_carritoCompras{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo_carro_compras{
+    width: 50px;
+    cursor: pointer;
+}
+
+.indicador_compra{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    top: -20px;
+    background-color: rgb(109, 198, 200);
+    cursor: pointer;
+}
+
+/** DATOS CARRITO FLOTANTE*/
+#carrito-flotante {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgb(109, 198, 200); 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Animación ocultar a la derecha*/
+}
+
+#carrito-flotante.mostrar {
+    transform: translateX(0);
+}
+
+.carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #555;
+    background-color: rgb(12, 131, 133);
+}
+
+.carrito-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.cerrar {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Contenido del carrito */
+.carrito-contenido {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Agrega un scroll si hay demasiados productos */
+}
+
+.carrito-footer {
+    padding: 20px;
+    border-top: 1px solid #555;
+}
+.ver-carrito {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/*^BANNER*/
+#contenedor_banner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.texto_banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    gap: 30px;
+    width: 300px;
+    margin-top: 70px;
+}
+
+.titulo_banner{
+    width: 280px;
+}
+
+.parrafo_banner{
+    width: 280px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.img_banner_uno{
+    background-image: url(../Img/lauraoh.png);
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: none;
+    height: 510px;
+    width: 120px;
+}
+
+.img_banner_dos{
+    background-image: url(../Img/vacilao.png);
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: none;
+    background-position: center top;
+    height: 510px;
+    width: 120px;
+}
+
+.img_banner_tres{
+    background-image: url(../Img/Antonella_dos.jpeg);
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: none;
+    background-position: -10px;
+    height: 510px;
+    width: 120px;
+}
+
+/*^SECCION QUIENES SOMOS*/
+#contenedor_seccion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    margin-top: 70px;
+    gap: 40px;
+}
+
+.texto_seccion{
+    width: 680px;
+}
+
+/*^CARACTERISTICAS*/
+#contenedor_caracteristica{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.caracteristicas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    gap: 20px;
+    width: 300px;
+}
+
+.img_caracteristicas{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.parrafo_caracteristica{
+    text-align: justify;
+}
+
+/*^ ESTADISTICAS*/
+#contenedor_estadistica{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.contenedor_grafica{
+    width: 380px;
+    background-color: rgb(128, 128, 128, 0.8);
+}
+
+/*^FOOTER*/
+#contenedor_footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 40px;
+    background-color: rgb(109, 198, 200);
+}
+
+.footer_descripcion{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.texto_footer{
+    text-align: left;
+    width: 230px;
+}
+
+.footer_direccion{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.enlace_direccion_footer{
+    color: black;
+    width: 180px;
+    text-decoration: none;
+}
+
+.enlace_direccion_footer:hover{
+    color: rgb(59, 101, 102);
+    text-decoration: underline;
+}
+
+.footer_logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo_footer{
+    width: 100px;
+    padding: 10px;
+}
+
+.logo_footer:hover{
+    filter: drop-shadow(0px 0px 10px rgb(41, 66, 67));
+    transform: scale(1.1);
+}
+
+.footer_contactanos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lista_contacto_footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.enlace_contactanos{
+    color: black;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.enlace_contactanos:hover{
+    color:  rgb(59, 101, 102);
+    transform: scale(1.2);
+    text-decoration: underline;
+}
+
+.footer_redes{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lista_redes_footer{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    transition: 0.2s;
+}
+
+.logos_redes_footer img:hover{
+    transform: scale(1.1) translate(-5px, -10px) rotate(30deg);
+}
