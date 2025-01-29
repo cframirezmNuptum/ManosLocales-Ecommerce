@@ -1,64 +1,79 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Obtener el carrito desde localStorage
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    const productosPedido = document.getElementById('productosPedido');
-    const totalPrecioPedido = document.getElementById('totalPrecioPedido');
-    const formularioEnvio = document.getElementById('formEnvio');
+document.addEventListener('DOMContentLoaded', function () {
+    const totalElement = document.getElementById('total');
+    const envioElement = document.getElementById('envio');
+    const totalEnvioElement = document.getElementById('totalEnvio');
+    const realizarCompraBtn = document.getElementById('realizarCompra');
 
-    // Función para actualizar el resumen del pedido
-    function actualizarResumenPedido() {
-        // Limpiar la tabla
-        productosPedido.innerHTML = '';
+    // Ejemplo de productos seleccionados, en un escenario real vendrían del carrito
+    let productosSeleccionados = [
+        { nombre: 'Producto 1', precio: 50.0 },
+        { nombre: 'Producto 2', precio: 49.0 }
+    ];
+
+    // Calcular el total y el envío
+    function actualizarTotales() {
         let total = 0;
-
-        carrito.forEach(producto => {
-            // Crear una fila por cada producto
-            const fila = document.createElement('tr');
-            fila.innerHTML = `
-                <td>${producto.nombre}</td>
-                <td>${producto.cantidad}</td>
-                <td>$${producto.precio}</td>
-                <td>$${(producto.precio * producto.cantidad).toFixed(2)}</td>
-            `;
-            productosPedido.appendChild(fila);
-
-            // Sumar el total
-            total += producto.precio * producto.cantidad;
+        productosSeleccionados.forEach(producto => {
+            total += producto.precio;
         });
 
-        // Actualizar el total de la compra
-        totalPrecioPedido.textContent = total.toFixed(2);
+        let envio = productosSeleccionados.length > 0 ? 50.0 : 0; // Envío fijo para este ejemplo
+        let totalConEnvio = total + envio;
+
+        totalElement.textContent = total.toFixed(2);
+        envioElement.textContent = envio.toFixed(2);
+        totalEnvioElement.textContent = totalConEnvio.toFixed(2);
     }
 
-    // Función para manejar la confirmación del pedido
-    formularioEnvio.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevenir el envío del formulario
+    // Manejar el evento de realizar compra
+    realizarCompraBtn.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevenir el comportamiento por defecto del botón (por si acaso)
 
-        // Obtener los datos del formulario
-        const nombre = document.getElementById('nombre').value;
-        const direccion = document.getElementById('direccion').value;
-        const telefono = document.getElementById('telefono').value;
-        const tarjeta = document.getElementById('tarjeta').value;
-        const fecha = document.getElementById('fecha').value;
-        const cvv = document.getElementById('cvv').value;
+        const nombre = document.getElementById('nombre').value.trim();
+        const apellido = document.getElementById('apellido').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telefono = document.getElementById('telefono').value.trim();
+        const direccion = document.getElementById('direccion').value.trim();
+        const ciudad = document.getElementById('ciudad').value.trim();
+        const datosAdicionales = document.getElementById('datosAdicionales').value.trim();
 
-        // Validar los datos (básicamente, asegurarse de que no estén vacíos)
-        if (!nombre || !direccion || !telefono || !tarjeta || !fecha || !cvv) {
-            alert('Por favor complete todos los campos');
+        let errores = [];
+
+        // Validaciones básicas
+        if (!nombre) errores.push('El nombre es obligatorio.');
+        if (!apellido) errores.push('El apellido es obligatorio.');
+        if (!email) errores.push('El correo electrónico es obligatorio.');
+        if (!telefono) errores.push('El número de contacto es obligatorio.');
+        if (!direccion) errores.push('La dirección es obligatoria.');
+        if (!ciudad) errores.push('La ciudad es obligatoria.');
+
+        // Validar formato de email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email && !emailRegex.test(email)) {
+            errores.push('El correo electrónico no es válido.');
+        }
+
+        // Validar que el teléfono solo contenga números y tenga al menos 7 dígitos
+        const telefonoRegex = /^[0-9]{7,}$/;
+        if (telefono && !telefonoRegex.test(telefono)) {
+            errores.push('El número de contacto debe contener solo números y al menos 7 dígitos.');
+        }
+
+        // Mostrar errores si existen
+        if (errores.length > 0) {
+            alert(errores.join('\n'));
             return;
         }
 
-        // Aquí podrías agregar la lógica para procesar el pago (esto es solo un ejemplo)
-        // Por ejemplo, podrías hacer una llamada a una API de pago
+        // Guardar los datos en localStorage
+        const datosFormulario = { nombre, apellido, email, telefono, direccion, ciudad, datosAdicionales };
+        localStorage.setItem('datosFormulario', JSON.stringify(datosFormulario));
 
-        // Si todo está bien, limpiar el carrito y redirigir
-        localStorage.removeItem('carrito');
-        alert('¡Gracias por tu compra!');
-
-        // Redirigir a una página de confirmación (puedes crear una página de "Gracias por tu compra")
-        window.location.href = 'thank_you.html'; // Cambia esto según tu estructura
+        // Mostrar alerta de éxito y redirigir
+        alert('Formulario enviado con éxito.');
+        window.location.href = 'index.html'; // Redirigir o mostrar una página de confirmación
     });
 
-    // Inicializar el resumen del pedido
-    actualizarResumenPedido();
+    // Inicializar totales
+    actualizarTotales();
 });
