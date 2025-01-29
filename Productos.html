@@ -8,6 +8,7 @@
     <link rel="icon" href="./Img/Favicon_ManosLocales.png">
 </head>
 <body>
+    <!--^ Cabecera y Banner del home -->
     <header id="contenedor_cabecera">
         <div class="contenedor_logo">
             <a href="./index.html"><img class="logo_header" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
@@ -22,7 +23,21 @@
             </ul>
         </nav>
         <div class="contenedor_carritoCompras">
-            <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
+                <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
+                <span class="indicador_compra"></span>
+        </div>
+        <!--& COMPRAS EN EL CARRITO-->
+        <div id="carrito-flotante" class="carrito oculto">
+            <div class="carrito-header">
+                <h2>Mis Productos</h2>
+                <button id="cerrar-carrito" class="cerrar">✖</button>
+            </div>
+            <div class="carrito-contenido">
+                <span class="producto_agregado"></span>
+            </div>
+            <div class="carrito-footer">
+                <a href="./cart.html"><button class="ver-carrito">Ver carrito completo</button></a>
+            </div>
         </div>
     </header>
     
@@ -31,11 +46,11 @@
         <div class="headerProductos">
             <h1>Productos</h1>
             <p class="descProductos">Aquí podras encontrar todos los productos de los comercios aliados, elije entre toda la variedad que tenemos.</p>
-            <h2>Emprendimiento O___Joyas</h2>
+            <h2>O___Joyas</h2>
         </div>
 
         <section class="seccionProductos">
-            <div class="productoCompleto">
+            <div class="productoCompleto" data-id="1">
                 <article class="tarjetaProductos">
                     <div class="imagenProductos">
                         <div class="imagenProductosContenedor">
@@ -50,13 +65,13 @@
                     </div>
                 </article>
                 <div class="infoProductos">
-                    <h3>ITEM 1</h3>
+                    <h3 class="nombreProducto">ITEM 1</h3>
                     <p class="descripcionP">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p class="precioProductos"> $ 000.000</p>
+                    <p class="precioProductos"> $ 14.000</p>
                 </div>
             </div>
         
-            <div class="productoCompleto">
+            <div class="productoCompleto" data-id="2">
                 <article class="tarjetaProductos">
                     <div class="imagenProductos">
                         <div class="imagenProductosContenedor">
@@ -71,13 +86,13 @@
                     </div>
                 </article>
                 <div class="infoProductos">
-                    <h3>ITEM 2</h3>
+                    <h3 class="nombreProducto">ITEM 2</h3>
                     <p class="descripcionP">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p class="precioProductos"> $ 000.000</p>
+                    <p class="precioProductos"> $ 20.000</p>
                 </div>
             </div>
         
-            <div class="productoCompleto">
+            <div class="productoCompleto" data-id="3">
                 <article class="tarjetaProductos">
                     <div class="imagenProductos">
                         <div class="imagenProductosContenedor">
@@ -92,13 +107,13 @@
                     </div>
                 </article>
                 <div class="infoProductos">
-                    <h3>ITEM 3</h3>
+                    <h3 class="nombreProducto">ITEM 3</h3>
                     <p class="descripcionP">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p class="precioProductos"> $ 000.000</p>
+                    <p class="precioProductos"> $ 10.000</p>
                 </div>
             </div>
         
-            <div class="productoCompleto">
+            <div class="productoCompleto" data-id="4">
                 <article class="tarjetaProductos">
                     <div class="imagenProductos">
                         <div class="imagenProductosContenedor">
@@ -113,13 +128,13 @@
                     </div>
                 </article>
                 <div class="infoProductos">
-                    <h3>ITEM 4</h3>
+                    <h3 class="nombreProducto">ITEM 4</h3>
                     <p class="descripcionP">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p class="precioProductos"> $ 000.000</p>
+                    <p class="precioProductos"> $ 100.000</p>
                 </div>
             </div>
         
-            <div class="productoCompleto">
+            <div class="productoCompleto" data-id="4">
                 <article class="tarjetaProductos">
                     <div class="imagenProductos">
                         <div class="imagenProductosContenedor">
@@ -134,13 +149,13 @@
                     </div>
                 </article>
                 <div class="infoProductos">
-                    <h3>ITEM 5</h3>
+                    <h3 class="nombreProducto">ITEM 5</h3>
                     <p class="descripcionP">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p class="precioProductos"> $ 000.000</p>
+                    <p class="precioProductos"> $ 40.000</p>
                 </div>
             </div>
         
-            <div class="productoCompleto">
+            <div class="productoCompleto" data-id="5">
                 <article class="tarjetaProductos">
                     <div class="imagenProductos">
                         <div class="imagenProductosContenedor">
@@ -155,9 +170,9 @@
                     </div>
                 </article>
                 <div class="infoProductos">
-                    <h3>ITEM 6</h3>
+                    <h3 class="nombreProducto">ITEM 6</h3>
                     <p class="descripcionP">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p class="precioProductos"> $ 000.000</p>
+                    <p class="precioProductos"> $ 20.000</p>
                 </div>
             </div>
 
@@ -166,12 +181,12 @@
             <!-- Segundo Emprendimiento -->
              
             <div>
-                <h2>Emprendimiento 2 Vacila´o</h2>
+                <h2>Vacila´o</h2>
 
             </div>
         <section class="seccionProductos">
 
-            <div class="productoCompleto">
+            <div class="productoCompleto" data-id="6">
                 <article class="tarjetaProductos">
                     <div class="imagenProductos">
                         <div class="imagenProductosContenedor">
@@ -186,13 +201,13 @@
                     </div>
                 </article>
                 <div class="infoProductos">
-                    <h3>ITEM 7</h3>
+                    <h3 class="nombreProducto">ITEM 7</h3>
                     <p class="descripcionP">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p class="precioProductos"> $ 000.000</p>
+                    <p class="precioProductos"> $ 30.000</p>
                 </div>
             </div>
         
-            <div class="productoCompleto">
+            <div class="productoCompleto" data-id="7">
                 <article class="tarjetaProductos">
                     <div class="imagenProductos">
                         <div class="imagenProductosContenedor">
@@ -207,13 +222,13 @@
                     </div>
                 </article>
                 <div class="infoProductos">
-                    <h3>ITEM 8</h3>
+                    <h3 class="nombreProducto">ITEM 8</h3>
                     <p class="descripcionP">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p class="precioProductos"> $ 000.000</p>
+                    <p class="precioProductos"> $ 35.000</p>
                 </div>
             </div>
         
-            <div class="productoCompleto">
+            <div class="productoCompleto" data-id="8">
                 <article class="tarjetaProductos">
                     <div class="imagenProductos">
                         <div class="imagenProductosContenedor">
@@ -228,13 +243,13 @@
                     </div>
                 </article>
                 <div class="infoProductos">
-                    <h3>ITEM 9</h3>
+                    <h3 class="nombreProducto">ITEM 9</h3>
                     <p class="descripcionP">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p class="precioProductos"> $ 000.000</p>
+                    <p class="precioProductos"> $ 30.000</p>
                 </div>
             </div>
 
-            <div class="productoCompleto">
+            <div class="productoCompleto" data-id="9">
                 <article class="tarjetaProductos">
                     <div class="imagenProductos">
                         <div class="imagenProductosContenedor">
@@ -249,13 +264,13 @@
                     </div>
                 </article>
                 <div class="infoProductos">
-                    <h3>ITEM 10</h3>
+                    <h3 class="nombreProducto">ITEM 10</h3>
                     <p class="descripcionP">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p class="precioProductos"> $ 000.000</p>
+                    <p class="precioProductos"> $ 30.000</p>
                 </div>
             </div>
         
-            <div class="productoCompleto">
+            <div class="productoCompleto" data-id="10">
                 <article class="tarjetaProductos">
                     <div class="imagenProductos">
                         <div class="imagenProductosContenedor">
@@ -270,13 +285,13 @@
                     </div>
                 </article>
                 <div class="infoProductos">
-                    <h3>ITEM 11</h3>
+                    <h3 class="nombreProducto">ITEM 11</h3>
                     <p class="descripcionP">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p class="precioProductos"> $ 000.000</p>
+                    <p class="precioProductos"> $ 20.000</p>
                 </div>
             </div>
         
-            <div class="productoCompleto">
+            <div class="productoCompleto" data-id="11">
                 <article class="tarjetaProductos">
                     <div class="imagenProductos">
                         <div class="imagenProductosContenedor">
@@ -291,9 +306,9 @@
                     </div>
                 </article>
                 <div class="infoProductos">
-                    <h3>ITEM 12</h3>
+                    <h3 class="nombreProducto">ITEM 12</h3>
                     <p class="descripcionP">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p class="precioProductos"> $ 000.000</p>
+                    <p class="precioProductos"> $ 30.000</p>
                 </div>
             </div>
         </section>
@@ -303,9 +318,7 @@
     </main>
 
 
-
-
-
+    <!--^Pie de Pagina-->
     <footer id="contenedor_footer">
         <div class="footer_descripcion">
             <h3 class="titulos_footer">Manos Locales:</h3>
@@ -358,5 +371,7 @@
         </div>
     </footer>
     <script src="/js/Script_Produtcs.js" defer></script>
+    <script src="./js/carrito_lateral.js"></script>
+
 </body>
 </html>

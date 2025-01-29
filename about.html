@@ -19,6 +19,7 @@
     <div class="is-mobile"></div>
 
     <!-- HEADER -->
+    <!--^ Cabecera y Banner del home -->
     <header id="contenedor_cabecera">
         <div class="contenedor_logo">
             <a href="./index.html"><img class="logo_header" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
@@ -33,7 +34,22 @@
             </ul>
         </nav>
         <div class="contenedor_carritoCompras">
-            <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
+                <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
+                <span class="indicador_compra"></span>
+        </div>
+        <!--& COMPRAS EN EL CARRITO-->
+        <div id="carrito-flotante" class="carrito oculto">
+            <div class="carrito-header">
+                <h2>Mis Productos</h2>
+                <button id="cerrar-carrito" class="cerrar">✖</button>
+            </div>
+            <div class="carrito-contenido">
+                <span class="producto_agregado"></span>
+                <p>No hay productos en el carrito.</p>
+            </div>
+            <div class="carrito-footer">
+                <a href="./cart.html"><button class="ver-carrito">Ver carrito completo</button></a>
+            </div>
         </div>
     </header>
     <!-- HEADER -->
@@ -205,85 +221,64 @@
             </div>
     <div class="empty-space h30-xs h65-md"></div>
 </section>
-        
-        </section>            
 
-        <!-- footer -->
-        <footer class="custom-footer">
-            <div class="container">
-                <div class="row">
-                    <!-- Logo y descripción -->
-                    <div class="col-md-3 mb-4">
-                        <a href="index.html">
-                            <img src="https://res.cloudinary.com/dmljqigr5/image/upload/v1736692646/Logo_uqpo57.png" alt="Logo" class="footer-logo">
-                        </a>
-                        <p class="footer-text">Manos Locales: Conectamos talento y creatividad para lograr grandes proyectos. Únete a nuestra comunidad.</p>
-                    </div>
-        
-                    <!-- Dirección -->
-                    <div class="col-md-3 mb-4">
-                        <h6 class="footer-title">Dirección</h6>
-                        <ul class="footer-list">
-                            <li>
-                                <a href="https://www.google.com/maps" target="_blank" class="footer-link">
-                                    Av Jimenez - Bogotá - Colombia
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-        
-                    <!-- Contacto -->
-                    <div class="col-md-3 mb-4">
-                        <h6 class="footer-title">Contáctanos</h6>
-                        <ul class="footer-list">
-                            <li>
-                                <a href="tel:+1234567890" class="footer-link">Teléfono: +57 320 567 890</a>
-                            </li>
-                            <li>
-                                <a href="mailto:info@manoslocales.com" class="footer-link">Email: info@manoslocales.com</a>
-                            </li>
-                        </ul>
-                    </div>
-        
-                    <!-- Redes sociales -->
-                    <div class="col-md-3 mb-4">
-                        <h6 class="footer-title">Síguenos</h6>
-                    <!-- Redes sociales - Falta redes sociales --> 
-                        <div class="footer-socials">
-                            <a href="https://www.instagram.com/" target="_blank" class="footer-social-icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.facebook.com/" target="_blank" class="footer-social-icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="https://twitter.com/" target="_blank" class="footer-social-icon">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/" target="_blank" class="footer-social-icon">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="row mt-4">
-                    <div class="col text-center">
-                        <p class="footer-copyright">
-                            &copy; 2025 Manos Locales. Todos los derechos reservados. Diseñado con 
-                            <span class="footer-heart">❤</span> por nuestro equipo.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>        
-        <!-- footer -->
+<!--^Pie de Pagina-->
+    <footer id="contenedor_footer">
+        <div class="footer_descripcion">
+            <h3 class="titulos_footer">Manos Locales:</h3>
+            <p class="texto_footer">Conectamos talento y creatividad para lograr grandes proyectos.</p>
+            <p class="texto_footer">Únete a nuestra comunidad.</p>
+        </div>
 
-    </div>
-    <!-- content -->
+        <div class="footer_direccion">
+            <h3 class="titulos_footer">Dirección:</h3>
+            <a class="enlace_direccion_footer" href="https://www.google.com/maps/@4.5505119,-73.4058557,8.5z?hl=es&entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Cra. 6 #15-88, Santa Fé, Bogotá, Cundinamarca</a>
+        </div>
+
+        <div class="footer_logo">
+            <a href="./index.html"><img class="logo_footer" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
+        </div>
+
+        <div class="footer_contactanos">
+            <h3 class="titulos_footer">Contáctanos</h3>
+            <ul class="lista_contacto_footer">
+                <li>
+                    <p class="subtitulos_footer">Teléfono: <a class="enlace_contactanos" href="https://web.whatsapp.com/" target="_blank">+57 320567890</a></p>
+                </li>
+                <li>
+                    <p class="subtitulos_footer">Email: <a class="enlace_contactanos" href="https://web.whatsapp.com/" target="_blank">info@manoslocales.com</a></p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer_redes">
+            <h3 class="titulos_footer">Redes Sociales</h3>
+            <ul class="lista_redes_footer">
+                <li class="logos_redes_footer">
+                    <a href="https://www.instagram.com/manos_locales/   " target="_blank">
+                        <img src="./Img/logo Instagram.png"     alt="Logo Instagram">
+                    </a>
+                </li>
+                
+                <li class="logos_redes_footer">
+                    <a href="" target="_blank">
+                        <img src="./Img/Logo Facebook.png" alt="Logo Facebook">
+                    </a>
+                </li>
+
+                <li class="logos_redes_footer">
+                    <a href="" target="_blank">
+                        <img src="./Img/Logo LinkedIn.png" alt="Logo Linkedin">
+                    </a>
+                </li> 
+            </ul>
+        </div>
+    </footer>
 
     <script src="js/global.js"></script>
     <!--JS BOOTSTRAP-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/carrito_lateral.js"></script>
 
 
 </body>

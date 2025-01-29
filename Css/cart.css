@@ -1,0 +1,435 @@
+body{
+    padding-top: 90px;
+}
+
+#contenedor_cabecera{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(255, 255, 255, 0.7);
+}
+
+/*^LOGO*/
+.contenedor_logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.logo_header{
+    width: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.logo_header:hover{
+    filter: drop-shadow(0px 0px 10px rgb(109, 198, 200));
+}
+
+/*^MENÚ*/
+.contenedor_nav{
+    display: flex;
+    align-items: center;
+}
+
+.contenedor_menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+    transform: 0.2s;
+}
+
+.menu_navegacion{
+    list-style: none;
+}
+
+.menu_navegacion a{
+    text-decoration: none;
+    color: black;
+}
+
+.menu_navegacion:hover{
+    color: rgb(232, 157, 116);
+    transform: scale(1.1);
+}
+
+.menu_navegacion a:hover{
+    color: rgb(232, 157, 116);
+}
+
+/*^CARRITO COMPRAS*/
+.contenedor_carritoCompras{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo_carro_compras{
+    width: 50px;
+    cursor: pointer;
+}
+
+.indicador_compra{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    top: -20px;
+    background-color: rgb(109, 198, 200);
+    cursor: pointer;
+}
+
+/** DATOS CARRITO FLOTANTE*/
+#carrito-flotante {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgb(109, 198, 200); 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Animación ocultar a la derecha*/
+}
+
+#carrito-flotante.mostrar {
+    transform: translateX(0);
+}
+
+.carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #555;
+    background-color: rgb(12, 131, 133);
+}
+
+.carrito-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.cerrar {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Contenido del carrito */
+.carrito-contenido {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Agrega un scroll si hay demasiados productos */
+}
+
+.carrito-footer {
+    padding: 20px;
+    border-top: 1px solid #555;
+}
+.ver-carrito {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+}
+/* FIN ESTILO HEADER*/
+
+.cart-page {
+    position: relative;
+    margin-top: 30px;
+}
+
+.cart-page .cart-page-inner {
+    padding: 30px;
+    margin-bottom: 30px;
+    background: #ffffff;
+}
+
+.cart-page .table {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.cart-page .table .thead-dark th {
+    font-size: 18px;
+    font-weight: 700;
+    color: #D8B08C;
+    text-align: center;
+    background: transparent;
+    border-color: #dddddd;
+    border-bottom: none;
+    vertical-align: middle;
+}
+
+.cart-page .table td {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.cart-page .table .img {
+    display: flex;
+    align-items: center;
+}
+
+.cart-page .table .img img {
+    max-width: 60px;
+    max-height: 60px;
+    margin-right: 15px;
+}
+
+.cart-page .table .img p {
+    display: inline-block;
+    text-align: left;
+    margin: 0;
+}
+
+.cart-page .table .qty {
+    display: inline-block;
+    width: 100px;
+    font-size: 0;
+}
+
+.cart-page .table button {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+    background: #0F6466;
+    border: none;
+    border-radius: 4px;
+}
+
+.cart-page .table button.btn-minus {
+    border-radius: 4px 0 0 4px;
+}
+
+.cart-page .table button.btn-plus {
+    border-radius: 0 4px 4px 0;
+}
+
+.cart-page .table button.btn-cart {
+    width: auto;
+}
+
+.cart-page .table input {
+    width: 40px;
+    height: 30px;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    background: #b3cfc9;
+    border: none;
+}
+
+.cart-page .coupon {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 0;
+}
+
+.cart-page .coupon input {
+    width: calc(100% - 135px);
+    height: 40px;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #b3cfc9;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    margin-right: 15px;
+    transition: all .3s;
+}
+
+.cart-page .coupon input:focus {
+    border-color: #0F6466;
+}
+
+.cart-page .coupon button {
+    width: 120px;
+    height: 40px;
+    padding: 2px 0;
+    font-size: 16px;
+    text-align: center;
+    color: #0F6466;
+    background: #ffffff;
+    border: 1px solid #0F6466;
+    border-radius: 4px;
+}
+
+.cart-page .coupon button:hover {
+    color: #ffffff;
+    background: #0F6466;
+}
+
+.cart-page .cart-summary {
+    position: relative;
+    width: 100%;
+}
+
+.cart-page .cart-summary .cart-content {
+    padding: 30px;
+    background: #FFDFCA;
+}-----
+
+.cart-page .cart-summary .cart-content h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.cart-page .cart-summary .cart-content p span,
+.cart-page .cart-summary .cart-content h2 span {
+    float: right;
+}
+
+.cart-page .cart-summary .cart-content h2 {
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 12px;
+    border-top: 1px solid #0F6466;
+    margin: 0;
+}
+
+
+.cart-page .cart-summary .cart-btn button {
+    margin-top: 15px;
+    width: calc(50% - 15px);
+    height: 50px;
+    padding: 2px 10px;
+    text-align: center;
+    color: #ffffff;
+    background: #0F6466;
+    border: none;
+    border-radius: 4px;
+}
+
+.cart-page .cart-summary .cart-btn button:hover {
+    color: #0F6466;
+    background: #FFDFCA;
+}
+
+.cart-page .cart-summary .cart-btn button:first-child {
+    margin-right: 25px;
+    color: #0F6466;
+    background: #ffffff;
+    border: 1px solid #0F6466;
+}
+
+.cart-page .cart-summary .cart-btn button:first-child:hover {
+    color: #ffffff;
+    background: #0F6466;
+}
+
+
+/********** Checkout CSS **********/
+
+.checkout {
+    position: relative;
+    padding-top: 30px;
+}
+
+.checkout .checkout-inner {
+    margin-bottom: 30px;
+    padding: 30px;
+    background: #ffffff;
+}
+
+.checkout .billing-address,
+.checkout .shipping-address {
+    position: relative;
+    width: 100%;
+}
+
+.checkout .shipping-address {
+    display: none;
+    margin-top: 30px;
+}
+
+.checkout .billing-address h2,
+.checkout .shipping-address h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.checkout .checkout-summary,
+.checkout .checkout-payment {
+    position: relative;
+    width: 100%;
+}
+
+.checkout .checkout-summary h1,
+.checkout .checkout-payment h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.checkout .checkout-summary,
+.checkout .checkout-payment .payment-methods {
+    padding: 30px;
+    background: #b3cfc9;
+    margin-bottom: 30px;
+}
+
+.checkout .checkout-summary p.sub-total,
+.checkout .checkout-summary p.ship-cost {
+    padding-top: 15px;
+    border-top: 1px solid #dddddd;
+}
+
+.checkout .checkout-summary p span,
+.checkout .checkout-summary h2 span {
+    float: right;
+}
+
+.checkout .checkout-summary h2 {
+    font-size: 20px;
+    padding-top: 12px;
+    border-top: 1px solid #dddddd;
+    margin: 0;
+}
+
+.checkout .checkout-payment .payment-methods .payment-content {
+    display: none;
+}
+
+.checkout .checkout-payment .checkout-btn button {
+    width: 100%;
+    height: 50px;
+    padding: 2px 10px;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+    color: #ffffff;
+    background: #0F6466;
+    border: none;
+    border-radius: 4px;
+    transition: all .3s;
+}
+
+.checkout .checkout-payment .checkout-btn button:hover {
+    color: #0F6466;
+    background: #b3cfc9;
+}
