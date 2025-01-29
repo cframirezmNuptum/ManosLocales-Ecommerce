@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!--FontAwesome-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="./Img/Favicon_ManosLocales.png">
+    <link rel="stylesheet" href="Css/cart.css">
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/estilo_home.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <!--HEADER-->
+    <!--^ Cabecera y Banner del home -->
+    <header id="contenedor_cabecera">
+        <div class="contenedor_logo">
+            <a href="./index.html"><img class="logo_header" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
+        </div>
+
+        <nav class="contenedor_nav">
+            <ul class="contenedor_menu">
+                <li class="menu_navegacion"><a href="./index.html">Inicio</a></li>
+                <li class="menu_navegacion"><a href="./about.html">Acerca de Nosotros</a></li>
+                <li class="menu_navegacion"><a href="./Productos.html">Productos</a></li>
+                <li class="menu_navegacion"><a href="./Contact us.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+        <div class="contenedor_carritoCompras">
+                <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
+                <span class="indicador_compra"></span>
+        </div>
+        <!--& COMPRAS EN EL CARRITO-->
+        <div id="carrito-flotante" class="carrito oculto">
+            <div class="carrito-header">
+                <h2>Mis Productos</h2>
+                <button id="cerrar-carrito" class="cerrar">✖</button>
+            </div>
+            <div class="carrito-contenido">
+                <span class="producto_agregado"></span>
+                <p>No hay productos en el carrito.</p>
+            </div>
+            <div class="carrito-footer">
+                <a href="./cart.html"><button class="ver-carrito">Ver carrito completo</button></a>
+            </div>
+        </div>
+    </header>
+    <!--FIN HEADER-->
+
+    <div class="checkout">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="checkout-inner">
+                        <div class="billing-address">
+                            <h2>Dirección de facturación y envío</h2>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Nombre</label>
+                                    <input id="nombre" class="form-control" type="text" placeholder="Nombre">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Apellido</label>
+                                    <input id="apellido" class="form-control" type="text" placeholder="Apellido">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Correo Electrónico</label>
+                                    <input id="email" class="form-control" type="text" placeholder="correo electrónico">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Celular o número de contacto</label>
+                                    <input id="telefono" class="form-control" type="text" placeholder="celular o número de contacto">
+                                </div>
+                                <div class="col-md-12">
+                                    <label>Dirección</label>
+                                    <input id="direccion" class="form-control" type="text" placeholder="Dirección">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Departamento</label>
+                                    <select id="departamento" class="custom-select">
+                                        <option value="amazonas">Amazonas</option>
+                                        <option value="antioquia">Antioquia</option>
+                                        <!-- Otros departamentos aquí -->
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Ciudad o municipio</label>
+                                    <input id="ciudad" class="form-control" type="text" placeholder="Ciudad o municipio">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Datos adicionales</label>
+                                    <input id="datosAdicionales" class="form-control" type="text" placeholder="Datos adicionales">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4">
+                    <div class="checkout-inner">
+                        <div class="checkout-summary">
+                            <h1>Total Carrito</h1>
+                            <p>Total productos: <span id="total">$99.00</span></p>
+                            <p class="ship-cost">Envío: <span id="envio">$1.00</span></p>
+                            <h2>Total compra: <span id="totalEnvio">$100.00</span></h2>
+                        </div>
+    
+                        <div class="checkout-payment">
+                            <h1>Métodos de pago</h1>
+                            <div class="payment-methods">
+                                <div class="payment-method">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input" id="payment-1" name="payment">
+                                        <label class="custom-control-label" for="payment-1">Paypal</label>
+                                    </div>
+                                    <div class="payment-content" id="payment-1-show">
+                                        <p>Lorem ipsum dolor sit amet...</p>
+                                    </div>
+                                </div>
+                                <div class="payment-method">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input" id="payment-5" name="payment">
+                                        <label class="custom-control-label" for="payment-5">Transferencia</label>
+                                    </div>
+                                    <div class="payment-content" id="payment-5-show">
+                                        <p>Lorem ipsum dolor sit amet...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout-btn">
+                                <button id="realizarCompra" type="button">Realizar compra</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <footer>
+        
+    </footer>
+
+    <script src="checkout.js"></script>
+    <script src="./js/carrito_lateral.js"></script>
+</body>
+</html>
