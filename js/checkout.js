@@ -46,8 +46,18 @@ document.getElementById("realizarCompra").addEventListener("click", function () 
     validateField("datosAdicionales", null, "*Campo obligatorio");
 
     if (isValid) {
-        alert("Formulario enviado correctamente");
+        Swal.fire({
+            title: 'Éxito!',
+            text: 'Formulario enviado correctamente',
+            icon: 'success',
+            confirmButtonText: '¡Genial!'
+        });
     } else {
-        alert("Por favor, corrija los errores antes de continuar");
+        Swal.fire({
+            title: 'Error',
+            text: 'Por favor, corrija los errores antes de continuar',
+            icon: 'error',
+            confirmButtonText: 'Entendido'
+        });
     }
 });

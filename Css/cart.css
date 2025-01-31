@@ -538,17 +538,7 @@ body{
     color: #0F6466;
 }
 
-.checkout-btn {
-    display: block;
-    width: 200px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: #e0c4a6;
-    color: white;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-}
+
 
 .cart-description {
             text-align: center;
@@ -626,7 +616,7 @@ body{
             gap: 1rem;
         }
 
-        .checkout-btn {
+        .checkout-btn2 {
             display: block;
             width: 200px;
             margin: 2rem auto;
@@ -636,4 +626,22 @@ body{
             border: none;
             cursor: pointer;
             text-transform: uppercase;
+        }
+
+        .swal2-popup {
+            font-family: 'Monstserrat', sans-serif !important; /* Cambiar la fuente */
+            font-size: 18px !important; /* Cambiar el tamaño del texto */
+        }
+        
+        .swal2-title {
+            color: rgb(109, 198, 200) !important; /* Cambiar el color del título */
+        }
+        
+        .swal2-content {
+            color: #333333 !important; /* Cambiar el color del texto */
+        }
+        
+        .swal2-confirm {
+            background-color: #0F6466!important; /* Cambiar color de fondo del botón */
+            border-radius: 10px !important; /* Hacer el botón más redondeado */
         }
