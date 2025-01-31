@@ -129,3 +129,56 @@ document.addEventListener('DOMContentLoaded', function() {
 // Llamar a la función cada vez que se carga la página para actualizar el contador
 document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const botonesAnadir = document.querySelectorAll(".btnAnadir");
+    const carritoIndicador = document.querySelector(".indicador_compra"); // Indicador del carrito
+
+    // Función para obtener el carrito del localStorage
+    function obtenerCarrito() {
+        return JSON.parse(localStorage.getItem("carrito")) || [];
+    }
+
+    // Función para guardar el carrito en localStorage
+    function guardarCarrito(carrito) {
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        actualizarIndicadorCarrito(); // Actualizar el número de productos en el icono
+    }
+
+    // Función para actualizar el número en el ícono del carrito
+    function actualizarIndicadorCarrito() {
+        const carrito = obtenerCarrito();
+        const totalProductos = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+        carritoIndicador.textContent = totalProductos > 0 ? totalProductos : ""; // Muestra el número o lo oculta si es 0
+    }
+
+    // Función para añadir un producto al carrito
+    function anadirAlCarrito(event) {
+        const productoElement = event.target.closest(".productoCompleto");
+        const id = productoElement.getAttribute("data-id");
+        const nombre = productoElement.querySelector(".nombreProducto").textContent;
+        const precio = parseFloat(productoElement.querySelector(".precioProductos").textContent.replace("$", "").trim());
+        const imagen = productoElement.querySelector(".imagenProductos img").src;
+
+        let carrito = obtenerCarrito();
+
+        // Verificar si el producto ya está en el carrito
+        const productoExistente = carrito.find(item => item.id === id);
+        if (productoExistente) {
+            productoExistente.cantidad++;
+        } else {
+            carrito.push({ id, nombre, precio, imagen, cantidad: 1 });
+        }
+
+        guardarCarrito(carrito);
+
+    }
+
+    // Asignar eventos a los botones "Añadir"
+    botonesAnadir.forEach(boton => {
+        boton.addEventListener("click", anadirAlCarrito);
+    });
+
+    // Actualizar el indicador del carrito al cargar la página
+    actualizarIndicadorCarrito();
+});

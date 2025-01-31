@@ -1,79 +1,63 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const totalElement = document.getElementById('total');
-    const envioElement = document.getElementById('envio');
-    const totalEnvioElement = document.getElementById('totalEnvio');
-    const realizarCompraBtn = document.getElementById('realizarCompra');
+document.getElementById("realizarCompra").addEventListener("click", function () {
+    let isValid = true;
 
-    // Ejemplo de productos seleccionados, en un escenario real vendrían del carrito
-    let productosSeleccionados = [
-        { nombre: 'Producto 1', precio: 50.0 },
-        { nombre: 'Producto 2', precio: 49.0 }
-    ];
-
-    // Calcular el total y el envío
-    function actualizarTotales() {
-        let total = 0;
-        productosSeleccionados.forEach(producto => {
-            total += producto.precio;
-        });
-
-        let envio = productosSeleccionados.length > 0 ? 50.0 : 0; // Envío fijo para este ejemplo
-        let totalConEnvio = total + envio;
-
-        totalElement.textContent = total.toFixed(2);
-        envioElement.textContent = envio.toFixed(2);
-        totalEnvioElement.textContent = totalConEnvio.toFixed(2);
+    function showError(inputId, message) {
+        let inputField = document.getElementById(inputId);
+        let errorField = document.getElementById(inputId + "Error");
+        
+        if (!errorField) {
+            errorField = document.createElement("div");
+            errorField.id = inputId + "Error";
+            errorField.style.color = "red";
+            errorField.style.fontSize = "12px";
+            inputField.parentNode.appendChild(errorField);
+        }
+        
+        errorField.textContent = message;
     }
 
-    // Manejar el evento de realizar compra
-    realizarCompraBtn.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevenir el comportamiento por defecto del botón (por si acaso)
-
-        const nombre = document.getElementById('nombre').value.trim();
-        const apellido = document.getElementById('apellido').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const telefono = document.getElementById('telefono').value.trim();
-        const direccion = document.getElementById('direccion').value.trim();
-        const ciudad = document.getElementById('ciudad').value.trim();
-        const datosAdicionales = document.getElementById('datosAdicionales').value.trim();
-
-        let errores = [];
-
-        // Validaciones básicas
-        if (!nombre) errores.push('El nombre es obligatorio.');
-        if (!apellido) errores.push('El apellido es obligatorio.');
-        if (!email) errores.push('El correo electrónico es obligatorio.');
-        if (!telefono) errores.push('El número de contacto es obligatorio.');
-        if (!direccion) errores.push('La dirección es obligatoria.');
-        if (!ciudad) errores.push('La ciudad es obligatoria.');
-
-        // Validar formato de email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (email && !emailRegex.test(email)) {
-            errores.push('El correo electrónico no es válido.');
+    function clearError(inputId) {
+        let errorField = document.getElementById(inputId + "Error");
+        if (errorField) {
+            errorField.textContent = "";
         }
+    }
 
-        // Validar que el teléfono solo contenga números y tenga al menos 7 dígitos
-        const telefonoRegex = /^[0-9]{7,}$/;
-        if (telefono && !telefonoRegex.test(telefono)) {
-            errores.push('El número de contacto debe contener solo números y al menos 7 dígitos.');
+    function validateField(inputId, regex, errorMessage) {
+        let value = document.getElementById(inputId).value.trim();
+        if (value === "") {
+            showError(inputId, "*Campo obligatorio");
+            isValid = false;
+        } else if (regex && !regex.test(value)) {
+            showError(inputId, errorMessage);
+            isValid = false;
+        } else {
+            clearError(inputId);
         }
+    }
 
-        // Mostrar errores si existen
-        if (errores.length > 0) {
-            alert(errores.join('\n'));
-            return;
-        }
+    validateField("nombre", /^[a-zA-ZÀ-ÿ\s]{2,}$/, "*Formato inválido");
+    validateField("apellido", /^[a-zA-ZÀ-ÿ\s]{2,}$/, "*Formato inválido");
+    validateField("email", /^[^\s@]+@[^\s@]+\.[^\s@]+$/, "*Correo electrónico inválido");
+    validateField("telefono", /^[0-9]{7,10}$/, "*Número de teléfono inválido");
+    validateField("direccion", null, "*Campo obligatorio");
+    validateField("departamento", null, "*Campo obligatorio");
+    validateField("ciudad", /^[a-zA-ZÀ-ÿ\s]{2,}$/, "*Formato inválido");
+    validateField("datosAdicionales", null, "*Campo obligatorio");
 
-        // Guardar los datos en localStorage
-        const datosFormulario = { nombre, apellido, email, telefono, direccion, ciudad, datosAdicionales };
-        localStorage.setItem('datosFormulario', JSON.stringify(datosFormulario));
-
-        // Mostrar alerta de éxito y redirigir
-        alert('Formulario enviado con éxito.');
-        window.location.href = 'index.html'; // Redirigir o mostrar una página de confirmación
-    });
-
-    // Inicializar totales
-    actualizarTotales();
+    if (isValid) {
+        Swal.fire({
+            title: 'Éxito!',
+            text: 'Formulario enviado correctamente',
+            icon: 'success',
+            confirmButtonText: '¡Genial!'
+        });
+    } else {
+        Swal.fire({
+            title: 'Error',
+            text: 'Por favor, corrija los errores antes de continuar',
+            icon: 'error',
+            confirmButtonText: 'Entendido'
+        });
+    }
 });

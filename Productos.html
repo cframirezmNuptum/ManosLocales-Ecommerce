@@ -24,22 +24,12 @@
             </ul>
         </nav>
         <div class="contenedor_carritoCompras">
+            <a href="./cart.html">
                 <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
-                <span class="indicador_compra"></span>
+                <span class="indicador_compra"></span> <!-- Aquí se mostrará la cantidad de productos -->
+            </a>
         </div>
-        <!--& COMPRAS EN EL CARRITO-->
-        <div id="carrito-flotante" class="carrito oculto">
-            <div class="carrito-header">
-                <h2>Mis Productos</h2>
-                <button id="cerrar-carrito" class="cerrar">✖</button>
-            </div>
-            <div class="carrito-contenido">
-                <span class="producto_agregado"></span>
-            </div>
-            <div class="carrito-footer">
-                <a href="./cart.html"><button class="ver-carrito">Ver carrito completo</button></a>
-            </div>
-        </div>
+        
     </header>
     
     <main class="contenedorProductos">
@@ -51,8 +41,15 @@
         </div>
 
         <section class="seccionProductos">
-            <div class="productoCompleto" data-id="1">
-                <article class="tarjetaProductos">
+
+            <!--Producto modelo-->
+            <div class="productoCompleto" 
+                    data-id="1" 
+                    data-nombre="Aretes Semilla" 
+                    data-precio="14000" 
+                    data-imagen="/imagenes/Products/Aretes Semilla.jpg">
+
+         <article class="tarjetaProductos">
                     <div class="imagenProductos">
                         <div class="imagenProductosContenedor">
                             <img src="/imagenes/Products/Aretes Semilla.jpg" alt="Producto 1">
@@ -60,19 +57,28 @@
                                 <a href="/Item por Producto/item1.html">
                                     <button class="btnVer">Ver</button>
                                 </a>      
-                                <button class="btnAnadir">Añadir</button>
+                                <button class="btnAnadir">Añadir</button> <!-- Este botón añade al carrito -->
                             </div>
                         </div>
                     </div>
                 </article>
+
                 <div class="infoProductos">
-                    <h3 class="nombreProducto">ITEM 1</h3>
+                    <h3 class="nombreProducto">Aretes Semilla</h3>
                     <p class="descripcionP">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <p class="precioProductos"> $ 14.000</p>
                 </div>
             </div>
+
+            <!--Fin producto completo-->
+
         
-            <div class="productoCompleto" data-id="2">
+            <div class="productoCompleto" data-id="2"
+                                            data-nombre="ITEM 2" 
+                                            data-precio="20000" 
+                                            data-imagen="/imagenes/Products/Candongas espinas.jpg">
+
+                
                 <article class="tarjetaProductos">
                     <div class="imagenProductos">
                         <div class="imagenProductosContenedor">
@@ -372,7 +378,7 @@
         </div>
     </footer>
     <script src="/js/Script_Produtcs.js" defer></script>
-    <script src="./js/carrito_lateral.js"></script>
+    <script src="./js/cart.js"></script>
 
 </body>
 </html>

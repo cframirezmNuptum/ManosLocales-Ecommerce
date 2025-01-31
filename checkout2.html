@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="Css/cart.css">
     <link rel="stylesheet" href="Css/style.css">
     <link rel="stylesheet" href="Css/estilo_home.css">
+    <!--Alert-->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.js"></script>
+
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <title>Shopping Cart</title>
@@ -61,28 +65,34 @@
                             <h2>Dirección de facturación y envío</h2>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label>Nombre</label>
+                                    <label for="nombre">Nombre</label>
                                     <input id="nombre" class="form-control" type="text" placeholder="Nombre">
+                                    <div id="nombreError" class="error-message"></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Apellido</label>
+                                    <label for="apellido">Apellido</label>
                                     <input id="apellido" class="form-control" type="text" placeholder="Apellido">
+                                    <div id="apellidoError" class="error-message"></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Correo Electrónico</label>
-                                    <input id="email" class="form-control" type="text" placeholder="correo electrónico">
+                                    <label for="email">Correo Electrónico</label>
+                                    <input id="email" class="form-control" type="text" placeholder="Correo electrónico">
+                                    <div id="emailError" class="error-message"></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Celular o número de contacto</label>
-                                    <input id="telefono" class="form-control" type="text" placeholder="celular o número de contacto">
+                                    <label for="telefono">Celular o número de contacto</label>
+                                    <input id="telefono" class="form-control" type="text" placeholder="Celular o número de contacto">
+                                    <div id="telefonoError" class="error-message"></div>
                                 </div>
                                 <div class="col-md-12">
-                                    <label>Dirección</label>
+                                    <label for="direccion">Dirección</label>
                                     <input id="direccion" class="form-control" type="text" placeholder="Dirección">
+                                    <div id="direccionError" class="error-message"></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Departamento</label>
+                                    <label for="departamento">Departamento</label>
                                     <select id="departamento" class="custom-select">
+                                        <option value="">Seleccione un departamento</option>
                                         <option value="amazonas">Amazonas</option>
                                         <option value="antioquia">Antioquia</option>
                                         <option value="arauca">Arauca</option>
@@ -115,23 +125,23 @@
                                         <option value="valle_del_cauca">Valle del Cauca</option>
                                         <option value="vaupes">Vaupés</option>
                                         <option value="vichada">Vichada</option>
-
-                                        <!-- Otros departamentos aquí -->
                                     </select>
+                                    <div id="departamentoError" class="error-message"></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Ciudad o municipio</label>
+                                    <label for="ciudad">Ciudad o municipio</label>
                                     <input id="ciudad" class="form-control" type="text" placeholder="Ciudad o municipio">
+                                    <div id="ciudadError" class="error-message"></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Datos adicionales</label>
+                                    <label for="datosAdicionales">Datos adicionales</label>
                                     <input id="datosAdicionales" class="form-control" type="text" placeholder="Datos adicionales">
+                                    <div id="datosAdicionalesError" class="error-message"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-    
                 <div class="col-lg-4">
                     <div class="checkout-inner">
                         <div class="checkout-summary">
@@ -140,7 +150,6 @@
                             <p class="ship-cost">Envío: <span id="envio">$1.00</span></p>
                             <h2>Total compra: <span id="totalEnvio">$100.00</span></h2>
                         </div>
-    
                         <div class="checkout-payment">
                             <h1>Métodos de pago</h1>
                             <div class="payment-methods">
@@ -172,6 +181,7 @@
             </div>
         </div>
     </div>
+    
     
     <footer id="contenedor_footer">
         <div class="footer_descripcion">
@@ -225,7 +235,7 @@
         </div>
     </footer>
 
-    <script src="checkout.js"></script>
+    <script src="./js/checkout.js"></script>
     <script src="./js/carrito_lateral.js"></script>
 </body>
 </html>
