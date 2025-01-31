@@ -9,11 +9,7 @@
     <link rel="icon" href="./Img/Favicon_ManosLocales.png">
     <link rel="stylesheet" href="Css/cart.css">
     <link rel="stylesheet" href="Css/style.css">
-    <link rel="stylesheet" href="Css/estilo_home.css">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    
     <title>Carrito de compras</title>
 </head>
 <body>
@@ -36,192 +32,34 @@
                 <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
                 <span class="indicador_compra"></span>
         </div>
-        <!--& COMPRAS EN EL CARRITO-->
-        <div id="carrito-flotante" class="carrito oculto">
-            <div class="carrito-header">
-                <h2>Mis Productos</h2>
-                <button id="cerrar-carrito" class="cerrar">✖</button>
-            </div>
-            <div class="carrito-contenido">
-                <span class="producto_agregado"></span>
-                <p>No hay productos en el carrito.</p>
-            </div>
-            <div class="carrito-footer">
-                <a href="./cart.html"><button class="ver-carrito">Ver carrito completo</button></a>
-            </div>
-        </div>
+        
     </header>
     <!--FIN HEADER-->
 
-    <main>
-        <!--SHOPPING CART CONTENT -NATALIA -->
-        <section id="carrito">
-            <h1>Carrito de Compras</h1>
-            <table id="tablaCarrito">
-                <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
-                        <th>Talla</th>
-                        <th>Precio</th>
-                        <th>Total</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="productosCarrito">
-                    <!-- Aquí se renderizan los productos -->
-                </tbody>
-            </table>
-            <div id="totalCarrito">
-                <p>Total: $<span id="totalPrecio">0.00</span></p>
-                <p>Envío: <span id="shipping">Gratis</span></p>
-                <button id="vaciarCarrito">Vaciar Carrito</button>
-                
-                <button id="btnCheckout">Continuar Compra</button>
-            </div>
-        </section>
-    </main>
-
-    <div class="cart-page">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="cart-page-inner">
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th>Producto</th>
-                                        <th>Precio</th>
-                                        <th>Cantidad</th>
-                                        <th>Total</th>
-                                        <th>Eliminar</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="align-middle">
-                                    <tr>
-                                        <td>
-                                            <div class="img">
-                                                <a href="#"><img src="img/product-1.jpg" alt="Image"></a>
-                                                <p>Product Name</p>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td>
-                                            <div class="qty">
-                                                <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                <input type="text" value="1">
-                                                <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td><button><i class="fa fa-trash"></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="img">
-                                                <a href="#"><img src="img/product-2.jpg" alt="Image"></a>
-                                                <p>Product Name</p>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td>
-                                            <div class="qty">
-                                                <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                <input type="text" value="1">
-                                                <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td><button><i class="fa fa-trash"></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="img">
-                                                <a href="#"><img src="img/product-3.jpg" alt="Image"></a>
-                                                <p>Product Name</p>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td>
-                                            <div class="qty">
-                                                <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                <input type="text" value="1">
-                                                <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td><button><i class="fa fa-trash"></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="img">
-                                                <a href="#"><img src="img/product-4.jpg" alt="Image"></a>
-                                                <p>Product Name</p>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td>
-                                            <div class="qty">
-                                                <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                <input type="text" value="1">
-                                                <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td><button><i class="fa fa-trash"></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="img">
-                                                <a href="#"><img src="img/product-5.jpg" alt="Image"></a>
-                                                <p>Product Name</p>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td>
-                                            <div class="qty">
-                                                <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                <input type="text" value="1">
-                                                <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td><button><i class="fa fa-trash"></i></button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="cart-page-inner">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="coupon">
-                                    <input type="text" placeholder="Código del cupón">
-                                    <button>Aplicar cupón</button>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="cart-summary">
-                                    <div class="cart-content">
-                                        <h1>Resumen de compra</h1>
-                                        <p>Sub Total<span>$99</span></p>
-                                        <p>Envío<span>$1</span></p>
-                                        <h2>Total<span>$100</span></h2>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <button>Pagar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <main class="main-container">
+        <!-- Aquí se renderizan los productos -->
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 text-center">
+                <h1 class="h1-2">Carrito de compras</h1>
+                <p class="text-center">Los mejores productos realizados por manos locales para ti</p>
             </div>
         </div>
-    </div>
+        
+
+                    <div id="cart-items">
+                        <!-- Products will be dynamically added here -->
+                    </div>
+                
+                    <div class="cart-total">
+                        <span>TOTAL:</span>
+                        <span id="total-amount">$ 0.000</span>
+                    </div>
+                
+                    <button class="checkout-btn">Proceder al checkout</button>
+                
+                
+    </main>
+
 
     <!--FOOTER-->
     <footer id="contenedor_footer">

@@ -96,7 +96,85 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }
 
+
+
 // Llamar a la función cada vez que se carga la página para actualizar el contador
+
+
+
 document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
 });
+
+ // Pre-loaded product data
+ const products = [
+    {
+        id: 1,
+        name: 'Bolso Artesanal Wayúu',
+        description: 'Hermoso bolso tejido a mano por artesanas Wayúu, con diseños tradicionales y colores vibrantes. Pieza única elaborada con técnicas ancestrales, perfecta para uso diario.',
+        price: 259.990,
+        quantity: 1
+    },
+    {
+        id: 2,
+        name: 'Collar de Tagua',
+        description: 'Elegante collar elaborado con Tagua, conocida como el marfil vegetal. Diseño exclusivo con acabados naturales y sostenibles, ideal para cualquier ocasión.',
+        price: 129.990,
+        quantity: 1
+    },
+    {
+        id: 3,
+        name: 'Cerámica Decorativa',
+        description: 'Pieza decorativa de cerámica pintada a mano, inspirada en motivos tradicionales colombianos. Perfecta para dar un toque de color y artesanía a tu hogar.',
+        price: 189.990,
+        quantity: 1
+    }
+];
+
+// Function to render cart items
+function renderCart() {
+    const cartContainer = document.getElementById('cart-items');
+    cartContainer.innerHTML = '';
+
+    products.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.className = 'product-item';
+        productElement.innerHTML = `
+            <div class="product-image">X</div>
+            <div class="product-info">
+                <h3 class="product-title">${product.name}</h3>
+                <p class="product-description">${product.description}</p>
+            </div>
+            <div class="quantity-controls">
+                <button class="quantity-btn minus" onclick="updateQuantity(${product.id}, -1)">-</button>
+                <input type="text" class="quantity-input" value="${product.quantity}" readonly>
+                <button class="quantity-btn plus" onclick="updateQuantity(${product.id}, 1)">+</button>
+            </div>
+            <div class="product-price">$ ${(product.price * product.quantity).toFixed(3)}</div>
+        `;
+        cartContainer.appendChild(productElement);
+    });
+
+    updateTotal();
+}
+
+// Function to update quantity
+function updateQuantity(productId, change) {
+    const product = products.find(p => p.id === productId);
+    if (product) {
+        const newQuantity = product.quantity + change;
+        if (newQuantity >= 1) {
+            product.quantity = newQuantity;
+            renderCart();
+        }
+    }
+}
+
+// Function to update total
+function updateTotal() {
+    const total = products.reduce((sum, product) => sum + (product.price * product.quantity), 0);
+    document.getElementById('total-amount').textContent = `$ ${total.toFixed(3)}`;
+}
+
+// Initial renders
+renderCart();
 

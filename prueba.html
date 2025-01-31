@@ -1,0 +1,166 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Manos Locales</title>
+    <link rel="stylesheet" href="/Css/style_productos.css">
+    <link rel="icon" href="./Img/Favicon_ManosLocales.png">
+</head>
+<body>
+    <!-- Encabezado -->
+     
+    <header id="contenedor_cabecera">
+        <div class="contenedor_logo">
+            <a href="./index.html">
+                <img class="logo_header" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales">
+            </a>
+        </div>
+
+        <nav class="contenedor_nav">
+            <ul class="contenedor_menu">
+                <li class="menu_navegacion"><a href="./index.html">Inicio</a></li>
+                <li class="menu_navegacion"><a href="./about.html">Acerca de Nosotros</a></li>
+                <li class="menu_navegacion"><a href="./Productos.html">Productos</a></li>
+                <li class="menu_navegacion"><a href="./Contact us.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+        <div class="contenedor_carritoCompras">
+            <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenedorProductos">
+        <div class="headerProductos">
+            <h1>Productos</h1>
+            <p class="descProductos">
+                Aquí podrás encontrar todos los productos de los comercios aliados, elije entre toda la variedad que tenemos.
+            </p>
+            <h2>Emprendimiento O___Joyas</h2>
+        </div>
+
+        <!-- Contenedor dinámico para productos -->
+        <section id="productosLista" class="seccionProductos">
+
+
+
+            <!-- Aquí se generarán los productos con JavaScript -->
+
+              <!-- Productos añadidos dinámicamente -->
+               
+              <div class="productoCompleto">
+                <article class="tarjetaProductos">
+                    <div class="imagenProductos">
+                        <img src="https://via.placeholder.com/150" alt="Producto 1">
+                        <div class="imgOverlay">
+                            <button class="btnVer" data-id="1">Ver</button>
+                            <button class="btnAnadir" data-id="1">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+                <div class="infoProductos">
+                    <h3>Producto 1</h3>
+                    <p class="descripcionP">Descripción del producto 1.</p>
+                    <p class="precioProductos">$ 10.00</p>
+                </div>
+            </div>
+
+            <div class="productoCompleto">
+                <article class="tarjetaProductos">
+                    <div class="imagenProductos">
+                        <img src="/imagenes/Products/Aretes Semilla.jpg" alt="Producto 2">
+                        <div class="imgOverlay">
+                            <button class="btnVer" data-id="2">Ver</button>
+                            <button class="btnAnadir" data-id="2">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+                <div class="infoProductos">
+                    <h3>Producto 2</h3>
+                    <p class="descripcionP">Descripción del producto 2.</p>
+                    <p class="precioProductos">$ 20.00</p>
+                </div>
+            </div>
+
+            <div class="productoCompleto">
+                <article class="tarjetaProductos">
+                    <div class="imagenProductos">
+                        <img src="https://via.placeholder.com/150" alt="Producto 3">
+                        <div class="imgOverlay">
+                            <button class="btnVer" data-id="3">Ver</button>
+                            <button class="btnAnadir" data-id="3">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+                <div class="infoProductos">
+                    <h3>Producto 3</h3>
+                    <p class="descripcionP">Descripción del producto 3.</p>
+                    <p class="precioProductos">$ 30.00</p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer id="contenedor_footer">
+        <div class="footer_descripcion">
+            <h3 class="titulos_footer">Manos Locales:</h3>
+            <p class="texto_footer">Conectamos talento y creatividad para lograr grandes proyectos.</p>
+            <p class="texto_footer">Únete a nuestra comunidad.</p>
+        </div>
+        <div class="footer_direccion">
+            <h3 class="titulos_footer">Dirección:</h3>
+            <a class="enlace_direccion_footer" href="https://www.google.com/maps/" target="_blank">
+                Cra. 6 #15-88, Santa Fé, Bogotá, Cundinamarca
+            </a>
+        </div>
+        <div class="footer_logo">
+            <a href="./index.html">
+                <img class="logo_footer" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales">
+            </a>
+        </div>
+        <div class="footer_contactanos">
+            <h3 class="titulos_footer">Contáctanos</h3>
+            <ul class="lista_contacto_footer">
+                <li><p class="subtitulos_footer">Teléfono: <a class="enlace_contactanos" href="#">+57 320567890</a></p></li>
+                <li><p class="subtitulos_footer">Email: <a class="enlace_contactanos" href="#">info@manoslocales.com</a></p></li>
+            </ul>
+        </div>
+        <div class="footer_redes">
+            <h3 class="titulos_footer">Redes Sociales</h3>
+            <ul class="lista_redes_footer">
+                <li class="logos_redes_footer">
+                    <a href="https://www.instagram.com/manos_locales/" target="_blank">
+                        <img src="./Img/logo Instagram.png" alt="Logo Instagram">
+                    </a>
+                </li>
+                <li class="logos_redes_footer">
+                    <a href="#" target="_blank">
+                        <img src="./Img/Logo Facebook.png" alt="Logo Facebook">
+                    </a>
+                </li>
+                <li class="logos_redes_footer">
+                    <a href="#" target="_blank">
+                        <img src="./Img/Logo LinkedIn.png" alt="Logo Linkedin">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/itemsController.js" defer></script>
+    <script src="/js/Script_Produtcs.js" defer></script>
+</body>
+</html>
