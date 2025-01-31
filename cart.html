@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="Css/style.css">
     <link rel="stylesheet" href="Css/estilo_home.css">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"> -->
     <title>Carrito de compras</title>
 </head>
 <body>
@@ -36,53 +36,31 @@
                 <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
                 <span class="indicador_compra"></span>
         </div>
-        <!--& COMPRAS EN EL CARRITO-->
-        <div id="carrito-flotante" class="carrito oculto">
-            <div class="carrito-header">
-                <h2>Mis Productos</h2>
-                <button id="cerrar-carrito" class="cerrar">✖</button>
-            </div>
-            <div class="carrito-contenido">
-                <span class="producto_agregado"></span>
-                <p>No hay productos en el carrito.</p>
-            </div>
-            <div class="carrito-footer">
-                <a href="./cart.html"><button class="ver-carrito">Ver carrito completo</button></a>
-            </div>
-        </div>
+        
     </header>
     <!--FIN HEADER-->
 
-    <main>
-        <!--SHOPPING CART CONTENT -NATALIA -->
-        <section id="carrito">
-            <h1>Carrito de Compras</h1>
-            <table id="tablaCarrito">
-                <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
-                        <th>Talla</th>
-                        <th>Precio</th>
-                        <th>Total</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="productosCarrito">
+    <main class="main-container">
                     <!-- Aquí se renderizan los productos -->
-                </tbody>
-            </table>
-            <div id="totalCarrito">
-                <p>Total: $<span id="totalPrecio">0.00</span></p>
-                <p>Envío: <span id="shipping">Gratis</span></p>
-                <button id="vaciarCarrito">Vaciar Carrito</button>
+
+                    <h1 class="h1_title">Carrito de compras</h1>
+                    <p class="cart-description">Los mejores productos artesanales seleccionados para ti</p>
                 
-                <button id="btnCheckout">Continuar Compra</button>
-            </div>
-        </section>
+                    <div id="cart-items">
+                        <!-- Products will be dynamically added here -->
+                    </div>
+                
+                    <div class="cart-total">
+                        <span>TOTAL:</span>
+                        <span id="total-amount">$ 0.000</span>
+                    </div>
+                
+                    <button class="checkout-btn">Proceder al checkout</button>
+                
+                
     </main>
 
-    <div class="cart-page">
+    <!-- <div class="cart-page">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-8">
@@ -221,7 +199,26 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!--FOOTER-->
     <footer id="contenedor_footer">
