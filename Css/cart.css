@@ -433,3 +433,9 @@ body{
     color: #0F6466;
     background: #b3cfc9;
 }
+
+.error-message {
+    color: red;         /* Rojo */
+    font-size: 12px;    /* Tamaño pequeño */
+    margin-top: 5px;    /* Espaciado superior */
+}
