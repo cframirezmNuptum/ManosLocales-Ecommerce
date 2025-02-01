@@ -854,16 +854,7 @@ body{
       font-size: 14px; /* Reducir el tamaño de texto en dispositivos más pequeños */
     }
   }
-  
-  
-  /*El Equipo*/ 
-  
-  /* Centrar el título y la descripción */
-  
-  #about-us h2 {
-    margin-bottom: 20px; /* Espacio entre el título y la descripción */
-  }
-  
+
   .team-img {
     width: 200px; /* Ancho fijo */
     height: 400px; /* Altura fija */

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto - Manos Locales</title>
+    <!--FontAwesome-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/global_styles.css">
+    <link rel="icon" href="../Img/Favicon_ManosLocales.png">
+</head>
+<body>
+    <!--^ Cabecera y Banner del home -->
+    <header id="contenedor_cabecera">
+        <div class="contenedor_logo">
+            <a href="../index.html"><img class="logo_header" src="../Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
+        </div>
+
+        <nav class="contenedor_nav">
+            <ul class="contenedor_menu">
+                <li class="menu_navegacion"><a href="../index.html">Inicio</a></li>
+                <li class="menu_navegacion"><a href="../about.html">Acerca de Nosotros</a></li>
+                <li class="menu_navegacion"><a href="../Productos.html">Productos</a></li>
+                <li class="menu_navegacion"><a href="../Contact us.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+        <div class="contenedor_carritoCompras">
+                <img class="logo_carro_compras" src="../Img/carrito-de-compras.gif" alt="Carrito de compras">
+                <span class="indicador_compra"></span>
+        </div>
+        <!--& COMPRAS EN EL CARRITO-->
+        <div id="carrito-flotante" class="carrito oculto">
+            <div class="carrito-header">
+                <h2>Mis Productos</h2>
+                <button id="cerrar-carrito" class="cerrar">✖</button>
+            </div>
+            <div class="carrito-contenido">
+                <span class="producto_agregado"></span>
+                <p>No hay productos en el carrito.</p>
+            </div>
+            <div class="carrito-footer">
+                <a href="../cart.html"><button class="ver-carrito">Ver carrito completo</button></a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="contenedorProductoItem">
+        <div class="tituloProducto">
+            <h1>Aretes Semilla</h1>
+            <p class="descripcionProducto">Delicado pero al mismo tiempo elegante.</p>
+        </div>
+
+        <section class="itemContenedor">
+            <h2 class="tituloEmprendimiento">O___Joyas</h2>
+            
+            <div class="contenidoProducto">
+                <div class="fotosProducto">
+                    <div class="imagenPrincipal">
+                        <img src="../imagenes/Products/Aretes Semilla.jpg" alt="Imagen principal" id="primeraImagen">
+                    </div>
+                    <div class="contenedorMiniaturas">
+                        <img src="../imagenes/Products/aretessemilla1.jpeg" alt="Miniatura 1" class="miniatura active">
+                        <img src="../imagenes/Products/aretessemilla2.jpeg" alt="Miniatura 2" class="miniatura">
+                        <img src="../imagenes/Products/Aretes Semilla.jpg" alt="Miniatura 3" class="miniatura">
+                        <img src="../imagenes/Products/aretessemilla1.jpeg" alt="Miniatura 4" class="miniatura">
+                    </div>
+                </div>
+
+                <div class="detallesProducto">
+                    <div class="seccionOpciones">
+                        <h3>ARETES SEMILLA</h3>
+                        <p class="precioUnidad">$ 14.000</p>
+                        
+                        <div class="seleccionColor">
+                            <h4>COLOR:</h4>
+                            <div class="opcionesColor">
+                                <button class="colorIndividual" data-color="color1"></button>
+                                <button class="colorIndividual" data-color="color2"></button>
+                                <button class="colorIndividual" data-color="color3"></button>
+                                <button class="colorIndividual" data-color="color4"></button>
+                                <button class="colorIndividual" data-color="color5"></button>
+                            </div>
+                        </div>
+
+                        <div class="seleccionTalla">
+                            <h4>TALLA/TIPO:</h4>
+                            <select class="selectorTalla">
+                                <option value="">Seleccionar talla/tipo</option>
+                                <option value="s">S</option>
+                                <option value="m">M</option>
+                                <option value="l">L</option>
+                            </select>
+                        </div>
+
+                        <div class="seleccionCantidad">
+                            <h4>CANTIDAD:</h4>
+                            <div class="controladorCantidad">
+                                <button class="btnCantidad" id="disminuye">-</button>
+                                <input type="number" value="1" min="1" id="cantidad">
+                                <button class="btnCantidad" id="aumenta">+</button>
+                            </div>
+                        </div>
+
+                        <button class="añadirCarro">Añadir</button>
+                    </div>
+
+                    <div class="informacionProducto">
+                        <h4>DESCRIPCIÓN DEL PRODUCTO</h4>
+                        <p>Plata ley 950</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--FOOTER-->
+    <footer id="contenedor_footer">
+        <div class="footer_descripcion">
+            <h3 class="titulos_footer">Manos Locales:</h3>
+            <p class="h2 texto_footer">Conectamos talento y creatividad para lograr grandes proyectos.</p>
+            <p class="h2 texto_footer">Únete a nuestra comunidad.</p>
+        </div>
+
+        <div class="footer_direccion">
+            <h3 class="titulos_footer">Dirección:</h3>
+            <a class="footer-link" href="https://www.google.com/maps/@4.5505119,-73.4058557,8.5z?hl=es&entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Cra. 6 #15-88, Santa Fé, Bogotá, Cundinamarca</a>
+        </div>
+
+        <div class="footer_logo">
+            <a href="./index.html"><img class="logo_footer" src="/Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
+        </div>
+
+        <div class="footer_contactanos">
+            <h3 class="titulos_footer">Contáctanos</h3>
+            <ul class="lista_contacto_footer">
+                <li>
+                    <p class="h2">Teléfono: <a class="footer-link" href="https://web.whatsapp.com/" target="_blank">+57 320567890</a></p>
+                </li>
+                <li>
+                    <p class="h2">Email: <a class="footer-link" href="https://web.whatsapp.com/" target="_blank">info@manoslocales.com</a></p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer_redes">
+            <h3 class="titulos_footer">Redes Sociales</h3>
+            <ul class="lista_redes_footer">
+                <li class="logos_redes_footer">
+                    <a href="https://www.instagram.com/" target="_blank" class="footer-social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                
+                <li class="logos_redes_footer">
+                    <a href="https://www.facebook.com/" target="_blank" class="footer-social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+
+                <li class="logos_redes_footer">
+                    <a href="https://www.linkedin.com/" target="_blank" class="footer-social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </footer>
+
+    <script src="../js/Script_Produtcs.js" defer></script>
+    <script src="../js/carrito_lateral.js"></script>
+</body>
+</html>
