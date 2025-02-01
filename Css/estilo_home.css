@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+SA:wght@100..400&display=swap');
 
-*{
+/**{
     margin: 0;
     padding: 0;
     font-family: "Montserrat", serif;
@@ -23,7 +23,7 @@ body{
 }
 
 /*^LOGO*/
-.contenedor_logo{
+/*.contenedor_logo{
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -42,7 +42,7 @@ body{
 }
 
 /*^MENÚ*/
-.contenedor_nav{
+/*.contenedor_nav{
     display: flex;
     align-items: center;
 }
@@ -76,7 +76,7 @@ body{
 }
 
 /*^CARRITO COMPRAS*/
-.contenedor_carritoCompras{
+/*.contenedor_carritoCompras{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -98,7 +98,7 @@ body{
 }
 
 /** DATOS CARRITO FLOTANTE*/
-#carrito-flotante {
+/*#carrito-flotante {
     position: fixed;
     top: 0;
     right: 0;
@@ -111,10 +111,9 @@ body{
     justify-content: space-between;
     z-index: 1000;
     transition: transform 0.3s ease;
-    transform: translateX(100%); /* Animación ocultar a la derecha*/
-}
+    transform: translateX(100%); /* Animación ocultar a la derecha*/}
 
-#carrito-flotante.mostrar {
+/*#carrito-flotante.mostrar {
     transform: translateX(0);
 }
 
@@ -141,13 +140,12 @@ body{
 }
 
 /* Contenido del carrito */
-.carrito-contenido {
+/*.carrito-contenido {
     flex: 1;
     padding: 20px;
-    overflow-y: auto; /* Agrega un scroll si hay demasiados productos */
-}
+    overflow-y: auto; /* Agrega un scroll si hay demasiados productos */}
 
-.carrito-footer {
+/*.carrito-footer {
     padding: 20px;
     border-top: 1px solid #555;
 }
@@ -163,7 +161,7 @@ body{
 }
 
 /*^BANNER*/
-#contenedor_banner{
+/*#contenedor_banner{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -222,7 +220,7 @@ body{
 }
 
 /*^SECCION QUIENES SOMOS*/
-#contenedor_seccion{
+/*#contenedor_seccion{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -236,7 +234,7 @@ body{
 }
 
 /*^CARACTERISTICAS*/
-#contenedor_caracteristica{
+/*#contenedor_caracteristica{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -266,7 +264,7 @@ body{
 }
 
 /*^ ESTADISTICAS*/
-#contenedor_estadistica{
+/*#contenedor_estadistica{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -283,7 +281,7 @@ body{
 }
 
 /*^FOOTER*/
-#contenedor_footer{
+/*#contenedor_footer{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
