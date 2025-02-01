@@ -7,15 +7,13 @@
     <!--FontAwesome-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="./Img/Favicon_ManosLocales.png">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="Css/global_styles.css">
+    <link rel="stylesheet" href="Css/cart.css">
+    <link rel="stylesheet" href="Css/style.css">
+    
     <title>Carrito de compras</title>
 </head>
-<body class="pagina-contacto">
-        <!--HEADER-->
+<body>
+    <!--HEADER-->
     <!--^ Cabecera y Banner del home -->
     <header id="contenedor_cabecera">
         <div class="contenedor_logo">
@@ -39,31 +37,12 @@
     </header>
     <!--FIN HEADER-->
 
-    <main>
-        <!--SHOPPING CART CONTENT -NATALIA -->
-        <section id="carrito">
-            <h1 class="h1-2">Carrito de Compras</h1>
-            <table id="tablaCarrito">
-                <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
-                        <th>Talla</th>
-                        <th>Precio</th>
-                        <th>Total</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="productosCarrito">
-                    <!-- Aquí se renderizan los productos -->
-                </tbody>
-            </table>
-            <div id="totalCarrito">
-                <p>Total: $<span id="totalPrecio">0.00</span></p>
-                <p>Envío: <span id="shipping">Gratis</span></p>
-                <button id="vaciarCarrito">Vaciar Carrito</button>
-                
-                <button id="btnCheckout">Continuar Compra</button>
+    <main class="main-container">
+        <!-- Aquí se renderizan los productos -->
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 text-center">
+                <h1 class="h1-2">Carrito de compras</h1>
+                <p class="text-center">Los mejores productos realizados por manos locales para ti</p>
             </div>
         </div>
         
@@ -71,30 +50,10 @@
                     <div id="cart-items">
                         <!-- Products will be dynamically added here -->
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="cart-page-inner">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="coupon">
-                                    <input type="text" placeholder="Código del cupón">
-                                    <button>Aplicar cupón</button>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="cart-summary">
-                                    <div class="cart-content">
-                                        <h1>Resumen de compra</h1>
-                                        <p>Sub Total<span>$99</span></p>
-                                        <p>Envío<span>$1</span></p>
-                                        <h2>Total<span>$100</span></h2>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <button id="btnCheckout">Pagar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                
+                    <div class="cart-total">
+                        <span>TOTAL:</span>
+                        <span id="total-amount">$ 0.000</span>
                     </div>
                 
                     <button class="checkout-btn2">Proceder al checkout</button>
@@ -107,13 +66,14 @@
     <footer id="contenedor_footer">
         <div class="footer_descripcion">
             <h3 class="titulos_footer">Manos Locales:</h3>
-            <p class="h2 texto_footer">Conectamos talento y creatividad para lograr grandes proyectos.</p>
-            <p class="h2 texto_footer">Únete a nuestra comunidad.</p>
+            <p class="texto_footer">Conectamos talento y creatividad para lograr grandes proyectos.</p>
+            <p class="texto_footer">Únete a nuestra comunidad.</p>
+            
         </div>
 
         <div class="footer_direccion">
             <h3 class="titulos_footer">Dirección:</h3>
-            <a class="footer-link" href="https://www.google.com/maps/@4.5505119,-73.4058557,8.5z?hl=es&entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Cra. 6 #15-88, Santa Fé, Bogotá, Cundinamarca</a>
+            <a class="enlace_direccion_footer" href="https://www.google.com/maps/@4.5505119,-73.4058557,8.5z?hl=es&entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Cra. 6 #15-88, Santa Fé, Bogotá, Cundinamarca</a>
         </div>
 
         <div class="footer_logo">
@@ -121,19 +81,19 @@
         </div>
 
         <div class="footer_contactanos">
-            <h3 id= contactanosab class="titulos_footer">Contáctanos</h3>
+            <h3 class="titulos_footer">Contáctanos</h3>
             <ul class="lista_contacto_footer">
                 <li>
-                    <p class="h2">Teléfono: <a class="footer-link" href="https://web.whatsapp.com/" target="_blank">+57 320567890</a></p>
+                    <p class="subtitulos_footer">Teléfono: <a class="enlace_contactanos" href="https://web.whatsapp.com/" target="_blank">+57 320567890</a></p>
                 </li>
                 <li>
-                    <p class="h2">Email: <a class="footer-link" href="https://web.whatsapp.com/" target="_blank">info@manoslocales.com</a></p>
+                    <p class="subtitulos_footer">Email: <a class="enlace_contactanos" href="https://web.whatsapp.com/" target="_blank">info@manoslocales.com</a></p>
                 </li>
             </ul>
         </div>
 
         <div class="footer_redes">
-            <h3 class="titulos_footer">Redes Sociales</h3>
+            <h3 class="titulos_footer">Síguenos</h3>
             <ul class="lista_redes_footer">
                 <li class="logos_redes_footer">
                     <a href="https://www.instagram.com/" target="_blank" class="footer-social-icon">
@@ -151,8 +111,7 @@
                     <a href="https://www.linkedin.com/" target="_blank" class="footer-social-icon">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                </li>
-                
+                </li> 
             </ul>
         </div>
     </footer>

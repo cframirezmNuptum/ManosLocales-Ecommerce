@@ -1,49 +1,61 @@
-// Función para validar el formulario antes de enviarlo
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevenir el envío para validación
-
+document.getElementById("btn-destacado").addEventListener("click", function () {
     let isValid = true;
 
-    // Validación del nombre
-    const name = document.getElementById('name').value;
-    if (name.trim() === '') {
-        alert('Por favor, ingresa tu nombre');
-        isValid = false;
+    function showError(inputId, message) {
+        let inputField = document.getElementById(inputId);
+        let errorField = document.getElementById(inputId + "Error");
+
+        if (!errorField) {
+            errorField = document.createElement("div");
+            errorField.id = inputId + "Error";
+            errorField.className = "error-message";
+            inputField.parentNode.appendChild(errorField);
+        }
+
+        errorField.textContent = message;
     }
 
-    // Validación del teléfono (formato)
-    const phone = document.getElementById('phone').value;
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!phoneRegex.test(phone)) {
-        alert('El teléfono debe tener 10 dígitos');
-        isValid = false;
+    function clearError(inputId) {
+        let errorField = document.getElementById(inputId + "Error");
+        if (errorField) {
+            errorField.textContent = "";
+        }
     }
 
-    // Validación del correo
-    const email = document.getElementById('email').value;
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailRegex.test(email)) {
-        alert('Por favor, ingresa un correo electrónico válido');
-        isValid = false;
+    function validateField(inputId, regex, errorMessage) {
+        let value = document.getElementById(inputId).value.trim();
+        if (value === "") {
+            showError(inputId, "*Campo obligatorio");
+            isValid = false;
+        } else if (regex && !regex.test(value)) {
+            showError(inputId, errorMessage);
+            isValid = false;
+        } else {
+            clearError(inputId);
+        }
     }
 
-    // Validación del mensaje
-    const message = document.getElementById('message').value;
-    if (message.trim() === '') {
-        alert('Por favor, ingresa tu mensaje');
-        isValid = false;
-    }
+    validateField("name", /^[a-zA-ZÀ-ÿ\s]{2,}$/, "*Formato inválido");
+    validateField("phone", /^[0-9]{7,10}$/, "*Número de teléfono inválido");
+    validateField("email", /^[^\s@]+@[^\s@]+\.[^\s@]+$/, "*Correo electrónico inválido");
+    validateField("message", null, "*Campo obligatorio");
 
-    // Si todas las validaciones pasan, enviamos el formulario
     if (isValid) {
-        this.submit();
+        // Guardar el mensaje en localStorage
+        localStorage.setItem("formMessage", document.getElementById("message").value);
+        Swal.fire({
+            title: 'Éxito!',
+            text: 'Formulario enviado correctamente',
+            icon: 'success',
+            confirmButtonText: '¡Genial!'
+        });
+        document.getElementById("contact-form").submit();
+    } else {
+        Swal.fire({
+            title: 'Error',
+            text: 'Por favor, complete todos los campos correctamente antes de enviar',
+            icon: 'error',
+            confirmButtonText: 'Entendido'
+        });
     }
-});
-
-
-// Archivo: js/contact.js
-
-document.getElementById("hamburger").addEventListener("click", function() {
-    const nav = document.querySelector("nav");
-    nav.classList.toggle("active");
 });
