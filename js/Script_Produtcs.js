@@ -1,184 +1,434 @@
-document.querySelectorAll('.btnVer').forEach(button => {
-    button.addEventListener('click', () => {
-        // Aquí debemos redirigir a un producto específico, no solo a 'item.html' por eso lo cambié.
-        // Cada producto tiene un atributo 'data-id' para identificarlo de forma única.
-        const productId = button.closest('.productoCompleto').dataset.id;
-        window.location.href = `item.html?id=${productId}`; // Redirige a item.html con un parámetro de ID
+let productos = [
+    {
+        id: 1,
+        nombre: "Aretes Semilla",
+        descripcion: "Plata ley 950",
+        imagen: "/imagenes/Products/Aretes Semilla.jpg",
+        imagenPrincipal: "/imagenes/Products/Aretes Semilla.jpg",
+        miniatura1: "/imagenes/Products/Aretes Semilla.jpg",
+        miniatura2: "/imagenes/Products/Aretes Semilla.jpg",
+        miniatura3: "/imagenes/Products/Aretes Semilla.jpg",
+        miniatura4: "/imagenes/Products/Aretes Semilla.jpg",
+        precio: 14000,
+        talla1: "Única",
+        descripcionLarga: "Elegantes aretes elaborados en plata ley 950."
+    },
+    {
+        id: 2,
+        nombre: "Candongas Espinas",
+        descripcion: "Plata ley 950",
+        imagen: "/imagenes/Products/Candongas espinas.jpg",
+        imagenPrincipal: "/imagenes/Products/Candongas espinas.jpg",
+        miniatura1: "/imagenes/Products/Candongas espinas.jpg",
+        miniatura2: "/imagenes/Products/Candongas espinas.jpg",
+        miniatura3: "/imagenes/Products/Candongas espinas.jpg",
+        miniatura4: "/imagenes/Products/Candongas espinas.jpg",
+        precio: 20000,
+        talla1: "Única",
+        descripcionLarga: "Diseño exclusivo de candongas con textura de espinas, en plata ley 950."
+    },
+    {
+        id: 3,
+        nombre: "Candongas Flor",
+        descripcion: "Plata ley 950",
+        imagen: "/imagenes/Products/Candongas Plata Ley.jpg",
+        imagenPrincipal: "/imagenes/Products/Candongas Plata Ley.jpg",
+        miniatura1: "/imagenes/Products/Candongas Plata Ley.jpg",
+        miniatura2: "/imagenes/Products/Candongas Plata Ley.jpg",
+        miniatura3: "/imagenes/Products/Candongas Plata Ley.jpg",
+        miniatura4: "/imagenes/Products/Candongas Plata Ley.jpg",
+        precio: 10000,
+        talla1: "Única",
+        descripcionLarga: "Candongas con diseño floral, elaboradas en plata ley 950."
+    },
+    {
+        id: 4,
+        nombre: "Candelabro Cabeza",
+        descripcion: "Latón y cobre",
+        imagen: "/imagenes/Products/Candelabro cabeza.jpg",
+        imagenPrincipal: "/imagenes/Products/Candelabro cabeza.jpg",
+        miniatura1: "/imagenes/Products/Candelabro cabeza.jpg",
+        miniatura2: "/imagenes/Products/Candelabro cabeza.jpg",
+        miniatura3: "/imagenes/Products/Candelabro cabeza.jpg",
+        miniatura4: "/imagenes/Products/Candelabro cabeza.jpg",
+        precio: 100000,
+        talla1: "Única",
+        descripcionLarga: "Candelabro artesanal hecho de latón y cobre con un diseño único en forma de cabeza."
+    },
+    {
+        id: 5,
+        nombre: "Candelabro Mano",
+        descripcion: "Latón y cobre",
+        imagen: "/imagenes/Products/Candelabro mano.jpg",
+        imagenPrincipal: "/imagenes/Products/Candelabro mano.jpg",
+        miniatura1: "/imagenes/Products/Candelabro mano.jpg",
+        miniatura2: "/imagenes/Products/Candelabro mano.jpg",
+        miniatura3: "/imagenes/Products/Candelabro mano.jpg",
+        miniatura4: "/imagenes/Products/Candelabro mano.jpg",
+        precio: 160000,
+        talla1: "Única",
+        descripcionLarga: "Candelabro con forma de mano, elaborado en latón y cobre, con un diseño exclusivo."
+    },
+    {
+        id: 6,
+        nombre: "Lipcuff Líneas",
+        descripcion: "Plata ley 950",
+        imagen: "/imagenes/Products/Lipcufflineas.jpeg",
+        imagenPrincipal: "/imagenes/Products/Lipcufflineas.jpeg",
+        miniatura1: "/imagenes/Products/Lipcufflineas.jpeg",
+        miniatura2: "/imagenes/Products/Lipcufflineas.jpeg",
+        miniatura3: "/imagenes/Products/Lipcufflineas.jpeg",
+        miniatura4: "/imagenes/Products/Lipcufflineas.jpeg",
+        precio: 75000,
+        talla1: "Única",
+        descripcionLarga: "Lipcuff con diseño de líneas minimalistas, elaborado en plata ley 950."
+    },
+    {
+        id: 7,
+        nombre: "Camisa Estampada",
+        descripcion: "Disponible en todas las tallas",
+        imagen: "/imagenes/Products/Camisa  (1).png",
+        imagenPrincipal: "/imagenes/Products/Camisa  (1).png",
+        miniatura1: "/imagenes/Products/Camisa  (1).png",
+        miniatura2: "/imagenes/Products/Camisa  (1).png",
+        miniatura3: "/imagenes/Products/Camisa  (1).png",
+        miniatura4: "/imagenes/Products/Camisa  (1).png",
+        precio: 80000,
+        talla1: "S",
+        talla2: "M",
+        talla3: "L",
+        descripcionLarga: "Camisa estampada con diseño exclusivo, disponible en todas las tallas."
+    },
+    {
+        id: 8,
+        nombre: "Camisa Estampada",
+        descripcion: "Disponible en todas las tallas",
+        imagen: "/imagenes/Products/Camisa  (2).png",
+        imagenPrincipal: "/imagenes/Products/Camisa  (2).png",
+        miniatura1: "/imagenes/Products/Camisa  (2).png",
+        miniatura2: "/imagenes/Products/Camisa  (2).png",
+        miniatura3: "/imagenes/Products/Camisa  (2).png",
+        miniatura4: "/imagenes/Products/Camisa  (2).png",
+        precio: 80000,
+        talla1: "S",
+        talla2: "M",
+        talla3: "L",
+        descripcionLarga: "Camisa estampada con un patrón vibrante, ideal para cualquier ocasión."
+    },
+    {
+        id: 9,
+        nombre: "Camisa Estampada",
+        descripcion: "Disponible en todas las tallas",
+        imagen: "/imagenes/Products/Camisa  (3).png",
+        imagenPrincipal: "/imagenes/Products/Camisa  (3).png",
+        miniatura1: "/imagenes/Products/Camisa  (3).png",
+        miniatura2: "/imagenes/Products/Camisa  (3).png",
+        miniatura3: "/imagenes/Products/Camisa  (3).png",
+        miniatura4: "/imagenes/Products/Camisa  (3).png",
+        precio: 80000,
+        talla1: "S",
+        talla2: "M",
+        talla3: "L",
+        descripcionLarga: "Camisa con un diseño único y estampado colorido."
+    },
+    {
+        id: 10,
+        nombre: "Camisa Estampada",
+        descripcion: "Disponible en todas las tallas",
+        imagen: "/imagenes/Products/Camisa  (4).png",
+        imagenPrincipal: "/imagenes/Products/Camisa  (4).png",
+        miniatura1: "/imagenes/Products/Camisa  (4).png",
+        miniatura2: "/imagenes/Products/Camisa  (4).png",
+        miniatura3: "/imagenes/Products/Camisa  (4).png",
+        miniatura4: "/imagenes/Products/Camisa  (4).png",
+        precio: 80000,
+        talla1: "S",
+        talla2: "M",
+        talla3: "L",
+        descripcionLarga: "Camisa estampada con diseño innovador, perfecta para el día a día."
+    },
+    {
+        id: 11,
+        nombre: "Camisa Estampada",
+        descripcion: "Disponible en todas las tallas",
+        imagen: "/imagenes/Products/Camisa (5).png",
+        imagenPrincipal: "/imagenes/Products/Camisa (5).png",
+        miniatura1: "/imagenes/Products/Camisa (5).png",
+        miniatura2: "/imagenes/Products/Camisa (5).png",
+        miniatura3: "/imagenes/Products/Camisa (5).png",
+        miniatura4: "/imagenes/Products/Camisa (5).png",
+        precio: 80000,
+        talla1: "S",
+        talla2: "M",
+        talla3: "L",
+        descripcionLarga: "Camisa estampada con diseño atractivo y disponible en varias tallas."
+    },
+    {
+        id: 12,
+        nombre: "Camisa Estampada",
+        descripcion: "Disponible en todas las tallas",
+        imagen: "/imagenes/Products/Camisa (6).png",
+        imagenPrincipal: "/imagenes/Products/Camisa (6).png",
+        miniatura1: "/imagenes/Products/Camisa (6).png",
+        miniatura2: "/imagenes/Products/Camisa (6).png",
+        miniatura3: "/imagenes/Products/Camisa (6).png",
+        miniatura4: "/imagenes/Products/Camisa (6).png",
+        precio: 80000,
+        talla1: "S",
+        talla2: "M",
+        talla3: "L",
+        descripcionLarga: "Camisa estampada en tonos modernos y versátil para cualquier ocasión."
+    }
+];
+
+let carrito = [];
+
+function cargarCarrito() {
+    const carritoGuardado = localStorage.getItem(carrito);
+    carrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
+}
+
+function guardarCarrito(){
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+function renderProductos() {
+    const seccionProductos = document.getElementById("seccionProductos");
+    seccionProductos.innerHTML = ""; // Limpia la sección antes de agregar nuevos productos
+
+    productos.forEach((producto) => {
+        const productoCompleto = document.createElement("div");
+        productoCompleto.classList.add("productoCompleto");
+
+        const tarjetaProductos = `
+            <article class="tarjetaProductos">
+                <div class="imagenProductos">
+                    <div class="imagenProductosContenedor">
+                        <img src="${producto.imagen}" alt="${producto.nombre}">
+                        <div class="imgOverlay">
+                            <a href="Item.html?id=${producto.id}">
+                                <button class="btnVer">Ver</button>
+                            </a>      
+                            <button class="btnAnadir" onclick="agregarAlCarrito(${producto.id})">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <div class="infoProductos">
+                <h3>${producto.nombre}</h3>
+                <p class="descripcionP">${producto.descripcion}</p>
+                <p class="precioProductos">$ ${formatearPrecio(producto.precio)}</p>
+            </div>
+        `;
+        
+        productoCompleto.innerHTML = tarjetaProductos; 
+        seccionProductos.appendChild(productoCompleto); 
     });
-});
+}
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Funcionalidad para la galería de imágenes
-    const miniaturas = document.querySelectorAll('.miniatura');
-    const primeraImagen = document.getElementById('primeraImagen');
+function renderItems() {
+    const itemContenedor = document.getElementById("itemContenedor");
+    itemContenedor.innerHTML = "";
 
-    if (miniaturas && primeraImagen) {
-        miniaturas.forEach(thumb => {
-            thumb.addEventListener('click', function() {
-                // Actualizar imagen principal
-                primeraImagen.src = this.src;
+    const urlParams = new URLSearchParams(window.location.search);
+    const productoId = parseInt(urlParams.get('id')); // Obtener el ID del producto de la URL con urlParams  
+    const productoSeleccionado = productos.find(producto => producto.id === productoId); // Find encuentra el producto específico y si se encuentra el producto se renderiza con un if
+    
+    if (productoSeleccionado) {
+        const contenidoProducto = document.createElement("div");
+        contenidoProducto.classList.add("contenidoProducto");
+        
+        // Función para generar las opciones de talla
+        const generarOpcionesTalla = (producto) => {
+            if (producto.talla1 === "Unica") {
+                return `<option value="${producto.talla1}">${producto.talla1}</option>`;
+            }
+            
+            let opciones = '<option value="">Seleccionar talla</option>';
+            if (producto.talla1) opciones += `<option value="${producto.talla1}">${producto.talla1}</option>`;
+            if (producto.talla2) opciones += `<option value="${producto.talla2}">${producto.talla2}</option>`;
+            if (producto.talla3) opciones += `<option value="${producto.talla3}">${producto.talla3}</option>`;
+            return opciones;
+        };
+
+        contenidoProducto.innerHTML = `
+            <div class="fotosProducto">
+                <div class="imagenPrincipal">
+                    <img src="${productoSeleccionado.imagenPrincipal}" id="primeraImagen">
+                </div>
+                <div class="contenedorMiniaturas">
+                    <img src="${productoSeleccionado.miniatura1}" class="miniatura active">
+                    <img src="${productoSeleccionado.miniatura2}" class="miniatura">
+                    <img src="${productoSeleccionado.miniatura3}" class="miniatura">
+                    <img src="${productoSeleccionado.miniatura4}" class="miniatura">
+                </div>
+            </div>
+
+            <div class="detallesProducto">
+
+                <div class="seccionOpciones">
+                     <h3>${productoSeleccionado.nombre}</h3>
+                <p>$ ${formatearPrecio(productoSeleccionado.precio)}</p>
+                <div class="seleccionTalla">
+                    <h4>TALLA</h4>
+                    <select class="selectorTalla">
+                        ${generarOpcionesTalla(productoSeleccionado)}
+                    </select>
+
+                <div class="seleccionCantidad">
+                    <h4>CANTIDAD:</h4>
+                    <div class="controladorCantidad">
+                        <button class="btnCantidad" id="disminuye">-</button>
+                        <input type="number" value="1" min="1" id="cantidad">
+                        <button class="btnCantidad" id="aumenta">+</button>
+                    </div>
+                </div>
+                    <div>
+                        <button class="añadirCarro" onclick="agregarAlCarrito(${productoSeleccionado.id})">Añadir</button>
+                    </div>
                 
-                // Actualizar clase active
-                miniaturas.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
+                </div>
+                <div class="informacionProducto">
+                    <h4>DESCRIPCIÓN DEL PRODUCTO</h4>
+                    <p>${productoSeleccionado.descripcionLarga}</p>
+                </div>
+            </div>
+        `;
+        
+    itemContenedor.appendChild(contenidoProducto);
+    function inicializarFuncionalidades() {
+        // Funcionalidad para la galería de imágenes
+        const miniaturas = document.querySelectorAll('.miniatura');
+        const primeraImagen = document.getElementById('primeraImagen');
+
+        if (miniaturas && primeraImagen) {
+            miniaturas.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    primeraImagen.src = this.src;
+                    miniaturas.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
             });
-        });
-    }
-
-    // Funcionalidad para el selector de cantidad
-    const entradaCantidad = document.getElementById('cantidad');
-    const botonDisminuir = document.getElementById('disminuye');
-    const botonAumentar = document.getElementById('aumenta');
-
-    if (entradaCantidad && botonDisminuir && botonAumentar) {
-        botonDisminuir.addEventListener('click', function() {
-            const valorActual = parseInt(entradaCantidad.value);
-            if (valorActual > 1) {
-                entradaCantidad.value = valorActual - 1;
-            }
-        });
-
-        botonAumentar.addEventListener('click', function() {
-            const valorActual = parseInt(entradaCantidad.value);
-            entradaCantidad.value = valorActual + 1;
-        });
-
-        entradaCantidad.addEventListener('change', function() {
-            if (this.value < 1) {
-                this.value = 1;
-            }
-        });
-    }
-
-    // Funcionalidad para los botones de color
-    const opcionesColor = document.querySelectorAll('.colorIndividual');
-    
-    if (opcionesColor) {
-        opcionesColor.forEach(option => {
-            option.addEventListener('click', function() {
-                // Remover selección previa
-                opcionesColor.forEach(opt => opt.classList.remove('selected'));
-                // Agregar selección actual
-                this.classList.add('selected');
-            });
-        });
-    }
-
-    // Funcionalidad para el botón de añadir al carrito
-    const añadirCarro = document.querySelector('.btnAnadir');
-    
-    if (añadirCarro) {
-        añadirCarro.addEventListener('click', function () {
-            // Recopilar datos del producto
-            const productId = document.querySelector('.productoCompleto').dataset.id;
-            const cantidad = parseInt(document.getElementById('cantidad').value);
-    
-            // Validar cantidad
-        if (isNaN(cantidad) || cantidad < 1) {
-            alert('Por favor seleccione una cantidad válida');
-            return;
         }
-    
-            // Crear objeto del producto
-            const producto = {
-                id: productId, // Usar el ID del producto
-                nombre: document.getElementById('nombreProducto').textContent, 
-                cantidad: cantidad,
-                precio: parseFloat(document.getElementById('precioProductos').textContent.replace('$', '').replace('.', '')),
-            };
-    
-            // Leer carrito actual desde localStorage
-            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    
-            // Verificar si el producto ya existe en el carrito
-            const indiceExistente = carrito.findIndex(
-                item => item.id === producto.id
-            );
-    
-            if (indiceExistente > -1) {
-                // Si ya existe, actualizar la cantidad
-                carrito[indiceExistente].cantidad += cantidad;
-            } else {
-                // Si no existe, añadirlo
-                carrito.push(producto);
-            }
-    
-            // Guardar carrito actualizado en localStorage
-            localStorage.setItem('carrito', JSON.stringify(carrito));
-    
-            // Confirmar al usuario
-            alert('Producto añadido al carrito');
-            window.location.href = 'cart.html';
-        });
-    }
 
-    // Función para actualizar el contador de productos en el carrito
-    function actualizarContadorCarrito() {
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    const contador = carrito.reduce((acc, item) => acc + item.cantidad, 0); // Sumar las cantidades de todos los productos
-    const cartCount = document.getElementById('cart-count');
-    
-    if (contador > 0) {
-        cartCount.textContent = `${contador} productos añadidos`; // Actualizar texto
-        cartCount.style.display = 'block'; // Asegurarse de que el contador sea visible
+        // Funcionalidad para el selector de cantidad
+        const entradaCantidad = document.getElementById('cantidad');
+        const botonDisminuir = document.getElementById('disminuye');
+        const botonAumentar = document.getElementById('aumenta');
+
+        if (entradaCantidad && botonDisminuir && botonAumentar) {
+            botonDisminuir.addEventListener('click', function() {
+                const valorActual = parseInt(entradaCantidad.value);
+                if (valorActual > 1) {
+                    entradaCantidad.value = valorActual - 1;
+                }
+            });
+
+            botonAumentar.addEventListener('click', function() {
+                const valorActual = parseInt(entradaCantidad.value);
+                entradaCantidad.value = valorActual + 1;
+            });
+
+            entradaCantidad.addEventListener('change', function() {
+                if (this.value < 1) {
+                    this.value = 1;
+                }
+            });
+        }
+    }
+    inicializarFuncionalidades();
     } else {
-        cartCount.style.display = 'none'; // Ocultar el contador si no hay productos
+        itemContenedor.innerHTML = "<p>Producto no encontrado</p>";
     }
 }
 
-// Llamar a la función cada vez que se carga la página para actualizar el contador
-document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const botonesAnadir = document.querySelectorAll(".btnAnadir");
-    const carritoIndicador = document.querySelector(".indicador_compra"); // Indicador del carrito
-
-    // Función para obtener el carrito del localStorage
-    function obtenerCarrito() {
-        return JSON.parse(localStorage.getItem("carrito")) || [];
+function mostrarError(mensaje) {
+    const errorSpan = document.querySelector('.errorTalla') || document.createElement('span');
+    errorSpan.className = 'errorTalla';
+    errorSpan.textContent = mensaje;    
+   
+    const selectorTalla = document.getElementById("selectorTalla");
+    if (!document.querySelector('.error-talla')) {
+        selectorTalla.parentNode.insertBefore(errorSpan, selectorTalla.nextSibling);
     }
+    
+    setTimeout(() => {
+        errorSpan.remove();
+    }, 3000);
+}
 
-    // Función para guardar el carrito en localStorage
-    function guardarCarrito(carrito) {
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-        actualizarIndicadorCarrito(); // Actualizar el número de productos en el icono
-    }
-
-    // Función para actualizar el número en el ícono del carrito
-    function actualizarIndicadorCarrito() {
-        const carrito = obtenerCarrito();
-        const totalProductos = carrito.reduce((acc, item) => acc + item.cantidad, 0);
-        carritoIndicador.textContent = totalProductos > 0 ? totalProductos : ""; // Muestra el número o lo oculta si es 0
-    }
-
-    // Función para añadir un producto al carrito
-    function anadirAlCarrito(event) {
-        const productoElement = event.target.closest(".productoCompleto");
-        const id = productoElement.getAttribute("data-id");
-        const nombre = productoElement.querySelector(".nombreProducto").textContent;
-        const precio = parseFloat(productoElement.querySelector(".precioProductos").textContent.replace("$", "").trim());
-        const imagen = productoElement.querySelector(".imagenProductos img").src;
-
-        let carrito = obtenerCarrito();
-
-        // Verificar si el producto ya está en el carrito
-        const productoExistente = carrito.find(item => item.id === id);
-        if (productoExistente) {
-            productoExistente.cantidad++;
-        } else {
-            carrito.push({ id, nombre, precio, imagen, cantidad: 1 });
-        }
-
-        guardarCarrito(carrito);
-
-    }
-
-    // Asignar eventos a los botones "Añadir"
-    botonesAnadir.forEach(boton => {
-        boton.addEventListener("click", anadirAlCarrito);
+function mostrarModal(mensaje, tipo = 'success') {
+    const modalOverlay = document.createElement('div');
+    modalOverlay.className = 'modalOverlay';
+    
+    const contenidoModal = `
+        <div class="contenidoModal">
+            <div class="iconoModal">${tipo === 'success' ? '✓' : '+'}</div>
+            <p class="textoModal">${mensaje}</p>
+        </div>
+    `;
+    
+    modalOverlay.innerHTML = contenidoModal;
+    document.body.appendChild(modalOverlay);
+    requestAnimationFrame(() => {
+        modalOverlay.classList.add('active');
     });
 
-    // Actualizar el indicador del carrito al cargar la página
-    actualizarIndicadorCarrito();
+    setTimeout(() => {
+        modalOverlay.classList.add('fade-out');
+        setTimeout(() => {
+            modalOverlay.remove();
+        }, 500);
+    }, 2000);
+}
+
+function mostrarModalAgregado(nombreProducto) {
+    mostrarModal(`¡${nombreProducto} ha sido agregado al carrito!`);
+}
+
+function mostrarModalProductoExistente(nombreProducto) {
+    mostrarModal(`Se ha actualizado la cantidad de ${nombreProducto} en el carrito`);
+}
+
+function agregarAlCarrito(productoId) {
+    const selectorTalla = document.getElementById("selectorTalla");
+    if (!selectorTalla.value) {
+        mostrarError("Por favor, selecciona una talla antes de añadir al carrito.");
+        return;
+    }
+    
+    const productoEnCarrito = carrito.find((p) => p.id === productoId);
+    if (productoEnCarrito) {
+        productoEnCarrito.cantidad += 1;
+        mostrarModalProductoExistente(productoEnCarrito.nombre);
+    } else {
+        const producto = productos.find((p) => p.id === productoId);
+        if (producto) {
+            producto.cantidad = 1;
+            producto.talla = selectorTalla.value;
+            carrito.push(producto);
+            mostrarModalAgregado(producto.nombre);
+        }
+    }
+    guardarCarrito();
+}
+
+function formatearPrecio(precio) {
+    return precio.toLocaleString("es-CO", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const paginaActual = window.location.pathname;
+    if (paginaActual.includes("Productos.html")) {
+        renderProductos();
+    }    
+    if (paginaActual.includes("Item.html")) {
+        renderItems();
+    }
+    cargarCarrito();
 });
+
+
