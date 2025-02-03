@@ -446,6 +446,7 @@ ul {
     justify-content: center;
     gap: 30px;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .texto_banner{
@@ -542,6 +543,74 @@ background-image: url(../Img/lauraoh.png);
     background-color: rgb(128, 128, 128, 0.8);
 }
 
+/* Media Queries para pantallas pequeñas */
+@media screen and (max-width: 992px) {
+    #contenedor_banner {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .texto_banner {
+        width: 90%;
+        margin: 20px auto;
+        padding: 30px;
+    }
+
+    .img_banner_uno, .img_banner_dos, .img_banner_tres {
+        width: 100%;
+        height: 300px;
+        background-attachment: scroll;
+        background-position: center;
+    }
+
+    .texto_seccion {
+        width: 90%;
+        padding: 0 20px;
+    }
+
+    #contenedor_estadistica {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contenedor_grafica {
+        width: 100%;
+        max-width: 380px;
+    }
+}
+
+/* Media Queries para móviles */
+@media screen and (max-width: 768px) {    
+    .texto_banner {
+        padding: 15px;
+    }
+
+    .img_banner_uno,
+    .img_banner_dos,
+    .img_banner_tres {
+        width: 100px;
+        height: 300px;
+    }
+
+
+    .caracteristicas {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .img_caracteristicas {
+        width: 100%;
+        height: 250px;
+    }
+
+    #contenedor_estadistica {
+        gap: 20px;
+    }
+
+    .contenedor_grafica {
+        width: 100%;
+    }
+}
 /**-------------------------------------------------------------------------------------------------------------------------------*/
 /** - ABOUT PAGE PERSONALIZED */
 /**-------------------------------------------------------------------------------------------------------------------------------*/
