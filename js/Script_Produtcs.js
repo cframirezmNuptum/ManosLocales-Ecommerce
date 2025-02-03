@@ -17,8 +17,8 @@ let productos = [
         id: 2,
         nombre: "Candongas Espinas",
         descripcion: "Plata ley 950",
-        imagen: "/imagenes/Products/Candongas espinas.jpg",
-        imagenPrincipal: "/imagenes/Products/Candongas_espinas.jpg",
+        imagen: "/imagenes/Products/Candongas_espinas.jpg",
+        imagenPrincipal: "/imagenes/Products/Candongas_espinas.jpeg",
         miniatura1: "/imagenes/Products/Candongas espinas1.jpg",
         miniatura2: "/imagenes/Products/Candongas_espinas.jpg",
         miniatura3: "/imagenes/Products/Candongas espinas1.jpg",
@@ -224,6 +224,11 @@ function renderProductos() {
         productoCompleto.innerHTML = tarjetaProductos; 
         seccionProductos.appendChild(productoCompleto); 
     });
+
+    document.querySelectorAll(".btnAnadir").forEach(boton => {
+        boton.addEventListener("click", agregarAlCarrito);
+    });
+    
 }
 
 function renderItems() {
@@ -340,6 +345,10 @@ function renderItems() {
     } else {
         itemContenedor.innerHTML = "<p>Producto no encontrado</p>";
     }
+    document.querySelectorAll(".btnAnadir").forEach(boton => {
+        boton.addEventListener("click", agregarAlCarrito);
+    });
+    
 }
 
 function mostrarError(mensaje) {
