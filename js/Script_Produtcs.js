@@ -17,7 +17,7 @@ let productos = [
         id: 2,
         nombre: "Candongas Espinas",
         descripcion: "Plata ley 950",
-        imagen: "/imagenes/Products/Candongas espinas.jpg",
+        imagen: "/imagenes/Products/Candongas espinas1.jpg",
         imagenPrincipal: "/imagenes/Products/Candongas_espinas.jpg",
         miniatura1: "/imagenes/Products/Candongas espinas1.jpg",
         miniatura2: "/imagenes/Products/Candongas_espinas.jpg",
@@ -337,24 +337,32 @@ function renderItems() {
         }
     }
     inicializarFuncionalidades();
-    } else {
-        itemContenedor.innerHTML = "<p>Producto no encontrado</p>";
     }
 }
 
-function mostrarError(mensaje) {
-    const errorSpan = document.querySelector('.errorTalla') || document.createElement('span');
-    errorSpan.className = 'errorTalla';
-    errorSpan.textContent = mensaje;    
-   
-    const selectorTalla = document.getElementById("selectorTalla");
-    if (!document.querySelector('.error-talla')) {
-        selectorTalla.parentNode.insertBefore(errorSpan, selectorTalla.nextSibling);
-    }
+function mostrarModalError(mensaje, tipo = 'error') {
+    const modalOverlay = document.createElement('div');
+    modalOverlay.className = 'modalOverlay';
     
+    const contenidoModal = `
+        <div class="contenidoModalError">
+            <div class="iconoModalError">${tipo === 'error' ? '⚠️' : '+'}</div>
+            <p class="textoModalError">${mensaje}</p>
+        </div>
+    `;
+    
+    modalOverlay.innerHTML = contenidoModal;
+    document.body.appendChild(modalOverlay);
+    requestAnimationFrame(() => {
+        modalOverlay.classList.add('active');
+    });
+
     setTimeout(() => {
-        errorSpan.remove();
-    }, 3000);
+        modalOverlay.classList.add('fade-out');
+        setTimeout(() => {
+            modalOverlay.remove();
+        }, 500);
+    }, 2000);
 }
 
 function mostrarModal(mensaje, tipo = 'success') {
@@ -391,26 +399,34 @@ function mostrarModalProductoExistente(nombreProducto) {
 }
 
 function agregarAlCarrito(productoId) {
-    const selectorTalla = document.getElementById("selectorTalla");
-    if (!selectorTalla.value) {
-        mostrarError("Por favor, selecciona una talla antes de añadir al carrito.");
+    const selectorTalla = document.querySelector(".selectorTalla");
+    const tallaSeleccionada = selectorTalla ? selectorTalla.value : null;
+
+    if (!tallaSeleccionada) {
+        mostrarModalError("Por favor, selecciona una talla antes de añadir al carrito.");
         return;
     }
     
-    const productoEnCarrito = carrito.find((p) => p.id === productoId);
-    if (productoEnCarrito) {
-        productoEnCarrito.cantidad += 1;
-        mostrarModalProductoExistente(productoEnCarrito.nombre);
-    } else {
-        const producto = productos.find((p) => p.id === productoId);
-        if (producto) {
-            producto.cantidad = 1;
-            producto.talla = selectorTalla.value;
-            carrito.push(producto);
-            mostrarModalAgregado(producto.nombre);
+    const producto = productos.find((p) => p.id === productoId);
+    if (producto) {
+        const productoEnCarrito = {
+            id: producto.id,
+            nombre: producto.nombre,
+            precio: producto.precio,
+            imagen: producto.imagen,
+            cantidad: 1,
+            talla: tallaSeleccionada,
+        };
+
+        // Se llama a la función del carrito
+
+        if (typeof agregarProductoAlCarrito === "function") {
+            agregarProductoAlCarrito(productoEnCarrito);
         }
+
+        mostrarModalAgregado(producto.nombre);
     }
-    guardarCarrito();
+    
 }
 
 function formatearPrecio(precio) {
