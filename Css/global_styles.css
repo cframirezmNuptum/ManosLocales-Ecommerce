@@ -1006,8 +1006,9 @@ background-image: url(../Img/lauraoh.png);
    background-color: #e6b17e;
 }
 
-.btnVer, .btnAnadir {
-    background-color: #0F6566;
+.btnVer{
+    background-color: #e6b17e;
+    color: #000000;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
@@ -1015,8 +1016,9 @@ background-image: url(../Img/lauraoh.png);
     width: 130px;
 }
 
-.btnVer:hover, .btnAnadir:hover {
-    background-color: #e6b17e;
+.btnVer:hover{
+    background-color: #0F6466;
+    color: #ffffff;
 }
 
 /* Fin estilos botones*/
@@ -1809,7 +1811,7 @@ h1, h2 {
 
 .btnRegistro:hover {
     background-color: #D8B08C;
-    color: #0F6566;
+    color: #ffffff;
 }
 
 .btnRedirigirIS:hover {

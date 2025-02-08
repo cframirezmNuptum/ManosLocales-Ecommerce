@@ -207,9 +207,8 @@ function renderProductos() {
                         <img src="${producto.imagen}" alt="${producto.nombre}">
                         <div class="imgOverlay">
                             <a href="Item.html?id=${producto.id}">
-                                <button class="btnVer">Ver</button>
-                            </a>      
-                            <button class="btnAnadir" onclick="agregarAlCarrito(${producto.id})">Añadir</button>
+                                <button class="btnVer">Ver producto</button>
+                            </a>
                         </div>
                     </div>
                 </div>
