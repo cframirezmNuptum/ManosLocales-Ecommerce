@@ -564,7 +564,9 @@ body{
         }
 
         .product-info {
-            flex: 1;
+            display: flex;
+            justify-content: space-between; /* Distribuye los elementos en la línea */
+            align-items: center; /* Alinea los elementos verticalmente */
         }
 
         .product-title {
@@ -579,8 +581,8 @@ body{
 
         .quantity-controls {
             display: flex;
-            align-items: center;
             gap: 1rem;
+            justify-content: flex-end;
         }
 
         .quantity-btn {
@@ -598,7 +600,6 @@ body{
             width: 50px;
             text-align: center;
             border: 1px solid #ddd;
-            padding: 0.3rem;
         }
 
         .product-price {
@@ -615,6 +616,28 @@ body{
             font-weight: bold;
             gap: 1rem;
         }
+
+        /* Estilos para el botón de eliminar */
+.btnEliminar {
+    background-color: transparent;
+    border: none;
+    color: #e0c4a6;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btnEliminar i {
+    font-size: 20px;
+}
+
+/* Hover para darle un toque visual */
+.btnEliminar:hover {
+    color: #c9302c;
+}
+
 
         .checkout-btn2 {
             display: block;
