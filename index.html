@@ -7,6 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./Css/global_styles.css">
     <link rel="icon" href="./Img/Favicon_ManosLocales.png">
+    <link rel="stylesheet" href="./Css/menu_hamburguesa.css">
     <title> Manos Locales - Home</title>
 </head>
 <body>
@@ -29,29 +30,16 @@
         <div class="contenedor_carritoCompras">
             <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
         </div>
-        <!--& COMPRAS EN EL CARRITO-->
-        <div id="carrito-flotante" class="carrito oculto">
-            <div class="carrito-header">
-                <h2>Mis Productos</h2>
-                <button id="cerrar-carrito" class="cerrar">✖</button>
-            </div>
-            <div class="carrito-contenido">
-                <span class="producto_agregado"></span>
-                <p>No hay productos en el carrito.</p>
-            </div>
-            <div class="carrito-footer">
-                <a href="./cart.html"><button class="ver-carrito">Ver carrito completo</button></a>
-            </div>
+        <div class="menu_hamburguesa">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
         </div>
     </header>
 
     <header id="contenedor_banner">
-        <!--div class="texto_banner">
-            <h1 class="titulo_banner">Bienvenido a Manos Locales</h1>
-            <p class="parrafo_banner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi labore aspernatur officia necessitatibus magnam tenetur maiores eveniet enim aperiam, perferendis sunt fuga magni ratione nam nisi a ut animi sapiente?</p>
-        </div-->
         <div class="texto_banner">
-            <Manos class="h1-2">Bienvenido a <br/><b>Manos Locales</b></h2>
+            <h2 class="h1-2">Bienvenido a <br/><b>Manos Locales</b></h2>
         </div>
         <div class="imagenes_banner">
             <div class="img_banner_uno"></div>
@@ -66,7 +54,6 @@
     
 <!--^ Seccion Quienes Somos-->
     <section id="contenedor_seccion">
-        <!--h2 class="titulo_seccion">¿Quiénes Somos?</h2-->
         <h3 class="h3 text-center">¿Quiénes Somos?</h3>
         <p class="texto_seccion">
             Somos una plataforma que conecta a artesanos y productores locales con personas que valoran el trabajo hecho a mano. Creemos en el poder de las comunidades y en la importancia de preservar sus tradiciones y cultura. Nuestro compromiso es apoyar a los talentos locales, impulsando sus economías y promoviendo el consumo consciente. A través de nuestra web, facilitamos el acceso a productos únicos, hechos con pasión y dedicación.
@@ -94,17 +81,18 @@
 
 <!--^Nuestras Estadisticas-->
     <section id="contenedor_estadistica">
-        <div class="contenido_estadistica">
-            <h3>Nuestras estadísticas</h3>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div class="grafica">
+            <h3 class="titulo_cont_estadistica">Nuestras estadísticas</h3>
+            <canvas id="miGrafica" width="400" height="300"></canvas>
         </div>
-        <div class="contenedor_grafica">
-            <img src="./Img/Estadistica.svg" alt="imagen estadistica">
+        <div class="contenedor_imgEstadistica">
+            <h3 class="titulo_cont_imgEstadistica">¿Por qué somos la mejor herramienta</h3>
+            <img class="imagen_estadistica" src="./Img/Estadistica.svg" alt="imagen estadistica">
+            <ol>
+                <li>Somos la plataforma más visitada por usuarios en Colombia.</li>
+                <li>Segmentamos a posibles clientes según los productos de su interés.</li>
+                <li>Plataforma fácil de navegar.</li>
+            </ol>
         </div>
     </section>
 
@@ -163,6 +151,8 @@
     </footer>
 
     <script src="./index.js"></script>
-    <script src="./js/carrito_lateral.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/graficas_estadistica.js"></script>
+    <script src="./js/script_menuHamburguesa.js"></script>
 </body>
 </html>

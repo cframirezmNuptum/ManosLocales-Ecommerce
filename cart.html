@@ -45,21 +45,26 @@
                 <p class="text-center">Los mejores productos realizados por manos locales para ti</p>
             </div>
         </div>
+    
+        <!-- Contenedor para el contador de productos (cart-count) -->
+        <div id="contador-carrito" style="display: flex; justify-content: flex-start; margin-bottom: 20px;">
+            <span id="cart-count" class="indicador_compra" style="display: none; font-weight: bold;"></span> 
+        </div>
+    
+        <!-- Contenedor para los productos del carrito -->
+        <div id="cart-items">
+            <!-- Products will be dynamically added here -->
+        </div>
         
-
-                    <div id="cart-items">
-                        <!-- Products will be dynamically added here -->
-                    </div>
-                
-                    <div class="cart-total">
-                        <span>TOTAL:</span>
-                        <span id="total-amount">$ 0.000</span>
-                    </div>
-                
-                    <button class="checkout-btn2">Proceder al checkout</button>
-                
-                
+        <!-- Contenedor para el total del carrito -->
+        <div class="cart-total" style="text-align: center; margin-top: 20px;">
+            <span>TOTAL:</span>
+            <span id="total-amount">$ 0.000</span>
+        </div>
+                    
+        <button class="checkout-btn2" style="display: block; margin: 20px auto;">Proceder al checkout</button>
     </main>
+    
 
 
     <!--FOOTER-->
@@ -117,6 +122,5 @@
     </footer>
 
     <script src="./js/cart.js" defer></script>
-    <script src="./js/carrito_lateral.js"></script>
 </body>
 </html>
