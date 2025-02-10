@@ -54,6 +54,12 @@ body {
     background-color: #D8B08C;
 }
 
+@media screen and (max-width: 499px){
+    .h1-2{
+        text-align: center;
+    }
+}
+
 .h3.text-center {
     font-size: 32px;
     line-height: 28px;
@@ -101,6 +107,7 @@ a:hover {
     flex-direction: row;
     justify-content: space-around;
     position: fixed;
+    align-items: center;
     top: 0;
     left: 0;
     width: 100%;
@@ -170,59 +177,6 @@ a:hover {
 
 .logo_carro_compras{
     width: 50px;
-    cursor: pointer;
-}
-
-.indicador_compra{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    position: relative;
-    top: -20px;
-    background-color: rgb(109, 198, 200);
-    cursor: pointer;
-}
-
-/* FLOATING CART DATA */
-#carrito-flotante {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 100%;
-    background-color: rgb(109, 198, 200); 
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-    transform: translateX(100%); /* Animación ocultar a la derecha*/
-}
-
-#carrito-flotante.mostrar {
-    transform: translateX(0);
-}
-
-.carrito-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid #555;
-    background-color: rgb(12, 131, 133);
-}
-
-.carrito-header h2 {
-    margin: 0;
-    font-size: 18px;
-}
-
-.cerrar {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 20px;
     cursor: pointer;
 }
 
@@ -446,6 +400,7 @@ ul {
     justify-content: center;
     gap: 30px;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .texto_banner{
@@ -460,26 +415,276 @@ ul {
     margin-right: 50px;
 }
 
-.img_banner_uno, .img_banner_dos, .img_banner_tres {
-    background-attachment: fixed;
+.img_banner_uno{
+    background-image: url(../Img/lauraoh.png);
     background-size: contain;
     background-repeat: none;
-    height: 510px;
+    background-position: 0 20px;
+    background-attachment: fixed;
+    height: 420px;
     width: 120px;
-}
-
-.img_banner_uno{
-background-image: url(../Img/lauraoh.png);
 }
 
 .img_banner_dos{
     background-image: url(../Img/vacilao.png);
+    background-size: contain;
+    background-repeat: none;
     background-position: center top;
+    background-attachment: fixed;
+    height: 460px;
+    width: 120px;
 }
 
 .img_banner_tres{
     background-image: url(../Img/Antonella_dos.jpeg);
-    background-position: -10px;
+    background-size: contain;
+    background-repeat: none;
+    background-position: left bottom;
+    background-attachment: fixed;
+    height: 510px;
+    width: 120px;
+}
+
+/*! INICIO MEDIA QUERY BANNER*/
+
+/*@media screen and (max-width: 1600px){
+    .img_banner_uno{
+        background-size: auto;
+        background-position: center;
+    }
+
+    .img_banner_dos{
+        background-size: auto;
+        background-position: center;
+    }
+
+    .img_banner_tres{
+        background-size: auto;
+        background-position: center;
+    }
+}*/
+
+@media screen and (max-width: 1280px){
+    .img_banner_uno{
+        background-size: contain;
+        background-position: 110px ;
+    }
+
+    .img_banner_dos{
+        background-size: contain;
+        background-position: -110px;
+    }
+
+    .img_banner_tres{
+        background-size: contain;
+        background-position: 210px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .img_banner_uno{
+        background-size: contain;
+        background-position: 120px 40px;
+    }
+
+    .img_banner_dos{
+        background-size: contain;
+        background-position: -10px;
+    }
+
+    .img_banner_tres{
+        background-size: contain;
+        background-position: 270px 20px;
+    }
+}
+
+@media screen and (max-width: 986px){
+    .img_banner_uno{
+        background-size: contain;
+        background-position: -90px 40px;
+    }
+
+    .img_banner_dos{
+        background-position: -80px;
+    }
+
+    .img_banner_tres{
+        background-position: -60px 20px;
+    }
+}
+
+@media screen and (max-width: 978px){
+    .img_banner_uno{
+        background-size: contain;
+        background-position: -30px 40px;
+    }
+
+    .img_banner_dos{
+        background-position: -40px;
+    }
+
+    .img_banner_tres{
+        background-position: -10px 20px;
+    }
+}
+
+@media screen and (max-width: 860px){
+    .img_banner_uno{
+        background-size: contain;
+        background-position: center;
+    }
+
+    .img_banner_dos{
+        background-position: center;
+    }
+
+    .img_banner_tres{
+        background-position: center;
+    }
+}
+
+@media screen and (max-width: 860px){
+    .img_banner_uno{
+        background-size: auto;
+        background-position: -60px 95px;
+    }
+
+    .img_banner_dos{
+        background-size: contain;
+        background-position: -100px -200px;
+    }
+
+    .img_banner_tres{
+        background-size: auto;
+        background-position: -180px 10px;
+    }
+}
+
+@media screen and (max-width: 838px){
+    .img_banner_uno{
+        background-size: contain;
+        background-position: 10px 40px;
+    }
+
+    .img_banner_dos{
+        background-position: -40px;
+    }
+
+    .img_banner_tres{
+        background-position: -100px 20px;
+    }
+}
+
+@media screen and (max-width: 822px){
+    .img_banner_uno{
+        background-size: auto;
+        background-position: -50px 50px;
+    }
+
+    .img_banner_dos{
+        background-size: contain;
+        background-position: -50px -160px;
+    }
+
+    .img_banner_tres{
+        background-size: auto;
+        background-position: -210px 0px;
+    }
+}
+
+@media screen and (max-width: 769px){
+    #contenedor_banner{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    .texto_banner{
+        grid-column: 2 / 3;
+    }
+
+    .imagenes_banner{
+        grid-row: 2/4;
+        display: grid;
+        justify-content: center;
+    }
+
+    .img_banner_uno{
+        width: 200px;
+        background-size: contain;
+        background-position: -70px 160px;
+    }
+    .img_banner_dos{
+        width: 200px;
+        background-size: auto;
+        background-position: -60px -200px;
+    }
+    .img_banner_tres{
+        width: 200px;
+        background-size: auto;
+        background-position: -250px 160px;
+    }
+}
+
+@media screen and (max-width: 541px) and (min-width:501px){
+    #contenedor_banner{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    .texto_banner{
+        grid-column: 1 / 3;
+        justify-content: center;
+    }
+
+    .imagenes_banner{
+        grid-row: 2/ 3;
+        display: grid;
+        justify-content: center;
+    }
+
+    .img_banner_uno{
+        width: 150px;
+        background-size: contain;
+        background-position: -70px 160px;
+    }
+    .img_banner_dos{
+        width: 150px;
+        background-size: auto;
+        background-position: -100px -500px;
+    }
+    .img_banner_tres{
+        width: 150px;
+        background-size: contain;
+        background-position: 250px 160px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    #contenedor_banner{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        margin-left: 10px;
+    }
+
+    .img_banner_uno{
+        background-size: auto;
+        background-position: -10px 100px;
+    }
+
+    .img_banner_dos{
+        background-size: contain;
+        background-position: 20px;
+    }
+
+    .img_banner_tres{
+        background-size: auto;
+        background-position: -20px 90px;
+    }
 }
 
 /*SECCION QUIENES SOMOS*/
@@ -493,7 +698,7 @@ background-image: url(../Img/lauraoh.png);
 }
 
 .texto_seccion{
-    width: 680px;
+    width: 70vw;
     text-align: center;
 }
 
@@ -526,20 +731,74 @@ background-image: url(../Img/lauraoh.png);
     text-align: center;
 }
 
+@media screen and (max-width: 500px){
+    #contenedor_seccion{
+        text-align: center;
+    }
+}
+
 #contenedor_estadistica{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
-    padding: 40px;
-    gap: 30px;
-    margin-top: 30px;
-    margin-bottom: 100px;
+    padding: 10px;
+    margin-top: 60px;
+    margin-bottom: 80px;
 }
 
-.contenedor_grafica{
-    width: 380px;
-    background-color: rgb(128, 128, 128, 0.8);
+.titulo_cont_estadistica{
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.contenedor_imgEstadistica{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+}
+
+.titulo_cont_imgEstadistica{
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.imagen_estadistica{
+    width: 180px;
+}
+
+/*! MEDIA QUERY ESTADISTICA*/
+@media screen and (max-width: 1280px) {
+    .grafica{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 942px) {
+    #contenedor_estadistica{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .grafica{
+        width: 70vw;
+    }
+
+    .contenedor_imgEstadistica{
+        margin-top: 90px;
+        width: 30px;
+    }
+
+    .titulo_cont_imgEstadistica{
+        width: 70vw;
+    }
+
+    .contenedor_imgEstadistica ol{
+        width: 70vw;
+    }
 }
 
 /**-------------------------------------------------------------------------------------------------------------------------------*/
