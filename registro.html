@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="./Css/global_styles.css">
+</head>
+<body id="IR">
+    <div class="contenedorRegistro">
+        <div class="contenedorBienvenido">
+            <h2>¡Bienvenido!</h2>
+            <p>¿Ya tienes una cuenta?</p> <br>
+            <button class="btnRedirigirIS" onclick="window.location.href='inicio-sesion.html'">Inicia sesión</button>
+        </div>
+        <div class="volverInicioR">
+            <a href="index.html">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+                Volver a inicio
+            </a>
+        </div>        
+        <div class="contFormularioRegistro">
+            <h1>Regístrate</h1>            
+            <p class="subtitulo">Ingresa tus datos para el registro</p>
+            <form id="formularioRegist" novalidate>
+                <div class="inputRegistro">
+                    <div class="inputContenedor">
+                        <i class="usuario"></i>                                  
+                        <input type="text" id="nombre" placeholder="Nombre" novalidate>
+                        <ion-icon name="people-outline"></ion-icon>
+                    </div>
+                    <span class="errorNombre"></span>
+                </div>
+                <div class="inputRegistro">
+                    <div class="inputContenedor">
+                        <i class="usuario"></i>
+                        <input type="text" id="apellido" placeholder="Apellido" novalidate>
+                        <ion-icon name="people-outline"></ion-icon>
+                    </div>
+                    <span class="errorApellido"></span>
+                </div>
+                <div class="inputRegistro">
+                    <div class="inputContenedor">
+                        <i class="telefono"></i>
+                        <input type="tel" id="telefono" placeholder="Número de teléfono" novalidate>                    
+                        <ion-icon name="call-outline"></ion-icon>
+                    </div>
+                    <span class="errorTelefono"></span>
+                </div>
+                <div class="inputRegistro">
+                    <div class="inputContenedor">
+                        <i class="correo"></i>                    
+                        <input type="email" id="email" placeholder="Email" novalidate>
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </div>
+                    <span class="errorEmail"></span>
+                </div>
+                <div class="inputRegistro">
+                    <div class="inputContenedor">
+                        <i class="contraseña"></i>                    
+                        <input type="password" id="contraseña" placeholder="Contraseña" novalidate>
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </div>
+                    <span class="errorContraseña"></span>
+                </div>
+                <div class="inputRegistro">
+                    <div class="inputContenedor">
+                        <i class="confirmarContraseña"></i>                    
+                    <input type="password" id="confirmarContraseña" placeholder="Confirmar contraseña" novalidate>
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    </div>                    
+                    <span class="errorConfirmarContraseña"></span>
+                </div>
+                <button type="submit" class="btnRegistro">REGISTRARSE</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="./js/script_registro.js"></script>
+</body>
+</html>

@@ -3,50 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Css/estilo_home.css">
-    
+    <!--FontAwesome-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Css/global_styles.css">
     <link rel="icon" href="./Img/Favicon_ManosLocales.png">
-    <title>Home</title>
+    <link rel="stylesheet" href="./Css/menu_hamburguesa.css">
+    <title> Manos Locales - Home</title>
 </head>
 <body>
 
 <!--^ Cabecera y Banner del home -->
-<header id="contenedor_cabecera">
-    <div class="contenedor_logo">
-        <a href="./index.html"><img class="logo_header" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
-    </div>
+    <header id="contenedor_cabecera">
+        <div class="contenedor_logo">
+            <a href="./index.html"><img class="logo_header" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
+        </div>
 
-    <nav class="contenedor_nav">
-        <ul class="contenedor_menu">
-            <li class="menu_navegacion"><a href="./index.html">Inicio</a></li>
-            <li class="menu_navegacion"><a href="./about.html">Acerca de Nosotros</a></li>
-            <li class="menu_navegacion"><a href="./Productos.html">Productos</a></li>
-            <li class="menu_navegacion"><a href="./Contact us.html">Contáctanos</a></li>
-        </ul>
-    </nav>
-    <div class="contenedor_carritoCompras">
+        <nav class="contenedor_nav">
+            <ul class="contenedor_menu">
+                <li class="menu_navegacion"><a href="./index.html">Inicio</a></li>
+                <li class="menu_navegacion"><a href="./about.html">Acerca de Nosotros</a></li>
+                <li class="menu_navegacion"><a href="./Productos.html">Productos</a></li>
+                <li class="menu_navegacion"><a href="./Contact us.html">Contáctanos</a></li>
+                <li class="menu_navegacion"><a href="./inicio-sesion.html">Ingreso</a></li>
+            </ul>
+        </nav>
+        <div class="contenedor_carritoCompras">
             <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
-            <span class="indicador_compra"></span>
-    </div>
-    <!--& COMPRAS EN EL CARRITO-->
-    <div id="carrito-flotante" class="carrito oculto">
-        <div class="carrito-header">
-            <h2>Mis Productos</h2>
-            <button id="cerrar-carrito" class="cerrar">✖</button>
         </div>
-        <div class="carrito-contenido">
-            <span class="producto_agregado"></span>
+        <div class="menu_hamburguesa">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
         </div>
-        <div class="carrito-footer">
-            <a href="./cart.html"><button class="ver-carrito">Ver carrito completo</button></a>
-        </div>
-    </div>
-</header>
+    </header>
 
     <header id="contenedor_banner">
         <div class="texto_banner">
-            <h1 class="titulo_banner">Bienvenido a Manos Locales</h1>
-            <p class="parrafo_banner">Conectamos tradición y modernidad. Apoyamos lo hecho a mano.</p>
+            <h2 class="h1-2">Bienvenido a <br/><b>Manos Locales</b></h2>
         </div>
         <div class="imagenes_banner">
             <div class="img_banner_uno"></div>
@@ -61,44 +54,45 @@
     
 <!--^ Seccion Quienes Somos-->
     <section id="contenedor_seccion">
-        <h2 class="titulo_seccion">¿Quiénes Somos?</h2>
-        <p class="texto_seccion">Somos una plataforma dedicada a conectar a artesanos y productores locales con personas que valoran la autenticidad y el trabajo artesanal. Nuestro propósito es preservar y celebrar las tradiciones culturales, reconociendo el talento y la dedicación de las comunidades que las hacen posibles.<br><br>
-
-        Estamos comprometidos con el fortalecimiento de las economías locales, promoviendo un consumo consciente que respalde el comercio justo y sostenible. A través de nuestra plataforma, ofrecemos acceso a productos únicos, elaborados con pasión, esmero y respeto por la tradición.</p>
+        <h3 class="h3 text-center">¿Quiénes Somos?</h3>
+        <p class="texto_seccion">
+            Somos una plataforma que conecta a artesanos y productores locales con personas que valoran el trabajo hecho a mano. Creemos en el poder de las comunidades y en la importancia de preservar sus tradiciones y cultura. Nuestro compromiso es apoyar a los talentos locales, impulsando sus economías y promoviendo el consumo consciente. A través de nuestra web, facilitamos el acceso a productos únicos, hechos con pasión y dedicación.
+        </p>
     </section>
 
 <!--^ Nos caracterizamos por -->
     <main id="contenedor_caracteristica">
         <div class="caracteristicas">
             <img class="img_caracteristicas" src="./Img/MedioAmbiente.jpg" alt="Imagen Aveja">
-            <h3 class="titulo_caracteristica">Respeto por el medio ambiente</h3>
+            <h3 class="h2">Respeto por el medio ambiente</h3>
             <p class="parrafo_caracteristica">Priorizamos prácticas sostenibles, promoviendo productos que respetan el entorno natural. Cada compra impulsa un modelo de producción responsable, apoyando a emprendedores comprometidos con el cuidado del planeta.</p>
         </div>
         <div class="caracteristicas">
             <img class="img_caracteristicas" src="./Img/DiseñosCreativos.jpeg" alt="Imagen Creatividad">
-            <h3 class="titulo_caracteristica">Diseños creativos y autenticos</h3>
+            <h3 class="h2">Diseños creativos y autenticos</h3>
             <p class="parrafo_caracteristica">Celebramos la creatividad de los emprendedores locales, ofreciendo productos únicos que reflejan innovación, tradición y autenticidad. Aquí encontrarás piezas que cuentan historias y destacan por su originalidad.</p>
         </div>
         <div class="caracteristicas">
             <img class="img_caracteristicas" src="./Img/TrabajoArtesanal.jpeg" alt="Imagen Artesanal">
-            <h3 class="titulo_caracteristica">Trabajo artesanal</h3>
+            <h3 class="h2">Trabajo artesanal</h3>
             <p class="parrafo_caracteristica">Valoramos el arte detrás de cada producto hecho a mano. Nuestro enfoque está en resaltar la dedicación y el talento de los artesanos colombianos, honrando técnicas tradicionales que preservan nuestra identidad cultural.</p>
         </div>
     </main>
 
 <!--^Nuestras Estadisticas-->
     <section id="contenedor_estadistica">
-        <div class="contenido_estadistica">
-            <h3>Nuestras estadísticas</h3>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div class="grafica">
+            <h3 class="titulo_cont_estadistica">Nuestras estadísticas</h3>
+            <canvas id="miGrafica" width="400" height="300"></canvas>
         </div>
-        <div class="contenedor_grafica">
-            <img src="./Img/Estadistica.svg" alt="imagen estadistica">
+        <div class="contenedor_imgEstadistica">
+            <h3 class="titulo_cont_imgEstadistica">¿Por qué somos la mejor herramienta</h3>
+            <img class="imagen_estadistica" src="./Img/Estadistica.svg" alt="imagen estadistica">
+            <ol>
+                <li>Somos la plataforma más visitada por usuarios en Colombia.</li>
+                <li>Segmentamos a posibles clientes según los productos de su interés.</li>
+                <li>Plataforma fácil de navegar.</li>
+            </ol>
         </div>
     </section>
 
@@ -106,13 +100,13 @@
     <footer id="contenedor_footer">
         <div class="footer_descripcion">
             <h3 class="titulos_footer">Manos Locales:</h3>
-            <p class="texto_footer">Conectamos talento y creatividad para lograr grandes proyectos.</p>
-            <p class="texto_footer">Únete a nuestra comunidad.</p>
+            <p class="h2 texto_footer">Conectamos talento y creatividad para lograr grandes proyectos.</p>
+            <p class="h2 texto_footer">Únete a nuestra comunidad.</p>
         </div>
 
         <div class="footer_direccion">
             <h3 class="titulos_footer">Dirección:</h3>
-            <a class="enlace_direccion_footer" href="https://www.google.com/maps/@4.5505119,-73.4058557,8.5z?hl=es&entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Cra. 6 #15-88, Santa Fé, Bogotá, Cundinamarca</a>
+            <a class="footer-link" href="https://www.google.com/maps/@4.5505119,-73.4058557,8.5z?hl=es&entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Cra. 6 #15-88, Santa Fé, Bogotá, Cundinamarca</a>
         </div>
 
         <div class="footer_logo">
@@ -123,10 +117,10 @@
             <h3 class="titulos_footer">Contáctanos</h3>
             <ul class="lista_contacto_footer">
                 <li>
-                    <p class="subtitulos_footer">Teléfono: <a class="enlace_contactanos" href="https://web.whatsapp.com/" target="_blank">+57 320567890</a></p>
+                    <p class="h2">Teléfono: <a class="footer-link" href="https://web.whatsapp.com/" target="_blank">+57 320567890</a></p>
                 </li>
                 <li>
-                    <p class="subtitulos_footer">Email: <a class="enlace_contactanos" href="https://web.whatsapp.com/" target="_blank">info@manoslocales.com</a></p>
+                    <p class="h2">Email: <a class="footer-link" href="https://web.whatsapp.com/" target="_blank">info@manoslocales.com</a></p>
                 </li>
             </ul>
         </div>
@@ -135,27 +129,30 @@
             <h3 class="titulos_footer">Redes Sociales</h3>
             <ul class="lista_redes_footer">
                 <li class="logos_redes_footer">
-                    <a href="https://www.instagram.com/manos_locales/   " target="_blank">
-                        <img src="./Img/logo Instagram.png"     alt="Logo Instagram">
+                    <a href="https://www.instagram.com/" target="_blank" class="footer-social-icon">
+                        <i class="fab fa-instagram"></i>
                     </a>
                 </li>
                 
                 <li class="logos_redes_footer">
-                    <a href="" target="_blank">
-                        <img src="./Img/Logo Facebook.png" alt="Logo Facebook">
+                    <a href="https://www.facebook.com/" target="_blank" class="footer-social-icon">
+                        <i class="fab fa-facebook"></i>
                     </a>
                 </li>
 
                 <li class="logos_redes_footer">
-                    <a href="" target="_blank">
-                        <img src="./Img/Logo LinkedIn.png" alt="Logo Linkedin">
+                    <a href="https://www.linkedin.com/" target="_blank" class="footer-social-icon">
+                        <i class="fab fa-linkedin"></i>
                     </a>
-                </li> 
+                </li>
+                
             </ul>
         </div>
     </footer>
 
     <script src="./index.js"></script>
-    <script src="./js/carrito_lateral.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/graficas_estadistica.js"></script>
+    <script src="./js/script_menuHamburguesa.js"></script>
 </body>
 </html>

@@ -1,64 +1,63 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Obtener el carrito desde localStorage
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    const productosPedido = document.getElementById('productosPedido');
-    const totalPrecioPedido = document.getElementById('totalPrecioPedido');
-    const formularioEnvio = document.getElementById('formEnvio');
+document.getElementById("realizarCompra").addEventListener("click", function () {
+    let isValid = true;
 
-    // Función para actualizar el resumen del pedido
-    function actualizarResumenPedido() {
-        // Limpiar la tabla
-        productosPedido.innerHTML = '';
-        let total = 0;
-
-        carrito.forEach(producto => {
-            // Crear una fila por cada producto
-            const fila = document.createElement('tr');
-            fila.innerHTML = `
-                <td>${producto.nombre}</td>
-                <td>${producto.cantidad}</td>
-                <td>$${producto.precio}</td>
-                <td>$${(producto.precio * producto.cantidad).toFixed(2)}</td>
-            `;
-            productosPedido.appendChild(fila);
-
-            // Sumar el total
-            total += producto.precio * producto.cantidad;
-        });
-
-        // Actualizar el total de la compra
-        totalPrecioPedido.textContent = total.toFixed(2);
+    function showError(inputId, message) {
+        let inputField = document.getElementById(inputId);
+        let errorField = document.getElementById(inputId + "Error");
+        
+        if (!errorField) {
+            errorField = document.createElement("div");
+            errorField.id = inputId + "Error";
+            errorField.style.color = "red";
+            errorField.style.fontSize = "12px";
+            inputField.parentNode.appendChild(errorField);
+        }
+        
+        errorField.textContent = message;
     }
 
-    // Función para manejar la confirmación del pedido
-    formularioEnvio.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevenir el envío del formulario
-
-        // Obtener los datos del formulario
-        const nombre = document.getElementById('nombre').value;
-        const direccion = document.getElementById('direccion').value;
-        const telefono = document.getElementById('telefono').value;
-        const tarjeta = document.getElementById('tarjeta').value;
-        const fecha = document.getElementById('fecha').value;
-        const cvv = document.getElementById('cvv').value;
-
-        // Validar los datos (básicamente, asegurarse de que no estén vacíos)
-        if (!nombre || !direccion || !telefono || !tarjeta || !fecha || !cvv) {
-            alert('Por favor complete todos los campos');
-            return;
+    function clearError(inputId) {
+        let errorField = document.getElementById(inputId + "Error");
+        if (errorField) {
+            errorField.textContent = "";
         }
+    }
 
-        // Aquí podrías agregar la lógica para procesar el pago (esto es solo un ejemplo)
-        // Por ejemplo, podrías hacer una llamada a una API de pago
+    function validateField(inputId, regex, errorMessage) {
+        let value = document.getElementById(inputId).value.trim();
+        if (value === "") {
+            showError(inputId, "*Campo obligatorio");
+            isValid = false;
+        } else if (regex && !regex.test(value)) {
+            showError(inputId, errorMessage);
+            isValid = false;
+        } else {
+            clearError(inputId);
+        }
+    }
 
-        // Si todo está bien, limpiar el carrito y redirigir
-        localStorage.removeItem('carrito');
-        alert('¡Gracias por tu compra!');
+    validateField("nombre", /^[a-zA-ZÀ-ÿ\s]{2,}$/, "*Formato inválido");
+    validateField("apellido", /^[a-zA-ZÀ-ÿ\s]{2,}$/, "*Formato inválido");
+    validateField("email", /^[^\s@]+@[^\s@]+\.[^\s@]+$/, "*Correo electrónico inválido");
+    validateField("telefono", /^[0-9]{7,10}$/, "*Número de teléfono inválido");
+    validateField("direccion", null, "*Campo obligatorio");
+    validateField("departamento", null, "*Campo obligatorio");
+    validateField("ciudad", /^[a-zA-ZÀ-ÿ\s]{2,}$/, "*Formato inválido");
+    validateField("datosAdicionales", null, "*Campo obligatorio");
 
-        // Redirigir a una página de confirmación (puedes crear una página de "Gracias por tu compra")
-        window.location.href = 'thank_you.html'; // Cambia esto según tu estructura
-    });
-
-    // Inicializar el resumen del pedido
-    actualizarResumenPedido();
+    if (isValid) {
+        Swal.fire({
+            title: 'Éxito!',
+            text: 'Formulario enviado correctamente',
+            icon: 'success',
+            confirmButtonText: '¡Genial!'
+        });
+    } else {
+        Swal.fire({
+            title: 'Error',
+            text: 'Por favor, corrija los errores antes de continuar',
+            icon: 'error',
+            confirmButtonText: 'Entendido'
+        });
+    }
 });

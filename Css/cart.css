@@ -89,6 +89,7 @@ body{
     cursor: pointer;
 }
 
+
 /** DATOS CARRITO FLOTANTE*/
 #carrito-flotante {
     position: fixed;
@@ -154,6 +155,14 @@ body{
     border-radius: 5px;
 }
 /* FIN ESTILO HEADER*/
+
+.row {
+    display: flex;
+    justify-content: center; 
+    align-items: center;      
+    height: auto;             
+}
+
 
 .cart-page {
     position: relative;
@@ -433,3 +442,206 @@ body{
     color: #0F6466;
     background: #b3cfc9;
 }
+
+.error-message {
+    color: red;         /* Rojo */
+    font-size: 12px;    /* Tamaño pequeño */
+    margin-top: 5px;    /* Espaciado superior */
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.h1_title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cart-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    gap: 2rem;
+    color: #0F6466;
+}
+
+.product-image {
+    width: 150px;
+    height: 150px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-description {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #e0c4a6;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 0.3rem;
+}
+
+.product-price {
+    font-weight: bold;
+    min-width: 100px;
+    text-align: right;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-weight: bold;
+    gap: 1rem;
+    color: #0F6466;
+}
+
+
+
+.cart-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            gap: 2rem;
+        }
+
+        .product-image {
+            width: 150px;
+            height: 150px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: none;
+            background-color: #e0c4a6;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 0.3rem;
+        }
+
+        .product-price {
+            font-weight: bold;
+            min-width: 100px;
+            text-align: right;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 2rem;
+            padding: 1rem;
+            font-weight: bold;
+            gap: 1rem;
+        }
+
+        .checkout-btn2 {
+            display: block;
+            width: 200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #e0c4a6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .swal2-popup {
+            font-family: 'Monstserrat', sans-serif !important; /* Cambiar la fuente */
+            font-size: 18px !important; /* Cambiar el tamaño del texto */
+        }
+        
+        .swal2-title {
+            color: rgb(109, 198, 200) !important; /* Cambiar el color del título */
+        }
+        
+        .swal2-content {
+            color: #333333 !important; /* Cambiar el color del texto */
+        }
+        
+        .swal2-confirm {
+            background-color: #0F6466!important; /* Cambiar color de fondo del botón */
+            border-radius: 10px !important; /* Hacer el botón más redondeado */
+        }

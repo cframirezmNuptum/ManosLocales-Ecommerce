@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicio-sesion</title>
+    <link rel="stylesheet" href="./Css/global_styles.css">
+</head>
+<body id="IR">
+    <div class="contenedorRegistro">
+        <div class="contFormularioRegistro">
+            <h1>Iniciar Sesión</h1>
+            <p class="subtitulo">Ingresa con tu correo y contraseña</p>
+            <form id="contFormularioIS">
+                <div class="inputRegistro">
+                    <div class="inputContenedor">
+                        <i class="correo"></i>                    
+                        <input type="email" id="email" placeholder="Email" novalidate>
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </div>
+                    <span class="errorEmail"></span>
+                    <div class="inputContenedor">
+                        <i class="contraseña"></i>                    
+                        <input type="password" id="contraseña" placeholder="Contraseña" novalidate>
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </div>
+                    <span class="errorContraseña"></span>
+                </div>
+                <div class="enlaceBotonContainer">
+                    <a href="#" class="olvidarContraseña">¿Olvidaste tu contraseña?</a>
+                    <button type="submit" class="btnRegistro">INICIAR SESIÓN</button>
+                </div>              
+            </form>
+            <div class="volverInicio">
+                <a href="index.html">
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                    Volver a inicio
+                </a>
+            </div> 
+        </div>
+        <div class="contenedorBienvenidoIS">
+            <h2>¡Hola de nuevo!</h2>
+            <p>¿Aun no tienes una cuenta?</p> <br>
+            <button class="btnRedirigirIS" onclick="window.location.href='registro.html'">Registrarse</button>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="./js/script_registro.js"></script>
+</body>
+</html>

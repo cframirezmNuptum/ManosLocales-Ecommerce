@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact us</title>
-    <link href="Css/Styles_Contcts.css" rel="stylesheet" type="text/css" />
+    <!--FontAwesome-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Manos Locales - Contact us</title>
+    <link href="./Css/global_styles.css" rel="stylesheet" type="text/css" />
     <link rel="icon" href="./Img/Favicon_ManosLocales.png">
+    <!--Alert-->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.js"></script>
 </head>
-<body>
+<body class="pagina-contacto">
     <!--^ Cabecera y Banner del home -->
     <header id="contenedor_cabecera">
         <div class="contenedor_logo">
@@ -20,25 +25,11 @@
                 <li class="menu_navegacion"><a href="./about.html">Acerca de Nosotros</a></li>
                 <li class="menu_navegacion"><a href="./Productos.html">Productos</a></li>
                 <li class="menu_navegacion"><a href="./Contact us.html">Contáctanos</a></li>
+                <li class="menu_navegacion"><a href="./inicio-sesion.html">Ingreso</a></li>
             </ul>
         </nav>
         <div class="contenedor_carritoCompras">
-                <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
-                <span class="indicador_compra"></span>
-        </div>
-        <!--& COMPRAS EN EL CARRITO-->
-        <div id="carrito-flotante" class="carrito oculto">
-            <div class="carrito-header">
-                <h2>Mis Productos</h2>
-                <button id="cerrar-carrito" class="cerrar">✖</button>
-            </div>
-            <div class="carrito-contenido">
-                <span class="producto_agregado"></span>
-                <p>No hay productos en el carrito.</p>
-            </div>
-            <div class="carrito-footer">
-                <a href="./cart.html"><button class="ver-carrito">Ver carrito completo</button></a>
-            </div>
+            <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
         </div>
     </header>
 
@@ -47,75 +38,91 @@
     </section>
 
     <section class="form-section">
-        <h2>¡Habla con nosotros!</h2>
-        <p>¿Te gustaría ser parte de este increíble eCommerce y vender tus productos con nosotros? Llena el siguiente formulario y nos pondremos en contacto contigo lo antes posible. Recuerda, poner la descripción de tu negocio. <strong>¡Estamos emocionados de trabajar juntos! </strong></p>
+        <h1 class="h1-2">¡Habla con nosotros!</h1>
+        <p class="text-center">
+            ¿Te gustaría ser parte de este increíble eCommerce y vender tus productos con nosotros? Llena el siguiente formulario y nos pondremos en contacto contigo lo antes posible. Recuerda, poner la descripción de tu negocio. 
+            <strong>¡Estamos emocionados de trabajar juntos! </strong>
+        </p>
         
         <form id="contact-form" action="https://formspree.io/f/mvggyynn" method="POST">
             <div class="form-grid">
-                <input type="text" id="name" name="name" placeholder="Nombre" required>
-                <input type="tel" id="phone" name="phone" placeholder="Teléfono" required>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-                <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
+                <div>
+                    <input type="text" id="name" name="name" placeholder="Nombre" required>
+                    <div id="nameError" class="error-message"></div>
+                </div>
+                <div>
+                    <input type="tel" id="phone" name="phone" placeholder="Número de contacto" required>
+                    <div id="phoneError" class="error-message"></div>
+                </div>
+                <div>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <div id="emailError" class="error-message"></div>
+                </div>
+                <div class="message-container">
+                    <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
+                    <div id="messageError" class="error-message"></div>
+                </div>
             </div>
-            <button type="submit">Enviar</button>
+            <button id="btn-destacado" type="button" class="btn btn-custom-secondary">Enviar</button>
         </form>
+        
     </section>
 
-    <!--^Pie de Pagina-->
-    <footer id="contenedor_footer">
-        <div class="footer_descripcion">
-            <h3 class="titulos_footer">Manos Locales:</h3>
-            <p class="texto_footer">Conectamos talento y creatividad para lograr grandes proyectos.</p>
-            <p class="texto_footer">Únete a nuestra comunidad.</p>
-        </div>
+   <!--^Pie de Pagina-->
+   <footer id="contenedor_footer">
+    <div class="footer_descripcion">
+        <h3 class="titulos_footer">Manos Locales:</h3>
+        <p class="h2 texto_footer">Conectamos talento y creatividad para lograr grandes proyectos.</p>
+        <p class="h2 texto_footer">Únete a nuestra comunidad.</p>
+    </div>
 
-        <div class="footer_direccion">
-            <h3 class="titulos_footer">Dirección:</h3>
-            <a class="enlace_direccion_footer" href="https://www.google.com/maps/@4.5505119,-73.4058557,8.5z?hl=es&entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Cra. 6 #15-88, Santa Fé, Bogotá, Cundinamarca</a>
-        </div>
+    <div class="footer_direccion">
+        <h3 class="titulos_footer">Dirección:</h3>
+        <a class="footer-link" href="https://www.google.com/maps/@4.5505119,-73.4058557,8.5z?hl=es&entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Cra. 6 #15-88, Santa Fé, Bogotá, Cundinamarca</a>
+    </div>
 
-        <div class="footer_logo">
-            <a href="./index.html"><img class="logo_footer" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
-        </div>
+    <div class="footer_logo">
+        <a href="./index.html"><img class="logo_footer" src="./Img/Logo Manos Locales transparente.png" alt="Logo Manos Locales"></a>
+    </div>
 
-        <div class="footer_contactanos">
-            <h3 class="titulos_footer">Contáctanos</h3>
-            <ul class="lista_contacto_footer">
-                <li>
-                    <p class="subtitulos_footer">Teléfono: <a class="enlace_contactanos" href="https://web.whatsapp.com/" target="_blank">+57 320567890</a></p>
-                </li>
-                <li>
-                    <p class="subtitulos_footer">Email: <a class="enlace_contactanos" href="https://web.whatsapp.com/" target="_blank">info@manoslocales.com</a></p>
-                </li>
-            </ul>
-        </div>
+    <div class="footer_contactanos">
+        <h3 class="titulos_footer">Contáctanos</h3>
+        <ul class="lista_contacto_footer">
+            <li>
+                <p class="h2">Teléfono: <a class="footer-link" href="https://web.whatsapp.com/" target="_blank">+57 320567890</a></p>
+            </li>
+            <li>
+                <p class="h2">Email: <a class="footer-link" href="https://web.whatsapp.com/" target="_blank">info@manoslocales.com</a></p>
+            </li>
+        </ul>
+    </div>
 
-        <div class="footer_redes">
-            <h3 class="titulos_footer">Redes Sociales</h3>
-            <ul class="lista_redes_footer">
-                <li class="logos_redes_footer">
-                    <a href="https://www.instagram.com/manos_locales/   " target="_blank">
-                        <img src="./Img/logo Instagram.png"     alt="Logo Instagram">
-                    </a>
-                </li>
-                
-                <li class="logos_redes_footer">
-                    <a href="" target="_blank">
-                        <img src="./Img/Logo Facebook.png" alt="Logo Facebook">
-                    </a>
-                </li>
+    <div class="footer_redes">
+        <h3 class="titulos_footer">Redes Sociales</h3>
+        <ul class="lista_redes_footer">
+            <li class="logos_redes_footer">
+                <a href="https://www.instagram.com/" target="_blank" class="footer-social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            
+            <li class="logos_redes_footer">
+                <a href="https://www.facebook.com/" target="_blank" class="footer-social-icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </li>
 
-                <li class="logos_redes_footer">
-                    <a href="" target="_blank">
-                        <img src="./Img/Logo LinkedIn.png" alt="Logo Linkedin">
-                    </a>
-                </li> 
-            </ul>
-        </div>
-    </footer>
+            <li class="logos_redes_footer">
+                <a href="https://www.linkedin.com/" target="_blank" class="footer-social-icon">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</footer>
 
 
     <script src="js/contact.js"></script>
-    <script src="./js/carrito_lateral.js"></script>
 </body>
 </html>
