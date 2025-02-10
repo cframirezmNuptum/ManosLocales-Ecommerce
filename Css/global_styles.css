@@ -447,7 +447,7 @@ ul {
 
 /*! INICIO MEDIA QUERY BANNER*/
 
-@media screen and (max-width: 1600px){
+/*@media screen and (max-width: 1600px){
     .img_banner_uno{
         background-size: auto;
         background-position: center;
@@ -462,7 +462,7 @@ ul {
         background-size: auto;
         background-position: center;
     }
-}
+}*/
 
 @media screen and (max-width: 1280px){
     .img_banner_uno{
