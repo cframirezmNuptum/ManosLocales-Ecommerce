@@ -38,36 +38,20 @@
     <!--FIN HEADER-->
 
     <main class="main-container">
-        <!-- Aquí se renderizan los productos -->
-        <div class="row justify-content-center align-items-center">
-            <div class="col-12 text-center">
+            <div class="cart-container">
                 <h1 class="h1-2">Carrito de compras</h1>
-                <p class="text-center">Los mejores productos realizados por manos locales para ti</p>
+                <p class="descProductos">Los mejores productos realizados por manos locales para ti</p>
             </div>
         </div>
-    
-        <!-- Contenedor para el contador de productos (cart-count) -->
-        <div id="contador-carrito" style="display: flex; justify-content: flex-start; margin-bottom: 20px;">
-            <span id="cart-count" class="indicador_compra" style="display: none; font-weight: bold;"></span> 
+        <div id="listaCarrito" class="listaCarrito">
+            <div id="productItem" class="productItem"></div>
         </div>
-        
-          <!-- Contenedor para los productos del carrito -->
-        <div id="cart-items">
-            <!-- Los productos se agregarán dinámicamente aquí -->
-        </div>
-        
-        <!-- Total del carrito -->
         <div class="cart-total">
-            <span>TOTAL:</span>
-            <span id="total-amount">$ 0.00</span>
-        </div>
-        
-        <!-- Botón para proceder al checkout -->
-        <button class="checkout-btn2" style="display: block; margin: 20px auto;" id="btnCheckout" onclick="irACheckout()">Proceder al checkout</button>
-        
+            <span>TOTAL: $</span>
+            <span id="total-amount"></span>
+        </div>        
+        <button class="checkout-btn2" id="btnCheckout" onclick="irACheckout()">Proceder al checkout</button>
     </main>
-    
-
 
     <!--FOOTER-->
     <footer id="contenedor_footer">

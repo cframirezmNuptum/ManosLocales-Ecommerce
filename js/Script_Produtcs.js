@@ -184,7 +184,7 @@ let productos = [
 let carrito = [];
 
 function cargarCarrito() {
-    const carritoGuardado = localStorage.getItem(carrito);
+    const carritoGuardado = localStorage.getItem("carrito"); 
     carrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
 }
 
@@ -398,8 +398,10 @@ function mostrarModalProductoExistente(nombreProducto) {
 }
 
 function agregarAlCarrito(productoId) {
+    const cantidadIngreso = document.getElementById('cantidad');
+    const cantidad = parseInt(cantidadIngreso.value);
     const selectorTalla = document.querySelector(".selectorTalla");
-    const tallaSeleccionada = selectorTalla ? selectorTalla.value : null;
+    const tallaSeleccionada = selectorTalla.value;
 
     if (!tallaSeleccionada) {
         mostrarModalError("Por favor, selecciona una talla antes de añadir al carrito.");
@@ -413,7 +415,7 @@ function agregarAlCarrito(productoId) {
             nombre: producto.nombre,
             precio: producto.precio,
             imagen: producto.imagen,
-            cantidad: 1,
+            cantidad: cantidad,
             talla: tallaSeleccionada,
         };
 

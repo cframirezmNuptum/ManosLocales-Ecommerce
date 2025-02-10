@@ -3,16 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function agregarProductoAlCarrito(producto) {
         const existe = carrito.find(item => item.id === producto.id && item.talla === producto.talla);
-
+    
         if (existe) {
-            existe.cantidad++;
+            existe.cantidad += producto.cantidad; 
             mostrarModalProductoExistente(producto.nombre);
         } else {
-            producto.cantidad = 1;
             carrito.push(producto);
             mostrarModalAgregado(producto.nombre);
         }
-
+    
         localStorage.setItem('carrito', JSON.stringify(carrito));
         actualizarCarrito();
         actualizarContadorCarrito();
@@ -32,34 +31,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }*/
 
-    function actualizarCarrito() {
-        const listaCarrito = document.getElementById('cart-items');
-        if (!listaCarrito) return;
-        listaCarrito.innerHTML = '';
-
-        carrito.forEach(producto => {
-            const div = document.createElement('div');
-            div.classList.add('product-item');
-            div.innerHTML = `
-                <div class="product-image">
-                    <img src="${producto.imagen}" alt="${producto.nombre}" width="150" height="150">
-                </div>
-                <div class="product-info">
-                    <div class="product-title">${producto.nombre}</div>
-                    <div class="product-description">${producto.descripcion}</div>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn decrement-btn" data-id="${producto.id}" data-talla="${producto.talla}">-</button>
-                        <input class="quantity-input" type="text" value="${producto.cantidad}" readonly>
-                        <button class="quantity-btn increment-btn" data-id="${producto.id}" data-talla="${producto.talla}">+</button>
+        function actualizarCarrito() {
+            const listaCarrito = document.getElementById('listaCarrito');
+            if (!listaCarrito) return;
+            listaCarrito.innerHTML = '';
+        
+            carrito.forEach(producto => {
+                const productItem = document.createElement('div');
+                productItem.classList.add('productItem');
+        
+                productItem.innerHTML = `
+                    <div class="product-item-container">
+                        <div class="product-image">
+                            <img src="${producto.imagen}" alt="${producto.nombre}" width="150" height="150">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-title">${producto.nombre}</div>                            
+                            <div class="product-size">Talla: ${producto.talla}</div>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn decrement-btn" data-id="${producto.id}" data-talla="${producto.talla}">-</button>
+                                <input class="quantity-input" type="text" value="${producto.cantidad}" readonly>
+                                <button class="quantity-btn increment-btn" data-id="${producto.id}" data-talla="${producto.talla}">+</button>
+                            </div>
+                            <div class="product-price">$${formatearPrecio(producto.precio * producto.cantidad)}</div>
+                            <button class="btnEliminar" data-id="${producto.id}" data-talla="${producto.talla}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="product-price">$${producto.precio * producto.cantidad}</div>
-                <button class="btnEliminar" data-id="${producto.id}" data-talla="${producto.talla}">
-                    <i class="fas fa-trash"></i>
-                </button>
-            `;
-            listaCarrito.appendChild(div);
-        });
+                `;
+        
+                listaCarrito.appendChild(productItem);
+            });
 
         document.querySelectorAll('.btnEliminar').forEach(boton => {
             boton.addEventListener('click', function() {
@@ -92,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const costoTotal = document.getElementById('total-amount');
         const total = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
         if (costoTotal) {
-            costoTotal.textContent = `$ ${total}`;
+            costoTotal.textContent = formatearPrecio(total);
         }
     }
 
@@ -135,17 +138,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     actualizarCarrito();
-    actualizarContadorCarrito();
+    /*actualizarContadorCarrito();*/
     actualizarTotal();
 });
 
+function formatearPrecio(precio) {
+    return precio.toLocaleString("es-CO", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+    });
+}
+
 function obtenerTotalCarrito() {
     let total = 0;
-    // Aquí recorres el carrito y sumas el total, por ejemplo:
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];  // Si tienes un carrito guardado en localStorage
-    
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];    
     carrito.forEach(item => {
-        total += item.precio * item.cantidad;  // Ajusta esto según tu estructura de productos
+        total += item.precio * item.cantidad;
     });
 
     return total;
@@ -153,7 +161,7 @@ function obtenerTotalCarrito() {
 
 function irACheckout() {
     // Obtener los totales
-    const totalCarrito = obtenerTotalCarrito();  // Asegúrate de tener esta función implementada
+    const totalCarrito = obtenerTotalCarrito();  
     const costoEnvio = 15000;
 
     // Guardar los datos en localStorage
@@ -161,5 +169,5 @@ function irACheckout() {
     localStorage.setItem('costoEnvio', costoEnvio);
 
     // Redirigir a la página de checkout
-    window.location.href = 'checkout2.html';  // Cambia a la ruta correcta de tu página de checkout
+    window.location.href = 'checkout2.html';  
 }
