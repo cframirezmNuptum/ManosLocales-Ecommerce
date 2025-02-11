@@ -410,7 +410,7 @@ ul {
     padding: 70px;
     text-align: center;
     gap: 30px;
-    width: 300px;
+    width: 600px;
     margin-top: 70px;
     margin-right: 50px;
 }
@@ -1322,8 +1322,8 @@ ul {
     text-align: center;
     transform: translateY(20px);
     opacity: 0;
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
-                opacity 0.4s ease-in-out;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+                opacity 0.3s ease-in-out;
 }
 
 .modalOverlay.active .contenidoModal {
@@ -1352,8 +1352,8 @@ ul {
     text-align: center;
     transform: translateY(20px);
     opacity: 0;
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
-                opacity 0.4s ease-in-out;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+                opacity 0.3s ease-in-out;
 }
 
 .modalOverlay.active .contenidoModalError {
@@ -1378,11 +1378,29 @@ ul {
 .modalOverlay.fade-out {
     opacity: 0;
     visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 .modalOverlay.fade-out .contenidoModal {
     transform: translateY(-20px);
     opacity: 0;
+}
+
+#cerrarModal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(59, 101, 102, 0.4);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1001; /* Mantiene sobre el modal*/
+}
+
+#cerrarModal:hover{
+    background-color: rgba(59, 101, 102, 0.8);
 }
 
 /**-------------------------------------------------------------------------------------------------------------------------------*/
@@ -1942,7 +1960,7 @@ h1, h2 {
 
 /* Estilos para alertas*/
 
-.errorNombre, .errorApellido, .errorTelefono, .errorEmail, .errorContraseña, .errorConfirmarContraseña, .errorVacio {
+.errorNombre, .errorApellido, .errorTelefono, .errorEmail, .errorContraseña, .errorConfirmarContraseña {
     color: #ff4444;
     font-size: 12px;
     margin-top: 5px;

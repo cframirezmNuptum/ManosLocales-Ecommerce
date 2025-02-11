@@ -48,10 +48,10 @@ const entradasFormulario = {
             patron: /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/
         },
         mensajesError: {
-            requerido: 'El nombre es requerido',
-            longitudMinima: 'El nombre debe tener al menos 2 caracteres',
-            longitudMaxima: 'El nombre no puede exceder 50 caracteres',
-            patron: 'El nombre solo puede contener letras y espacios'
+            requerido: '*El nombre es requerido',
+            longitudMinima: '*El nombre debe tener al menos 2 caracteres',
+            longitudMaxima: '*El nombre no puede exceder 50 caracteres',
+            patron: '*El nombre solo puede contener letras y espacios'
         },
         elementoError: document.querySelector('.errorNombre')
     },
@@ -64,10 +64,10 @@ const entradasFormulario = {
             patron: /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/
         },
         mensajesError: {
-            requerido: 'El apellido es requerido',
-            longitudMinima: 'El apellido debe tener al menos 2 caracteres',
-            longitudMaxima: 'El apellido no puede exceder 50 caracteres',
-            patron: 'El apellido solo puede contener letras y espacios'
+            requerido: '*El apellido es requerido',
+            longitudMinima: '*El apellido debe tener al menos 2 caracteres',
+            longitudMaxima: '*El apellido no puede exceder 50 caracteres',
+            patron: '*El apellido solo puede contener letras y espacios'
         },
         elementoError: document.querySelector('.errorApellido')
     },
@@ -79,9 +79,9 @@ const entradasFormulario = {
             soloNumeros: true
         },
         mensajesError: {
-            requerido: 'El teléfono es requerido',
-            patron: 'El teléfono debe tener exactamente 10 dígitos',
-            soloNumeros: 'No puedes ingresar letras en este campo'
+            requerido: '*El teléfono es requerido',
+            patron: '*El teléfono debe tener exactamente 10 dígitos',
+            soloNumeros: '*No puedes ingresar otros caracteres en este campo'
         },
         elementoError: document.querySelector('.errorTelefono')
     },
@@ -92,8 +92,8 @@ const entradasFormulario = {
             patron: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
         },
         mensajesError: {
-            requerido: 'El correo electrónico es requerido',
-            patron: 'Por favor, ingrese un correo electrónico válido'
+            requerido: '*El correo electrónico es requerido',
+            patron: '*Por favor, ingresa un correo electrónico válido'
         },
         elementoError: document.querySelector('.errorEmail')
     },
@@ -104,8 +104,8 @@ const entradasFormulario = {
             longitudMinima: 8
         },
         mensajesError: {
-            requerido: 'La contraseña es requerida',
-            longitudMinima: 'La contraseña debe tener al menos 8 caracteres'
+            requerido: '*La contraseña es requerida',
+            longitudMinima: '*La contraseña debe tener al menos 8 caracteres'
         },
         elementoError: document.querySelector('.errorContraseña')
     },
@@ -116,8 +116,8 @@ const entradasFormulario = {
             coincideCon: 'contraseña'
         },
         mensajesError: {
-            requerido: 'La confirmación de contraseña es requerida',
-            coincideCon: 'Las contraseñas deben ser iguales'
+            requerido: '*La confirmación de contraseña es requerida',
+            coincideCon: '*Las contraseñas deben ser iguales'
         },
         elementoError: document.querySelector('.errorConfirmarContraseña')
     }
@@ -190,16 +190,37 @@ if (document.getElementById('formularioRegist')) {
            } 
        });
 
-       if (errores) { 
-           const errorDiv = document.createElement('div'); 
-           errorDiv.className = 'errorVacio'; 
-           errorDiv.textContent = 'Por favor, corrige los errores en el formulario'; 
-           formularioRegistro.insertBefore(errorDiv, formularioRegistro.firstChild);
-           
-           // Remover el mensaje después de 3 segundos
+       function mostrarModalError(mensaje, tipo = 'error') {
+        const modalOverlay = document.createElement('div');
+        modalOverlay.className = 'modalOverlay';
+        
+        const contenidoModal = `
+            <div class="contenidoModalError">
+                <div class="iconoModalError">${tipo === 'error' ? '⚠️' : '+'}</div>
+                <p class="textoModalError">${mensaje}</p>
+                <button id="cerrarModal">X</button>
+            </div>
+        `;
+        
+        modalOverlay.innerHTML = contenidoModal;
+        document.body.appendChild(modalOverlay);
+        requestAnimationFrame(() => {
+            modalOverlay.classList.add('active');
+        });
+    
+        const botonCerrar = modalOverlay.querySelector('#cerrarModal');
+        botonCerrar.addEventListener('click', () => {
+            modalOverlay.classList.remove('active');
+            modalOverlay.classList.add('fade-out');
+            setTimeout(() => {
+                modalOverlay.remove();
+            }, 300);
+        });
+    }
 
-           setTimeout(() => { errorDiv.remove(); }, 3000); 
-           return; 
+       if (errores) { 
+        mostrarModalError('¡Estás muy cerca de completar el registro! Por favor, rellena los campos vacíos.')
+        return; 
        }
 
        const datosUsuario = { 
@@ -264,14 +285,14 @@ if (document.getElementById('contFormularioIS')) {
 
     function validarEmail(valor) {
         if (!valor.trim()) {
-            spanErrorEmail.textContent = 'El correo electrónico es requerido';
+            spanErrorEmail.textContent = '*El correo electrónico es requerido';
             entradaEmail.classList.add('input-error');
             return false;
         }
         
         const patronEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!patronEmail.test(valor)) {
-            spanErrorEmail.textContent = 'Por favor, ingrese un correo electrónico válido';
+            spanErrorEmail.textContent = '*Por favor, ingresa un correo electrónico válido';
             entradaEmail.classList.add('input-error');
             return false;
         }
@@ -283,13 +304,13 @@ if (document.getElementById('contFormularioIS')) {
 
     function validarContraseña(valor) {
         if (!valor.trim()) {
-            spanErrorContraseña.textContent = 'La contraseña es requerida';
+            spanErrorContraseña.textContent = '*La contraseña es requerida';
             entradaContraseña.classList.add('input-error');
             return false;
         }
         
         if (valor.length < 8) {
-            spanErrorContraseña.textContent = 'La contraseña debe tener al menos 8 caracteres';
+            spanErrorContraseña.textContent = '*La contraseña debe tener al menos 8 caracteres';
             entradaContraseña.classList.add('input-error');
             return false;
         }

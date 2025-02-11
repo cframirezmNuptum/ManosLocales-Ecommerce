@@ -347,6 +347,7 @@ function mostrarModalError(mensaje, tipo = 'error') {
         <div class="contenidoModalError">
             <div class="iconoModalError">${tipo === 'error' ? '⚠️' : '+'}</div>
             <p class="textoModalError">${mensaje}</p>
+            <button id="cerrarModal">X</button>
         </div>
     `;
     
@@ -356,12 +357,14 @@ function mostrarModalError(mensaje, tipo = 'error') {
         modalOverlay.classList.add('active');
     });
 
-    setTimeout(() => {
+    const botonCerrar = modalOverlay.querySelector('#cerrarModal');
+    botonCerrar.addEventListener('click', () => {
+        modalOverlay.classList.remove('active');
         modalOverlay.classList.add('fade-out');
         setTimeout(() => {
             modalOverlay.remove();
-        }, 500);
-    }, 2000);
+        }, 300);
+    });
 }
 
 function mostrarModal(mensaje, tipo = 'success') {
@@ -372,6 +375,7 @@ function mostrarModal(mensaje, tipo = 'success') {
         <div class="contenidoModal">
             <div class="iconoModal">${tipo === 'success' ? '✓' : '+'}</div>
             <p class="textoModal">${mensaje}</p>
+            <button id="cerrarModal">X</button>
         </div>
     `;
     
@@ -381,12 +385,14 @@ function mostrarModal(mensaje, tipo = 'success') {
         modalOverlay.classList.add('active');
     });
 
-    setTimeout(() => {
+    const botonCerrar = modalOverlay.querySelector('#cerrarModal');
+    botonCerrar.addEventListener('click', () => {
+        modalOverlay.classList.remove('active');
         modalOverlay.classList.add('fade-out');
         setTimeout(() => {
             modalOverlay.remove();
-        }, 500);
-    }, 2000);
+        }, 300);
+    });
 }
 
 function mostrarModalAgregado(nombreProducto) {
