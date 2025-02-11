@@ -9,6 +9,7 @@
     <link rel="icon" href="./Img/Favicon_ManosLocales.png">
     <link rel="stylesheet" href="./Css/cart.css">
     <link rel="stylesheet" href="./Css/global_styles.css">
+    <link rel="stylesheet" href="./Css/menu_hamburguesa.css">
     
     <title>Carrito de compras</title>
 </head>
@@ -31,41 +32,30 @@
         </nav>
         <div class="contenedor_carritoCompras">
                 <img class="logo_carro_compras" src="./Img/carrito-de-compras.gif" alt="Carrito de compras">
-                <span class="indicador_compra"></span>
         </div>
-        
+        <div class="menu_hamburguesa">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
     </header>
     <!--FIN HEADER-->
 
     <main class="main-container">
-        <!-- Aquí se renderizan los productos -->
-        <div class="row justify-content-center align-items-center">
-            <div class="col-12 text-center">
+            <div class="cart-container">
                 <h1 class="h1-2">Carrito de compras</h1>
-                <p class="text-center">Los mejores productos realizados por manos locales para ti</p>
+                <p class="descProductos">Los mejores productos realizados por manos locales para ti</p>
             </div>
         </div>
-    
-        <!-- Contenedor para el contador de productos (cart-count) -->
-        <div id="contador-carrito" style="display: flex; justify-content: flex-start; margin-bottom: 20px;">
-            <span id="cart-count" class="indicador_compra" style="display: none; font-weight: bold;"></span> 
+        <div id="listaCarrito" class="listaCarrito">
+            <div id="productItem" class="productItem"></div>
         </div>
-    
-        <!-- Contenedor para los productos del carrito -->
-        <div id="cart-items">
-            <!-- Products will be dynamically added here -->
-        </div>
-        
-        <!-- Contenedor para el total del carrito -->
-        <div class="cart-total" style="text-align: center; margin-top: 20px;">
-            <span>TOTAL:</span>
-            <span id="total-amount">$ 0.000</span>
-        </div>
-                    
-        <button class="checkout-btn2" style="display: block; margin: 20px auto;">Proceder al checkout</button>
+        <div class="cart-total">
+            <span>TOTAL: $</span>
+            <span id="total-amount"></span>
+        </div>        
+        <button class="checkout-btn2" id="btnCheckout" onclick="irACheckout()">Proceder al checkout</button>
     </main>
-    
-
 
     <!--FOOTER-->
     <footer id="contenedor_footer">
@@ -92,7 +82,7 @@
                     <p class="subtitulos_footer">Teléfono: <a class="enlace_contactanos" href="https://web.whatsapp.com/" target="_blank">+57 320567890</a></p>
                 </li>
                 <li>
-                    <p class="subtitulos_footer">Email: <a class="enlace_contactanos" href="https://web.whatsapp.com/" target="_blank">info@manoslocales.com</a></p>
+                    <p class="subtitulos_footer">Email: <a class="enlace_contactanos" href="mailto:manoslocalesecommerce@gmail.com">manoslocalesecommerce@gmail.com</a></p>
                 </li>
             </ul>
         </div>
@@ -101,7 +91,7 @@
             <h3 class="titulos_footer">Síguenos</h3>
             <ul class="lista_redes_footer">
                 <li class="logos_redes_footer">
-                    <a href="https://www.instagram.com/" target="_blank" class="footer-social-icon">
+                    <a href="https://www.instagram.com/manos_locales?igsh=azV5Z2M5Mml5bHVj" target="_blank" class="footer-social-icon">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </li>
@@ -122,5 +112,6 @@
     </footer>
 
     <script src="./js/cart.js" defer></script>
+    <script src="./js/script_menuHamburguesa.js"></script>
 </body>
 </html>

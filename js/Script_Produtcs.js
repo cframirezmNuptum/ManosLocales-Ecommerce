@@ -184,7 +184,7 @@ let productos = [
 let carrito = [];
 
 function cargarCarrito() {
-    const carritoGuardado = localStorage.getItem(carrito);
+    const carritoGuardado = localStorage.getItem("carrito"); 
     carrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
 }
 
@@ -207,9 +207,8 @@ function renderProductos() {
                         <img src="${producto.imagen}" alt="${producto.nombre}">
                         <div class="imgOverlay">
                             <a href="Item.html?id=${producto.id}">
-                                <button class="btnVer">Ver</button>
-                            </a>      
-                            <button class="btnAnadir" onclick="agregarAlCarrito(${producto.id})">Añadir</button>
+                                <button class="btnVer">Ver producto</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -359,6 +358,7 @@ function mostrarModalError(mensaje, tipo = 'error') {
         <div class="contenidoModalError">
             <div class="iconoModalError">${tipo === 'error' ? '⚠️' : '+'}</div>
             <p class="textoModalError">${mensaje}</p>
+            <button id="cerrarModal">X</button>
         </div>
     `;
     
@@ -368,12 +368,14 @@ function mostrarModalError(mensaje, tipo = 'error') {
         modalOverlay.classList.add('active');
     });
 
-    setTimeout(() => {
+    const botonCerrar = modalOverlay.querySelector('#cerrarModal');
+    botonCerrar.addEventListener('click', () => {
+        modalOverlay.classList.remove('active');
         modalOverlay.classList.add('fade-out');
         setTimeout(() => {
             modalOverlay.remove();
-        }, 500);
-    }, 2000);
+        }, 300);
+    });
 }
 
 function mostrarModal(mensaje, tipo = 'success') {
@@ -384,6 +386,7 @@ function mostrarModal(mensaje, tipo = 'success') {
         <div class="contenidoModal">
             <div class="iconoModal">${tipo === 'success' ? '✓' : '+'}</div>
             <p class="textoModal">${mensaje}</p>
+            <button id="cerrarModal">X</button>
         </div>
     `;
     
@@ -393,12 +396,14 @@ function mostrarModal(mensaje, tipo = 'success') {
         modalOverlay.classList.add('active');
     });
 
-    setTimeout(() => {
+    const botonCerrar = modalOverlay.querySelector('#cerrarModal');
+    botonCerrar.addEventListener('click', () => {
+        modalOverlay.classList.remove('active');
         modalOverlay.classList.add('fade-out');
         setTimeout(() => {
             modalOverlay.remove();
-        }, 500);
-    }, 2000);
+        }, 300);
+    });
 }
 
 function mostrarModalAgregado(nombreProducto) {
@@ -410,8 +415,10 @@ function mostrarModalProductoExistente(nombreProducto) {
 }
 
 function agregarAlCarrito(productoId) {
+    const cantidadIngreso = document.getElementById('cantidad');
+    const cantidad = parseInt(cantidadIngreso.value);
     const selectorTalla = document.querySelector(".selectorTalla");
-    const tallaSeleccionada = selectorTalla ? selectorTalla.value : null;
+    const tallaSeleccionada = selectorTalla.value;
 
     if (!tallaSeleccionada) {
         mostrarModalError("Por favor, selecciona una talla antes de añadir al carrito.");
@@ -425,7 +432,7 @@ function agregarAlCarrito(productoId) {
             nombre: producto.nombre,
             precio: producto.precio,
             imagen: producto.imagen,
-            cantidad: 1,
+            cantidad: cantidad,
             talla: tallaSeleccionada,
         };
 
