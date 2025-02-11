@@ -60,13 +60,19 @@ body {
     }
 }
 
+.h3 {
+    font-size: 32px;
+    line-height: 28px;
+    color: #0F6466;
+    margin-bottom: 10px; /* Espacio entre h3 y el párrafo */
+    font-weight: normal;
+}
 .h3.text-center {
     font-size: 32px;
     line-height: 28px;
     text-transform: uppercase;
     color: #0F6466;
     margin-bottom: 10px; /* Espacio entre h3 y el párrafo */
-    color: #0F6466;
 }
 
 /* COLORS AND LINK STYLES */
@@ -750,6 +756,9 @@ ul {
 .titulo_cont_estadistica{
     margin-bottom: 40px;
     text-align: center;
+    color: #0F6466;
+    font-size: 32px;
+    font-weight: normal;
 }
 
 .contenedor_imgEstadistica{
@@ -757,15 +766,24 @@ ul {
     flex-direction: column;
     align-items: center;
     width: 400px;
+    color: #2C3532;
+    
 }
 
 .titulo_cont_imgEstadistica{
     margin-bottom: 10px;
     text-align: center;
+    font-size: 32px;
+    line-height: 28px;
+    color: #0F6466;
+    margin-bottom: 20px; /* Espacio entre h3 y el párrafo */
+    color: #0F6466;
+    font-weight: normal;
 }
 
 .imagen_estadistica{
-    width: 180px;
+    width: 400px;
+    padding-bottom: 20px;
 }
 
 /*! MEDIA QUERY ESTADISTICA*/
