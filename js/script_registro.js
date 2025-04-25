@@ -116,7 +116,7 @@ if (document.getElementById('formularioRegist')) {
         }
 
         try {
-            const respuesta = await fetch('http://https://main.dxyu45fepegt2.amplifyapp.com:8080/auth/register', {
+            const respuesta = await fetch('https://3im9ypvpur.us-east-1.awsapprunner.com/auth/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datosUsuario)
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const datosUsuario = { email, contrasena };
 
             try {
-                const respuesta = await fetch('http://https://main.dxyu45fepegt2.amplifyapp.com:8080/auth/login', {
+                const respuesta = await fetch('https://3im9ypvpur.us-east-1.awsapprunner.com/auth/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(datosUsuario)
